@@ -6946,6 +6946,13 @@ textarea.textarea-lg {
 		max-width: 230px;
 	}
 }
+@media (min-width: 992px) and (max-width: 1199.98px) {
+	.product-modern-figure img.list-img {
+		max-width: 300px !important;
+		width:100% !important;
+		height: auto !important;
+	}
+}
 
 .product-creative {
 	text-align: center;
