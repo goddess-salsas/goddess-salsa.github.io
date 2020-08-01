@@ -122,7 +122,7 @@ function renderListProducts(page, filters) {
                     <div class=\"unit unit-spacing-0 flex-column flex-sm-row\">
                         <div class=\"unit-left\">
                             <a class=\"product-modern-figure\" href=\"single-product-${item.id}.html\">
-                            <img src=\"${item.image_large}\" alt=\"\" width=\"328\" height=\"330\" style=\"height: 330;width: 430;\">
+                            <img src=\"${item.image_large}\" alt=\"\" width=\"328\" height=\"330\" style=\"height: 330;width: 430;\" class="list-img>
                             </a>
                         </div>
                         <div class=\"unit-body\">
