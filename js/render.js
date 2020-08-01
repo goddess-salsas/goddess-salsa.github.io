@@ -152,6 +152,7 @@ function renderMiniCart(items) {
     const $minitotal = document.querySelector(".mini-total");
     const $count = document.querySelector(".cart-count");
     const $minicount = document.querySelector(".cart-count-2");
+    const $minicartcount = document.querySelector(".mini-cart-count");
     var quantity = 0;
 
     $cartItems.innerHTML = items.map((item) => `
@@ -179,6 +180,7 @@ function renderMiniCart(items) {
     });
     $count.innerHTML = " " + quantity;
     $minicount.innerHTML = " " + quantity;
+    $minicartcount.innerHTML = " " + quantity;
 }    
 /**
  * renders the Product Grid Page Paginator
