@@ -133,7 +133,7 @@ function renderListProducts(page, filters) {
                                     <div class=\"product-price\">$${item.price_current}</div>
                                 </div>
                                 <p class=\"product-modern-text\">${item.desc_short}</p>
-                                <a class=\"button button-primary button-zakaria\" onclick=\"cartLS.add({id: ${item.id}, name: '${item.name}', price: ${item.price_current}, image: '${item.image_small}'})\" style=\"color:white;\">Add to cart</a>
+                                <span class=\"button button-primary button-zakaria\" onclick=\"cartLS.add({id: ${item.id}, name: '${item.name}', price: ${item.price_current}, image: '${item.image_small}'})\" style=\"color:white;\">Add to cart</span>
                             </div>
                         </div>
                     </div>
