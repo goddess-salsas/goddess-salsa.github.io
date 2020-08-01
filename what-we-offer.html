@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/cart-localstorage.min.js"></script>
+    <script type="text/javascript" language="javascript" src="js/products.js"></script> 
     <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
   </head>
   <body>
@@ -161,51 +163,21 @@
                   </div>
                   <!-- RD Navbar Basket-->
                   <div class="rd-navbar-basket-wrap">
-                    <button class="rd-navbar-basket fl-bigmug-line-shopping202" data-rd-navbar-toggle=".cart-inline"><span>2</span></button>
-                    <div class="cart-inline">
+                    <button class="rd-navbar-basket fl-bigmug-line-shopping202 toggle-original" data-rd-navbar-toggle=".cart-inline"><span class="cart-count"></span></button>
+                    <div class="cart-inline toggle-original-elements">
                       <div class="cart-inline-header">
-                        <h5 class="cart-inline-title">In cart:<span> 2</span> Products</h5>
-                        <h6 class="cart-inline-title">Total price:<span> $48</span></h6>
+                        <h5 class="cart-inline-title">In cart:<span class="cart-count-2"> 0</span> Products</h5>
+                        <h6 class="cart-inline-title">Total price:<span class="mini-total"> $0</span></h6>
                       </div>
-                      <div class="cart-inline-body">
-                        <div class="cart-inline-item">
-                          <div class="unit unit-spacing-sm align-items-center">
-                            <div class="unit-left"><a class="cart-inline-figure" href="single-product.html"><img src="images/product-mini-6-100x90.png" alt="" width="100" height="90"/></a></div>
-                            <div class="unit-body">
-                              <h6 class="cart-inline-name"><a href="single-product.html">MILK CHOCOLATE PUDDING</a></h6>
-                              <div>
-                                <div class="group-xs group-middle">
-                                  <div class="table-cart-stepper">
-                                    <input class="form-input" type="number" data-zeros="true" value="1" min="1" max="1000"/>
-                                  </div>
-                                  <h6 class="cart-inline-title">$25.00</h6>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="cart-inline-item">
-                          <div class="unit unit-spacing-sm align-items-center">
-                            <div class="unit-left"><a class="cart-inline-figure" href="single-product.html"><img src="images/product-mini-7-100x90.png" alt="" width="100" height="90"/></a></div>
-                            <div class="unit-body">
-                              <h6 class="cart-inline-name"><a href="single-product.html">CHOCOLATE Truffles</a></h6>
-                              <div>
-                                <div class="group-xs group-middle">
-                                  <div class="table-cart-stepper">
-                                    <input class="form-input" type="number" data-zeros="true" value="1" min="1" max="1000"/>
-                                  </div>
-                                  <h6 class="cart-inline-title">$23.00</h6>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                      <div class="cart-inline-body mini-cart-items">
+
                       </div>
                       <div class="cart-inline-footer">
                         <div class="group-sm"><a class="button button-default-outline-2 button-zakaria" href="cart-page.html">Go to cart</a><a class="button button-primary button-zakaria" href="checkout.html">Checkout</a></div>
                       </div>
                     </div>
-                  </div><a class="rd-navbar-basket rd-navbar-basket-mobile fl-bigmug-line-shopping202 rd-navbar-fixed-element-2" href="cart-page.html"><span>2</span></a>
+                  </div>
+                  <a class="rd-navbar-basket rd-navbar-basket-mobile fl-bigmug-line-shopping202 rd-navbar-fixed-element-2" href="cart-page.html"><span class="mini-cart-count">2</span></a>
                 </div>
               </div>
             </div>
@@ -213,7 +185,7 @@
         </div>
       </header>
       <section class="breadcrumbs-custom">
-        <div class="parallax-container" data-parallax-img="images/breadcrumbs-bg.jpg">
+        <div class="parallax-container" data-parallax-img="images/about-image.jpg">
           <div class="breadcrumbs-custom-body parallax-content context-dark">
             <div class="container">
               <h2 class="breadcrumbs-custom-title">What We Offer</h2>
@@ -241,7 +213,7 @@
                   <div class="box-icon-modern-icon linearicons-chef icon-lg"></div>
                 </div>
                 <h4 class="box-icon-modern-title"><a href="#">Quality Products</a></h4>
-                <p class="box-icon-modern-text">Pellentesque elit ullamcorper dignissim cras tincidunt lobortis etiam dignissim diam quis enim.</p>
+                <p class="box-icon-modern-text">We guarantee the quality of all the salsas we provide as they are made using the freshest ingredients.  Many of our spices and ingredients are grown on site to ensure that they are used at the peak of freshness.</p>
               </article>
             </div>
             <div class="col-sm-6 col-lg-3">
@@ -251,7 +223,7 @@
                   <div class="box-icon-modern-icon linearicons-platter icon-lg"></div>
                 </div>
                 <h4 class="box-icon-modern-title"><a href="#">catering service</a></h4>
-                <p class="box-icon-modern-text">Nullam non nisi est sit. Proin sed libero enim sed faucibus turpis aenean sed adipiscing diam.</p>
+                <p class="box-icon-modern-text">Our team also provides an outstanding catering and custom services for events and special occasions.  Want a special order?  Just reach out and we'll promptly let you know if that is something that we can accomodate.</p>
               </article>
             </div>
             <div class="col-sm-6 col-lg-3">
@@ -261,7 +233,7 @@
                   <div class="box-icon-modern-icon linearicons-truck icon-lg"></div>
                 </div>
                 <h4 class="box-icon-modern-title"><a href="#">fast delivery</a></h4>
-                <p class="box-icon-modern-text">Arcu cursus euismod quis viverra. Velit egestas dui id ornare arcu odio purus ut faucibus.</p>
+                <p class="box-icon-modern-text">All orders submitted by our US clients are shipped quickly throughout the United States.  Many local orders can be delivered directly by our efficient staff - please ask during checkout.</p>
               </article>
             </div>
             <div class="col-sm-6 col-lg-3">
@@ -271,7 +243,7 @@
                   <div class="box-icon-modern-icon linearicons-credit-card icon-lg"></div>
                 </div>
                 <h4 class="box-icon-modern-title"><a href="#">Online payment</a></h4>
-                <p class="box-icon-modern-text">Consequat mauris nunc congue nisi vitae. Bibendum est ultricies integer quis auctor.</p>
+                <p class="box-icon-modern-text">We accept all kinds of online payments including Visa, MasterCard, along with PayPal and Venmo.</p>
               </article>
             </div>
           </div>
@@ -466,5 +438,10 @@
     <div class="snackbars" id="form-output-global"></div>
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/render.js"></script>
+    <script>
+      renderMiniCart(cartLS.list());
+      cartLS.onChange(renderMiniCart);
+    </script>
   </body>
 </html>
