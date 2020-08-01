@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/cart-localstorage.min.js"></script>
+    <script type="text/javascript" language="javascript" src="products.js"></script> 
     <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
   <link rel="stylesheet" href="data:text/css;charset=utf-8;base64,Y2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gewogIGRpc3BsYXk6IGJsb2NrOwogIGJhY2tncm91bmQ6ICM0NTQ4NGQ7CiAgY29sb3I6ICNmZmY7CiAgbGluZS1oZWlnaHQ6IDEuNDU7CiAgcG9zaXRpb246IGZpeGVkOwogIHotaW5kZXg6IDkwMDAwMDAwOwogIHRvcDogMDsKICBsZWZ0OiAwOwogIHJpZ2h0OiAwOwogIHBhZGRpbmc6IC41ZW0gMWVtOwogIHRleHQtYWxpZ246IGNlbnRlcjsKICAtd2Via2l0LXVzZXItc2VsZWN0OiBub25lOwogICAgIC1tb3otdXNlci1zZWxlY3Q6IG5vbmU7CiAgICAgIC1tcy11c2VyLXNlbGVjdDogbm9uZTsKICAgICAgICAgIHVzZXItc2VsZWN0OiBub25lOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXVtkYXRhLXZpc2liaWxpdHk9ImhpZGRlbiJdIHsKICBkaXNwbGF5OiBub25lOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXSBjbG91ZGZsYXJlLWFwcC1tZXNzYWdlIHsKICBkaXNwbGF5OiBibG9jazsKfQoKY2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gYSB7CiAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7CiAgY29sb3I6ICNlYmViZjQ7Cn0KCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGE6aG92ZXIsCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGE6YWN0aXZlIHsKICBjb2xvcjogI2RiZGJlYjsKfQoKY2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gY2xvdWRmbGFyZS1hcHAtY2xvc2UgewogIGRpc3BsYXk6IGJsb2NrOwogIGN1cnNvcjogcG9pbnRlcjsKICBmb250LXNpemU6IDEuNWVtOwogIHBvc2l0aW9uOiBhYnNvbHV0ZTsKICByaWdodDogLjRlbTsKICB0b3A6IC4zNWVtOwogIGhlaWdodDogMWVtOwogIHdpZHRoOiAxZW07CiAgbGluZS1oZWlnaHQ6IDE7Cn0KCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGNsb3VkZmxhcmUtYXBwLWNsb3NlOmFjdGl2ZSB7CiAgLXdlYmtpdC10cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTsKICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgxcHgpOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXSBjbG91ZGZsYXJlLWFwcC1jbG9zZTpob3ZlciB7CiAgb3BhY2l0eTogLjllbTsKICBjb2xvcjogI2ZmZjsKfQo="></head>
   <body>
@@ -160,51 +162,21 @@
                   </div>
                   <!-- RD Navbar Basket-->
                   <div class="rd-navbar-basket-wrap">
-                    <button class="rd-navbar-basket fl-bigmug-line-shopping202" data-rd-navbar-toggle=".cart-inline"><span>2</span></button>
-                    <div class="cart-inline">
+                    <button class="rd-navbar-basket fl-bigmug-line-shopping202 toggle-original" data-rd-navbar-toggle=".cart-inline"><span class="cart-count"></span></button>
+                    <div class="cart-inline toggle-original-elements">
                       <div class="cart-inline-header">
-                        <h5 class="cart-inline-title">In cart:<span> 2</span> Products</h5>
-                        <h6 class="cart-inline-title">Total price:<span> $48</span></h6>
+                        <h5 class="cart-inline-title">In cart:<span class="cart-count-2"> 0</span> Products</h5>
+                        <h6 class="cart-inline-title">Total price:<span class="mini-total"> $0</span></h6>
                       </div>
-                      <div class="cart-inline-body">
-                        <div class="cart-inline-item">
-                          <div class="unit unit-spacing-sm align-items-center">
-                            <div class="unit-left"><a class="cart-inline-figure" href="single-product.html"><img src="images/product-mini-6-100x90.png" alt="" width="100" height="90"/></a></div>
-                            <div class="unit-body">
-                              <h6 class="cart-inline-name"><a href="single-product.html">MILK CHOCOLATE PUDDING</a></h6>
-                              <div>
-                                <div class="group-xs group-middle">
-                                  <div class="table-cart-stepper">
-                                    <input class="form-input" type="number" data-zeros="true" value="1" min="1" max="1000"/>
-                                  </div>
-                                  <h6 class="cart-inline-title">$25.00</h6>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="cart-inline-item">
-                          <div class="unit unit-spacing-sm align-items-center">
-                            <div class="unit-left"><a class="cart-inline-figure" href="single-product.html"><img src="images/product-mini-7-100x90.png" alt="" width="100" height="90"/></a></div>
-                            <div class="unit-body">
-                              <h6 class="cart-inline-name"><a href="single-product.html">CHOCOLATE Truffles</a></h6>
-                              <div>
-                                <div class="group-xs group-middle">
-                                  <div class="table-cart-stepper">
-                                    <input class="form-input" type="number" data-zeros="true" value="1" min="1" max="1000"/>
-                                  </div>
-                                  <h6 class="cart-inline-title">$23.00</h6>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                      <div class="cart-inline-body mini-cart-items">
+
                       </div>
                       <div class="cart-inline-footer">
                         <div class="group-sm"><a class="button button-default-outline-2 button-zakaria" href="cart-page.html">Go to cart</a><a class="button button-primary button-zakaria" href="checkout.html">Checkout</a></div>
                       </div>
                     </div>
-                  </div><a class="rd-navbar-basket rd-navbar-basket-mobile fl-bigmug-line-shopping202 rd-navbar-fixed-element-2" href="cart-page.html"><span>2</span></a>
+                  </div>
+                  <a class="rd-navbar-basket rd-navbar-basket-mobile fl-bigmug-line-shopping202 rd-navbar-fixed-element-2" href="cart-page.html"><span class="mini-cart-count">2</span></a>
                 </div>
               </div>
             </div>
@@ -215,7 +187,7 @@
         <div class="parallax-container" data-parallax-img="images/blog-image.webp">
           <div class="breadcrumbs-custom-body parallax-content context-dark">
             <div class="container">
-              <h2 class="breadcrumbs-custom-title">The Goddess Salsas Blog</h2>
+              <h2 class="breadcrumbs-custom-title">The Goddess Blog</h2>
             </div>
           </div>
         </div>
@@ -453,4 +425,9 @@
     <div class="snackbars" id="form-output-global"></div>
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/render.js"></script>
+    <script>
+      renderMiniCart(cartLS.list());
+      cartLS.onChange(renderMiniCart);
+    </script>
   </body></html>

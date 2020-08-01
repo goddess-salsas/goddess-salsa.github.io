@@ -3,14 +3,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- <script src="/cdn-cgi/apps/head/3ts2ksMwXvKRuG480KNifJ2_JNM.js"></script>
-    <script src="/cdn-cgi/apps/body/4o300efCt-CXoq1JEC-sVReFz48.js"></script> -->
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="fonts/poppins.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
     <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+    <script src="js/cart-localstorage.min.js"></script>
+    <script type="text/javascript" language="javascript" src="products.js"></script>
   <link rel="stylesheet" href="data:text/css;charset=utf-8;base64,Y2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gewogIGRpc3BsYXk6IGJsb2NrOwogIGJhY2tncm91bmQ6ICM0NTQ4NGQ7CiAgY29sb3I6ICNmZmY7CiAgbGluZS1oZWlnaHQ6IDEuNDU7CiAgcG9zaXRpb246IGZpeGVkOwogIHotaW5kZXg6IDkwMDAwMDAwOwogIHRvcDogMDsKICBsZWZ0OiAwOwogIHJpZ2h0OiAwOwogIHBhZGRpbmc6IC41ZW0gMWVtOwogIHRleHQtYWxpZ246IGNlbnRlcjsKICAtd2Via2l0LXVzZXItc2VsZWN0OiBub25lOwogICAgIC1tb3otdXNlci1zZWxlY3Q6IG5vbmU7CiAgICAgIC1tcy11c2VyLXNlbGVjdDogbm9uZTsKICAgICAgICAgIHVzZXItc2VsZWN0OiBub25lOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXVtkYXRhLXZpc2liaWxpdHk9ImhpZGRlbiJdIHsKICBkaXNwbGF5OiBub25lOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXSBjbG91ZGZsYXJlLWFwcC1tZXNzYWdlIHsKICBkaXNwbGF5OiBibG9jazsKfQoKY2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gYSB7CiAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7CiAgY29sb3I6ICNlYmViZjQ7Cn0KCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGE6aG92ZXIsCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGE6YWN0aXZlIHsKICBjb2xvcjogI2RiZGJlYjsKfQoKY2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gY2xvdWRmbGFyZS1hcHAtY2xvc2UgewogIGRpc3BsYXk6IGJsb2NrOwogIGN1cnNvcjogcG9pbnRlcjsKICBmb250LXNpemU6IDEuNWVtOwogIHBvc2l0aW9uOiBhYnNvbHV0ZTsKICByaWdodDogLjRlbTsKICB0b3A6IC4zNWVtOwogIGhlaWdodDogMWVtOwogIHdpZHRoOiAxZW07CiAgbGluZS1oZWlnaHQ6IDE7Cn0KCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGNsb3VkZmxhcmUtYXBwLWNsb3NlOmFjdGl2ZSB7CiAgLXdlYmtpdC10cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTsKICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgxcHgpOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXSBjbG91ZGZsYXJlLWFwcC1jbG9zZTpob3ZlciB7CiAgb3BhY2l0eTogLjllbTsKICBjb2xvcjogI2ZmZjsKfQo="></head>
   <body class="">
     <div class="ie-panel"> <a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
@@ -71,76 +71,26 @@
                     <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a>
                     </li>
                     <li class="rd-nav-item "><a class="rd-nav-link" href="masonry-gallery.html">Gallery</a>
-                      <!-- <li class="rd-nav-item rd-navbar--has-dropdown rd-navbar-submenu"><a class="rd-nav-link" href="masonry-gallery.html">Gallery</a><span class="rd-navbar-submenu-toggle"></span> -->
-                      <!-- RD Navbar Dropdown-->
-                      <!-- <ul class="rd-menu rd-navbar-dropdown"> -->
-                        <!-- <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="grid-gallery.html">Grid Gallery</a></li>
-                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="grid-fullwidth-gallery.html">Grid Fullwidth Gallery</a></li> -->
-                        <!-- <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="masonry-gallery.html">Masonry Gallery</a></li> -->
-                        <!-- <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="masonry-fullwidth-gallery.html">Masonry Fullwidth Gallery</a></li> -->
-                      <!-- </ul> -->
                     </li>
                     <li class="rd-nav-item rd-navbar--has-dropdown rd-navbar-submenu"><a class="rd-nav-link" href="shop-list.html">Shop</a><span class="rd-navbar-submenu-toggle"></span>
                       <!-- RD Navbar Dropdown-->
                       <ul class="rd-menu rd-navbar-dropdown">
-                        <!-- <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="grid-shop.html">Grid Shop</a></li> -->
                         <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="shop-list.html">Our Products</a></li>
-                        <!-- <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="single-product.html">Single Product</a></li> -->
                         <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="cart-page.html">Shopping Cart</a></li>
                         <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="checkout.html">Checkout</a></li>
                       </ul>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="blog-list.html">Blog</a>
-                      <!-- <li class="rd-nav-item rd-navbar--has-dropdown rd-navbar-submenu"><a class="rd-nav-link" href="blog-list.html">Blog</a><span class="rd-navbar-submenu-toggle"></span> -->
-                      <!-- RD Navbar Dropdown-->
-                      <!-- <ul class="rd-menu rd-navbar-dropdown">
-                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="grid-blog.html">Grid Blog</a></li>
-                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="blog-list.html">Blog List</a></li>
-                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="blog-post.html">Blog Post</a></li>
-                      </ul> -->
                     </li>
                     <li class="rd-nav-item rd-navbar--has-dropdown rd-navbar-submenu"><a class="rd-nav-link" href="what-we-offer.html">About Us</a><span class="rd-navbar-submenu-toggle"></span>
                       <!-- RD Navbar Dropdown-->
                       <ul class="rd-menu rd-navbar-dropdown">
-                        <!-- <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="what-we-offer.html">What We Offer</a></li> -->
                         <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="our-team.html">Our Team</a></li>
                         <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="testimonials.html">Testimonials</a></li>
                         <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="privacy-policy.html">Privacy Policy</a></li>
                         <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="pricing-list.html">Pricing List</a></li>
                       </ul>
                     </li>
-                    <!-- <li class="rd-nav-item rd-navbar--has-megamenu rd-navbar-submenu"><a class="rd-nav-link" href="#">Elements</a><span class="rd-navbar-submenu-toggle"></span>
-                      RD Navbar Megamenu
-                      <ul class="rd-menu rd-navbar-megamenu rd-navbar-open-right">
-                        <li class="rd-megamenu-item">
-                          <div class="rd-megamenu-title"><span class="rd-megamenu-icon mdi mdi-apps"></span><span class="rd-megamenu-text">Elements</span></div>
-                          <ul class="rd-megamenu-list rd-megamenu-list-2">
-                            <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="typography.html">Typography</a></li>
-                            <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="icon-lists.html">Icon lists</a></li>
-                            <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="progress-bars.html">Progress bars</a></li>
-                            <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="calls-to-action.html">Calls to action</a></li>
-                            <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="tabs-and-accordions.html">Tabs &amp; accordions</a></li>
-                            <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="buttons.html">Buttons</a></li>
-                            <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="tables.html">Tables</a></li>
-                            <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="forms.html">Forms</a></li>
-                            <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="counters.html">Counters</a></li>
-                            <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="grid-system.html">Grid system</a></li>
-                          </ul>
-                        </li>
-                        <li class="rd-megamenu-item flex-grow-1 flex-shrink-0">
-                          <div class="rd-megamenu-title"><span class="rd-megamenu-icon mdi mdi-layers"></span><span class="rd-megamenu-text">Additional pages</span></div>
-                          <ul class="rd-megamenu-list">
-                            <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="404-page.html">404 Page</a></li>
-                            <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="coming-soon.html">Coming Soon</a></li>
-                            <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="privacy-policy.html">Privacy Policy</a></li>
-                            <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="search-results.html">Search Results</a></li>
-                          </ul>
-                        </li>
-                        <li class="rd-megamenu-item rd-megamenu-banner">
-                          <div class="rd-megamenu-title"><span class="rd-megamenu-icon mdi mdi-cake-variant"></span><span class="rd-megamenu-text">Welcome to Our Store</span></div><a class="banner-classic" href="grid-shop.html"><img src="images/banner-1-300x202.jpg" alt="" width="300" height="202"></a>
-                        </li>
-                      </ul>
-                    </li> -->
                     <li class="rd-nav-item"><a class="rd-nav-link" href="contact-us.html">Contact Us</a>
                     </li>
                   </ul>
@@ -160,51 +110,21 @@
                   </div>
                   <!-- RD Navbar Basket-->
                   <div class="rd-navbar-basket-wrap">
-                    <button class="rd-navbar-basket fl-bigmug-line-shopping202 toggle-original" data-rd-navbar-toggle=".cart-inline"><span>2</span></button>
+                    <button class="rd-navbar-basket fl-bigmug-line-shopping202 toggle-original" data-rd-navbar-toggle=".cart-inline"><span class="cart-count"></span></button>
                     <div class="cart-inline toggle-original-elements">
                       <div class="cart-inline-header">
-                        <h5 class="cart-inline-title">In cart:<span> 2</span> Products</h5>
-                        <h6 class="cart-inline-title">Total price:<span> $48</span></h6>
+                        <h5 class="cart-inline-title">In cart:<span class="cart-count-2"> 0</span> Products</h5>
+                        <h6 class="cart-inline-title">Total price:<span class="mini-total"> $0</span></h6>
                       </div>
-                      <div class="cart-inline-body">
-                        <div class="cart-inline-item">
-                          <div class="unit unit-spacing-sm align-items-center">
-                            <div class="unit-left"><a class="cart-inline-figure" href="single-product.html"><img src="images/product-mini-6-100x90.png" alt="" width="100" height="90"></a></div>
-                            <div class="unit-body">
-                              <h6 class="cart-inline-name"><a href="single-product.html">MILK CHOCOLATE PUDDING</a></h6>
-                              <div>
-                                <div class="group-xs group-middle">
-                                  <div class="table-cart-stepper">
-                                    <div class="stepper "><input class="form-input stepper-input" type="number" data-zeros="true" value="1" min="1" max="1000"><span class="stepper-arrow up"></span><span class="stepper-arrow down"></span></div>
-                                  </div>
-                                  <h6 class="cart-inline-title">$25.00</h6>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="cart-inline-item">
-                          <div class="unit unit-spacing-sm align-items-center">
-                            <div class="unit-left"><a class="cart-inline-figure" href="single-product.html"><img src="images/product-mini-7-100x90.png" alt="" width="100" height="90"></a></div>
-                            <div class="unit-body">
-                              <h6 class="cart-inline-name"><a href="single-product.html">CHOCOLATE Truffles</a></h6>
-                              <div>
-                                <div class="group-xs group-middle">
-                                  <div class="table-cart-stepper">
-                                    <div class="stepper "><input class="form-input stepper-input" type="number" data-zeros="true" value="1" min="1" max="1000"><span class="stepper-arrow up"></span><span class="stepper-arrow down"></span></div>
-                                  </div>
-                                  <h6 class="cart-inline-title">$23.00</h6>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                      <div class="cart-inline-body mini-cart-items">
+
                       </div>
                       <div class="cart-inline-footer">
                         <div class="group-sm"><a class="button button-default-outline-2 button-zakaria" href="cart-page.html">Go to cart</a><a class="button button-primary button-zakaria" href="checkout.html">Checkout</a></div>
                       </div>
                     </div>
-                  </div><a class="rd-navbar-basket rd-navbar-basket-mobile fl-bigmug-line-shopping202 rd-navbar-fixed-element-2" href="cart-page.html"><span>2</span></a>
+                  </div>
+                  <a class="rd-navbar-basket rd-navbar-basket-mobile fl-bigmug-line-shopping202 rd-navbar-fixed-element-2" href="cart-page.html"><span class="mini-cart-count">2</span></a>
                 </div>
               </div>
             </div>
@@ -218,7 +138,7 @@
             <div class="col-md-7 col-xl-5 text-left">
               <div class="text-big text-decorative text-primary wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">Delicious</div>
               <h3 class="wow fadeInLeft font-weight-bold text-decor-line text-spacing-200" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">salsas for you</h3>
-              <h4 class="wow fadeInLeft text-spacing-100 text-transform-none text-gray-600 font-weight-normal text-gray-600" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;"><span class="d-xl-block">Goddess Salsas offers the best </span><span class="d-xl-block">salsas and freshest ingredients for you and your family.</span></h4><a class="button button-lg button-shadow-2 button-primary button-zakaria wow fadeInUp" href="grid-shop.html" style="visibility: visible; animation-name: fadeInUp;">Shop now</a>
+              <h4 class="wow fadeInLeft text-spacing-100 text-transform-none text-gray-600 font-weight-normal text-gray-600" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;"><span class="d-xl-block">Goddess Salsas offers the best </span><span class="d-xl-block">salsas and freshest ingredients for you and your family.</span></h4><a class="button button-lg button-shadow-2 button-primary button-zakaria wow fadeInUp" href="shop-list.html" style="visibility: visible; animation-name: fadeInUp;">Shop now</a>
             </div>
           </div>
         </div>
@@ -229,7 +149,7 @@
           <article class="promo-classic offset-negative-1" style="background-image: url(../images/ingredients-10.png);background-position: 50% 35%;"">
             <div class="promo-classic-title">Only Fresh Ingredients</div>
             <p class="big promo-classic-text">All of our products are made from scratch using family recipes with only the highest quality ingredients - many grown locally to ensure the richest flavors possible.  We make and sell fresh each day to ensure only the best products are sold to our customers.</p>
-            <a class="button button-sm button-icon-3 button-primary button-zakaria" href="grid-shop.html"><span class="mdi mdi-arrow-right"></span></a>
+            <a class="button button-sm button-icon-3 button-primary button-zakaria" href="shop-list.html"><span class="mdi mdi-arrow-right"></span></a>
             <p><br><br><br></p><p><br><br><br></p>
           </article>
         </div>
@@ -239,91 +159,8 @@
         <div class="container">
           <h2 class="wow fadeScale" style="visibility: hidden; animation-name: none;">What We offer</h2>
           <!-- Owl Carousel-->
-          <div class="owl-carousel owl-style-8 owl-loaded" data-items="1" data-sm-items="2" data-lg-items="3" data-margin="30" data-dots="true" data-mouse-drag="false" style="">
-            
-            
-            
-          <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-1200px, 0px, 0px); transition: all 0s ease 0s; width: 3600px;">
-            <div class="owl-item cloned" style="width: 370px; margin-right: 30px;">
-              <article class="box-info-modern wow slideInUp" data-wow-delay=".1s" style="visibility: hidden; animation-delay: 0.1s; animation-name: none;">
-                <a class="box-info-modern-figure" href="#"><img src="images/corn-salsa.jpeg" alt="" width="340" height="243"></a>
-                <h4 class="box-info-modern-title"><a href="#">Isis <br><i style="font-size: large;">a rich Corn Salsa</i></a></h4>
-                <div class="box-info-modern-text">Perfect with your favorite tortilla chips, this delicious Corn Salsa is amazing! Loaded with fresh, delicious veggies, this salsa is just as flavorful as it is pretty.</div>
-                <a class="box-info-modern-link" href="#">Read more</a>
-              </article>
-            </div>
-            <div class="owl-item cloned" style="width: 370px; margin-right: 30px;">
-              <article class="box-info-modern wow slideInUp" style="visibility: hidden; animation-name: none;">
-                <a class="box-info-modern-figure" href="#"><img src="images/mango-salsa-6.jpeg" alt="" width="340" height="243"></a>
-                <h4 class="box-info-modern-title"><a href="#">Aphrodite <br><i style="font-size: large;">a Mango Salsa</i></a></h4>
-                <div class="box-info-modern-text">Our Mango Salsa is a delicious combination of sweet juicy mangoes, tart lime juice and peppers for the perfect combination of sweet and heat.</div>
-                <a class="box-info-modern-link" href="#">Read more</a>
-              </article>
-            </div>
-            <div class="owl-item cloned" style="width: 370px; margin-right: 30px;">
-              <article class="box-info-modern wow slideInUp" data-wow-delay=".1s" style="visibility: hidden; animation-delay: 0.1s; animation-name: none;">
-                <a class="box-info-modern-figure" href="#"><img src="images/pinapple-salsa-2a.jpg" alt="" width="340" height="243"></a>
-                <h4 class="box-info-modern-title"><a href="#">Ostara <br><i style="font-size: large;">a Pineapple Salsa</i></a></h4>
-                <div class="box-info-modern-text">Our Pineapple Salsa is bright and colorful full of vibrant ingredients. Bringing the freshness of spring with every bite, bursting with unexpecting flavors.</div>
-                <a class="box-info-modern-link" href="#">Read more</a>
-              </article>
-            </div>
-            <div class="owl-item active" style="width: 370px; margin-right: 30px;">
-              <article class="box-info-modern wow slideInUp" data-wow-delay=".1s" style="visibility: hidden; animation-delay: 0.1s; animation-name: none;">
-                <a class="box-info-modern-figure" href="#"><img src="images/hot-salsa-verde.jpeg" alt="" width="340" height="243"></a>
-                <h4 class="box-info-modern-title"><a href="#">Zorya <br><i style="font-size: large;">a Hot Salsa Verde</i></a></h4>
-                <div class="box-info-modern-text">. This salsa starts with a sweet earthy flavor, going to the bright citrus notes, and finishing with the heat of the peppers.</div>
-                <a class="box-info-modern-link" href="#">Read more</a>
-              </article>
-            </div>
-            <div class="owl-item active" style="width: 370px; margin-right: 30px;">
-              <article class="box-info-modern wow slideInUp" style="visibility: hidden; animation-name: none;">
-                <a class="box-info-modern-figure" href="#"><img src="images/haberno-salsa-verde-2.jpg" alt="" width="340" height="243"></a>
-                <h4 class="box-info-modern-title"><a href="#">Pele <br><i style="font-size: large;">Salsa Verde Habanero</i></a></h4>
-                <div class="box-info-modern-text">Known for it's fiery temperament, this salsa starts with earthy savory notes turning straight to fiery finish.</div>
-                <a class="box-info-modern-link" href="#">Read more</a>
-              </article>
-            </div>
-            <div class="owl-item active" style="width: 370px; margin-right: 30px;">
-              <article class="box-info-modern wow slideInUp" style="visibility: hidden; animation-name: none;">
-                <a class="box-info-modern-figure" href="#"><img src="images/Pico-de-Gallo.jpg" alt="" width="340" height="243"></a>
-                <h4 class="box-info-modern-title"><a href="#">Demeter <br><i style="font-size: large;">Pico de Gallo</i></a></h4>
-                <div class="box-info-modern-text">Bringing simple ingredients together to create a delicious and healthy dish that's welcome on any table.</div>
-                <a class="box-info-modern-link" href="#">Read more</a>
-              </article>
-            </div>
-            <div class="owl-item active" style="width: 370px; margin-right: 30px;">
-              <article class="box-info-modern wow slideInUp" style="visibility: hidden; animation-name: none;">
-                <a class="box-info-modern-figure" href="#"><img src="images/mango-salsa-7.jpg" alt="" width="340" height="243"></a>
-                <h4 class="box-info-modern-title"><a href="#">Pachamama  <br><i style="font-size: large;">Mango Habanero Salsa</i></a></h4>
-                <div class="box-info-modern-text">The complex yet smooth salsa is sweet and spicy  - perfect as a dip or glazing chicken or anything really.</div>
-                <a class="box-info-modern-link" href="#">Read more</a>
-              </article>
-            </div>
-            <div class="owl-item active" style="width: 370px; margin-right: 30px;">
-              <article class="box-info-modern wow slideInUp" style="visibility: hidden; animation-name: none;">
-                <a class="box-info-modern-figure" href="#"><img src="images/salsa-rojo.jpeg" alt="" width="340" height="243"></a>
-                <h4 class="box-info-modern-title"><a href="#">Dhumavati  <br><i style="font-size: large;">Salsa Rojo</i></a></h4>
-                <div class="box-info-modern-text">This salsa captures a rich smokey flavor in a traditional red glaze made with fresh vegetables for a unforgetable taste. </div>
-                <a class="box-info-modern-link" href="#">Read more</a>
-              </article>
-            </div>
-            <div class="owl-item active" style="width: 370px; margin-right: 30px;">
-              <article class="box-info-modern wow slideInUp" style="visibility: hidden; animation-name: none;">
-                <a class="box-info-modern-figure" href="#"><img src="images/pinapple-mango-habanero.jpg" alt="" width="340" height="243"></a>
-                <h4 class="box-info-modern-title"><a href="#">Áine  <br><i style="font-size: large;">Pineapple Mango Habanero</i></a></h4>
-                <div class="box-info-modern-text">This smooth salsa is tantalizing with its sweet, savory, and tangy flavors that's sure to leave you wanting more.</div>
-                <a class="box-info-modern-link" href="#">Read more</a>
-              </article>
-            </div>
+          <div class="owl-carousel owl-style-8 home-products" data-items="1" data-sm-items="2" data-lg-items="3" data-margin="30" data-dots="true" data-mouse-drag="false" style="">
           </div>
-        </div>
-        <div class="owl-nav disabled">
-          <button type="button" role="presentation" class="owl-prev"></button>
-          <button type="button" role="presentation" class="owl-next"></button>
-        </div>
-        <div class="owl-dots disabled"><button role="button" class="owl-dot active"><span></span></button></div></div>
-        </div>
       </section>
       <!-- New products-->
       <!-- <section class="section section-xxl bg-image-1">
@@ -633,7 +470,7 @@
                       </div>
                       <div class="unit-body">
                         <h4 class="box-icon-nancy-title"><a href="#">Online payment</a></h4>
-                        <p class="box-icon-nancy-text">We accept all kinds of online payments including Visa, MasterCard, American Express credit cards.</p>
+                        <p class="box-icon-nancy-text">We accept all kinds of online payments including Visa, MasterCard, along with PayPal and Venmo.</p>
                       </div>
                     </div>
                   </article>
@@ -659,7 +496,7 @@
         <div class="container">
           <h2 class="wow fadeScale" style="visibility: hidden; animation-name: none;">About us</h2>
           <div class="row row-30 row-lg justify-content-center">
-            <div class="col-sm-8 col-md-7 col-lg-6 wow fadeInLeft" style="visibility: hidden; animation-name: none;"><img src="images/about-570x511.jpg" alt="" width="570" height="511">
+            <div class="col-sm-8 col-md-7 col-lg-6 wow fadeInLeft" style="visibility: hidden; animation-name: none;"><img src="images/ingredients-11.png" alt="" width="570" height="511">
             </div>
             <div class="col-md-10 col-lg-6 wow fadeInRight" style="visibility: hidden; animation-name: none;">
               <!-- Bootstrap tabs-->
@@ -669,19 +506,22 @@
                   <div class="tab-pane fade show active" id="tabs-1-1">
                     <div class="box-info-creative">
                       <h4 class="box-info-creative-title"><a href="#">providing quality fresh foods and salsa for all customers</a></h4>
-                      <div class="box-info-creative-text">Our mission is to create a business that makes the best quality salsas on site from scratch, and where both employees and customers would feel comfortable.</div><a class="link-classic box-info-creative-link" href="#">Read more</a>
+                      <div class="box-info-creative-text">Our mission is to create a business that makes the best quality salsas on site from scratch, and where both employees and customers would feel comfortable.</div>
+                      <a class="link-classic box-info-creative-link" href="what-we-offer.html">Read more</a>
                     </div>
                   </div>
                   <div class="tab-pane fade" id="tabs-1-2">
                     <div class="box-info-creative">
                       <h4 class="box-info-creative-title"><a href="#">Ensuring the Best Atmosphere for Everyone</a></h4>
-                      <div class="box-info-creative-text">We see the most important part of our business in ensuring the happiness of our staff and the satisfaction of our clients by creating a welcoming and caring atmosphere.</div><a class="link-classic box-info-creative-link" href="#">Read more</a>
+                      <div class="box-info-creative-text">We see the most important part of our business in ensuring the happiness of our staff and the satisfaction of our clients by creating a welcoming and caring atmosphere.</div>
+                      <a class="link-classic box-info-creative-link" href="what-we-offer.html">Read more</a>
                     </div>
                   </div>
                   <div class="tab-pane fade" id="tabs-1-3">
                     <div class="box-info-creative">
                       <h4 class="box-info-creative-title"><a href="#">Serving only the freshest foods and salsa for you</a></h4>
-                      <div class="box-info-creative-text">We aim to deliver the best foods and salsas for corporate events and individual celebrations, while also offering the best level of customer service in the United States.</div><a class="link-classic box-info-creative-link" href="#">Read more</a>
+                      <div class="box-info-creative-text">We aim to deliver the best foods and salsas for corporate events and individual celebrations, while also offering the best level of customer service in the United States.</div>
+                      <a class="link-classic box-info-creative-link" href="what-we-offer.html">Read more</a>
                     </div>
                   </div>
                 </div>
@@ -724,7 +564,7 @@
               </div>
             </article></div>
             <div class="owl-item cloned" style="width: 370px; margin-right: 30px;"><article class="team-creative wow slideInUp" style="visibility: hidden; animation-name: none;">
-              <div class="team-creative-header"><a class="team-creative-figure" href="#"><img src="images/baby-chef.webp" alt="" width="249" height="249"></a>
+              <div class="team-creative-header"><a class="team-creative-figure" href="#"><img src="images/baby-chef.png" alt="" width="249" height="249"></a>
                 <div class="team-creative-decor"></div>
               </div>
               <div class="team-creative-body">
@@ -744,10 +584,10 @@
       </section>
 
       <!-- CTA 2-->
-      <section class="section section-xxl section-inset-1 bg-image" style="background-image: url(images/bg-cta-1.jpg);">
+      <section class="section section-xxl section-inset-1 bg-image" style="background-image: url(images/salsa-features.png);">
         <div class="container box-cta">
           <h3 class="font-weight-normal text-transform-none wow fadeInDown text-decorative text-primary text-spacing-75" style="visibility: hidden; animation-name: none;">Unique Flavors and Fresh Ingredients</h3>
-          <h2 class="text-spacing-75 text-black-800 wow fadeScale" style="visibility: hidden; animation-name: none;">All Kinds of Salsas</h2><a class="button button-lg button-primary button-zakaria wow fadeInUp" href="#" style="visibility: hidden; animation-name: none;">Read More</a>
+          <h2 class="text-spacing-75 text-black-800 wow fadeScale" style="visibility: hidden; animation-name: none;">All Kinds of Salsas</h2><a class="button button-lg button-primary button-zakaria wow fadeInUp" href="shop-list.html" style="visibility: hidden; animation-name: none;">Read More</a>
         </div>
       </section>
 
@@ -967,6 +807,12 @@
     <div class="snackbars" id="form-output-global"></div>
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/render.js"></script>
+    <script>
+      renderHomeProducts();
+      renderMiniCart(cartLS.list());
+      cartLS.onChange(renderMiniCart);
+    </script>
 	
 	<!--LIVEDEMO_00 -->
 
