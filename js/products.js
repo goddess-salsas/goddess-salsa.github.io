@@ -1,0 +1,102 @@
+
+var products = [
+    {
+        id: 1,
+        name: "Isis",
+        desc_short: "Perfect with your favorite tortilla chips, this delicious Corn Salsa is amazing! Loaded with fresh, delicious veggies, this salsa is just as flavorful as it is pretty.",
+        desc_long: "",
+        image_small: "images/corn-salsa.jpeg",
+        image_large: "images/corn-salsa.jpeg",
+        price_current: 7.00,
+        price_previous:10.00,
+        onSale: true,
+        volume: "8 oz",
+        style: ["mild"],
+        popular: true
+
+    },
+    {
+        id: 2,
+        name: "Aphrodite",
+        desc_short: "Our Mango Salsa is a delicious combination of sweet juicy mangoes, tart lime juice and peppers for the perfect combination of sweet and heat.",
+        desc_long: "",
+        image_small: "images/mango-salsa-6.jpeg",
+        image_large: "images/mango-salsa-6.jpeg",
+        price_current: 10.00,
+        price_previous:10.00,
+        onSale: false,
+        volume: "8 oz",
+        style: ["mild", "sweet"],
+        popular: false
+    },
+    {
+        id: 3,
+        name: "Ostara",
+        desc_short: "Our Pineapple Salsa is bright and colorful full of vibrant ingredients. Bringing the freshness of spring with every bite, bursting with unexpecting flavors.",
+        desc_long: "",
+        image_small: "images/pinapple-salsa-2a.jpg",
+        image_large: "images/pinapple-salsa-2a.jpg",
+        price_current: 9.00,
+        price_previous:12.00,
+        onSale: true,
+        volume: "8 oz",
+        style: ["mild", "sweet"],
+        popular: true
+    },
+    {
+        id: 4,
+        name: "Zorya",
+        desc_short: "This salsa starts with a sweet earthy flavor, going to the bright citrus notes, and finishing with the heat of the peppers.",
+        desc_long: "",
+        image_small: "images/hot-salsa-verde.jpeg",
+        image_large: "images/hot-salsa-verde.jpeg",
+        price_current: 10.00,
+        price_previous:10.00,
+        onSale: false,
+        volume: "8 oz",
+        style: ["hot", "sweet"],
+        popular: false
+    },
+    {
+        id: 5,
+        name: "Pele",
+        desc_short: "Known for it's fiery temperament, this salsa starts with earthy savory notes turning straight to fiery finish.",
+        desc_long: "",
+        image_small: "images/haberno-salsa-verde-2.jpg",
+        image_large: "images/haberno-salsa-verde-2.jpg",
+        price_current: 10.00,
+        price_previous:10.00,
+        onSale: false,
+        volume: "8 oz",
+        style: ["hot"],
+        popular: true
+    },
+    {
+        id: 6,
+        name: "Demeter",
+        desc_short: "Bringing simple ingredients together to create a delicious and healthy dish that's welcome on any table.",
+        desc_long: "",
+        image_small: "images/Pico-de-Gallo.jpg",
+        image_large: "images/Pico-de-Gallo.jpg",
+        price_current: 10.00,
+        price_previous:10.00,
+        onSale: false,
+        volume: "8 oz",
+        style: ["mild"],
+        popular: false
+    },
+    {
+        id: 7,
+        name: "Pachamama",
+        desc_short: "The complex yet smooth salsa is sweet and spicy  - perfect as a dip or glazing chicken or anything really.",
+        desc_long: "",
+        image_small: "images/mango-salsa-7.jpg",
+        image_large: "images/mango-salsa-7.jpg",
+        price_current: 10.00,
+        price_previous:10.00,
+        onSale: false,
+        volume: "8 oz",
+        style: ["mild", "sweet"],
+        popular: false
+    }
+]
