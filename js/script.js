@@ -1222,15 +1222,22 @@
 				var match = regExp.exec(location.search);
 
 				if (match !== null) {
-					$.get(handler, {
-						s: decodeURI(match[1]),
-						dataType: "html",
-						filter: match[2],
-						template: defaultTemplate,
-						live: ''
-					}, function (data) {
-						plugins.searchResults.html(data);
-					})
+					// $.get(handler, {
+					// 	s: decodeURI(match[1]),
+					// 	dataType: "html",
+					// 	filter: match[2],
+					// 	template: defaultTemplate,
+					// 	live: ''
+					// }, function (data) {
+					// 	plugins.searchResults.html(data);
+					// })
+					var result = searchSite(decodeURI(match[1]));
+					var displayResult = `<div style="margin-bottom: 20px;text-align: left;"><h6 class="box-info-creative-title"><i>Your search for ...${match[1]}... had no matching results</i></h6></div>`;
+					if(result && result.length > 0) {
+						displayResult = `<div style="margin-bottom: 20px;text-align: left;"><h6 class="box-info-creative-title"><i>Your search for ...${match[1]}... has results on the following pages</i></h6></div>`;
+					}
+					result.unshift(displayResult);
+					plugins.searchResults.html(result);
 				}
 			}
 		}
@@ -1849,7 +1856,6 @@
 		if(plugins.multitoggle.length) {
 			multitoggles();
 		}
-
 
 		// Countdown
 		if (plugins.countdown.length) {
