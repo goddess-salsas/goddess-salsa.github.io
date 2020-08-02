@@ -428,25 +428,41 @@
 			$('#' + options.live).removeClass('cleared').html();
 			options.current++;
 			options.spin.addClass('loading');
-			$.get(handler, {
-				s: decodeURI(options.term),
-				liveSearch: options.live,
-				dataType: "html",
-				liveCount: options.liveCount,
-				filter: options.filter,
-				template: options.template
-			}, function (data) {
-				options.processed++;
-				var live = $('#' + options.live);
+			// $.get(handler, {
+			// 	s: decodeURI(options.term),
+			// 	liveSearch: options.live,
+			// 	dataType: "html",
+			// 	liveCount: options.liveCount,
+			// 	filter: options.filter,
+			// 	template: options.template
+			// }, function (data) {
+			// 	options.processed++;
+			// 	var live = $('#' + options.live);
+			// 	if ((options.processed === options.current) && !live.hasClass('cleared')) {
+			// 		live.find('> #search-results').removeClass('active');
+			// 		live.html(data);
+			// 		setTimeout(function () {
+			// 			live.find('> #search-results').addClass('active');
+			// 		}, 50);
+			// 	}
+			// 	options.spin.parents('.rd-search').find('.input-group-addon').removeClass('loading');
+			// })
+			var result = searchSite(decodeURI(options.term));
+			var live = $('#' + options.live);
 				if ((options.processed === options.current) && !live.hasClass('cleared')) {
 					live.find('> #search-results').removeClass('active');
-					live.html(data);
+					live.html(result);
 					setTimeout(function () {
 						live.find('> #search-results').addClass('active');
 					}, 50);
 				}
 				options.spin.parents('.rd-search').find('.input-group-addon').removeClass('loading');
-			})
+			// var displayResult = `<div style="margin-bottom: 20px;text-align: left;"><h6 class="box-info-creative-title"><i>Your search for ...${match[1]}... had no matching results</i></h6></div>`;
+			// if(result && result.length > 0) {
+			// 	displayResult = `<div style="margin-bottom: 20px;text-align: left;"><h6 class="box-info-creative-title"><i>Your search for ...${match[1]}... has results on the following pages</i></h6></div>`;
+			// }
+			// result.unshift(displayResult);
+			// plugins.searchResults.html(result);
 		}
 
 		/**
