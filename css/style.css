@@ -6927,6 +6927,11 @@ textarea.textarea-lg {
 		max-width: 230px;
 	}
 }
+@media (min-width: 576px) and (max-width: 767.98px) {
+	.product-modern-figure img.list-img {
+		max-width: 230px !important;
+	}
+}
 
 @media (min-width: 768px) {
 	.product-modern .product-badge {
