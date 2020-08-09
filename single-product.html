@@ -369,28 +369,28 @@
           $header = document.getElementsByTagName('head');
 
           var ogurl = document.createElement('meta');
-          ogurl.setAttribute('content', 'og:url');
+          ogurl.setAttribute('property', 'og:url');
           ogurl.content = document.location;
           $header[0].appendChild(ogurl);
 
           var ogtype = document.createElement('meta');
-          ogtype.setAttribute('content', 'og:type');
+          ogtype.setAttribute('property', 'og:type');
           ogtype.content = "Goddess Salsa Product";
           $header[0].appendChild(ogtype);
 
           var ogtitle = document.createElement('meta');
-          ogtitle.setAttribute('content', 'og:title');
+          ogtitle.setAttribute('property', 'og:title');
           ogtitle.content = `${pageProduct.name} - a Goddess Salsa`;
           $header[0].appendChild(ogtitle);
 
           var ogdescription = document.createElement('meta');
-          ogdescription.setAttribute('content', 'og:description');
+          ogdescription.setAttribute('property', 'og:description');
           ogdescription.content = `${pageProduct.desc_short}`;
           $header[0].appendChild(ogdescription);
 
           var ogimage = document.createElement('meta');
-          ogimage.setAttribute('content', 'og:image');
-          ogimage.content = `${pageProduct.image_large}`;
+          ogimage.setAttribute('property', 'og:image');
+          ogimage.content = `https://goddess-salsas.github.io/${pageProduct.image_large}`;
           document.getElementsByTagName('head')[0].appendChild(ogimage);
         }
 
