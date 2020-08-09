@@ -1,310 +1,385 @@
-<html class="wide wow-animation desktop landscape rd-navbar-static-linked html-undefined-select" lang="en"><head>
+<html class="wide wow-animation desktop landscape rd-navbar-static-linked html-undefined-select" lang="en">
+
+<head>
     <title>Shop List</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="fonts/poppins.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css">
-    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="fonts/poppins.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        .ie-panel {
+            display: none;
+            background: #212121;
+            padding: 10px 0;
+            box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .3);
+            clear: both;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        html.ie-10 .ie-panel,
+        html.lt-ie-10 .ie-panel {
+            display: block;
+        }
+    </style>
     <script src="js/cart-localstorage.min.js"></script>
-    <script type="text/javascript" language="javascript" src="js/products.js"></script> 
-    <link rel="stylesheet" href="data:text/css;charset=utf-8;base64,Y2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gewogIGRpc3BsYXk6IGJsb2NrOwogIGJhY2tncm91bmQ6ICM0NTQ4NGQ7CiAgY29sb3I6ICNmZmY7CiAgbGluZS1oZWlnaHQ6IDEuNDU7CiAgcG9zaXRpb246IGZpeGVkOwogIHotaW5kZXg6IDkwMDAwMDAwOwogIHRvcDogMDsKICBsZWZ0OiAwOwogIHJpZ2h0OiAwOwogIHBhZGRpbmc6IC41ZW0gMWVtOwogIHRleHQtYWxpZ246IGNlbnRlcjsKICAtd2Via2l0LXVzZXItc2VsZWN0OiBub25lOwogICAgIC1tb3otdXNlci1zZWxlY3Q6IG5vbmU7CiAgICAgIC1tcy11c2VyLXNlbGVjdDogbm9uZTsKICAgICAgICAgIHVzZXItc2VsZWN0OiBub25lOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXVtkYXRhLXZpc2liaWxpdHk9ImhpZGRlbiJdIHsKICBkaXNwbGF5OiBub25lOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXSBjbG91ZGZsYXJlLWFwcC1tZXNzYWdlIHsKICBkaXNwbGF5OiBibG9jazsKfQoKY2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gYSB7CiAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7CiAgY29sb3I6ICNlYmViZjQ7Cn0KCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGE6aG92ZXIsCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGE6YWN0aXZlIHsKICBjb2xvcjogI2RiZGJlYjsKfQoKY2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gY2xvdWRmbGFyZS1hcHAtY2xvc2UgewogIGRpc3BsYXk6IGJsb2NrOwogIGN1cnNvcjogcG9pbnRlcjsKICBmb250LXNpemU6IDEuNWVtOwogIHBvc2l0aW9uOiBhYnNvbHV0ZTsKICByaWdodDogLjRlbTsKICB0b3A6IC4zNWVtOwogIGhlaWdodDogMWVtOwogIHdpZHRoOiAxZW07CiAgbGluZS1oZWlnaHQ6IDE7Cn0KCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGNsb3VkZmxhcmUtYXBwLWNsb3NlOmFjdGl2ZSB7CiAgLXdlYmtpdC10cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTsKICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgxcHgpOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXSBjbG91ZGZsYXJlLWFwcC1jbG9zZTpob3ZlciB7CiAgb3BhY2l0eTogLjllbTsKICBjb2xvcjogI2ZmZjsKfQo=">
-  </head>
-  <body class="">
-    <div class="ie-panel"> <a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <script type="text/javascript" language="javascript" src="js/products.js"></script>
+    <link rel="stylesheet" href="data:text/css;charset=utf-8;base64,Y2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gewogIGRpc3BsYXk6IGJsb2NrOwogIGJhY2tncm91bmQ6ICM0NTQ4NGQ7CiAgY29sb3I6ICNmZmY7CiAgbGluZS1oZWlnaHQ6IDEuNDU7CiAgcG9zaXRpb246IGZpeGVkOwogIHotaW5kZXg6IDkwMDAwMDAwOwogIHRvcDogMDsKICBsZWZ0OiAwOwogIHJpZ2h0OiAwOwogIHBhZGRpbmc6IC41ZW0gMWVtOwogIHRleHQtYWxpZ246IGNlbnRlcjsKICAtd2Via2l0LXVzZXItc2VsZWN0OiBub25lOwogICAgIC1tb3otdXNlci1zZWxlY3Q6IG5vbmU7CiAgICAgIC1tcy11c2VyLXNlbGVjdDogbm9uZTsKICAgICAgICAgIHVzZXItc2VsZWN0OiBub25lOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXVtkYXRhLXZpc2liaWxpdHk9ImhpZGRlbiJdIHsKICBkaXNwbGF5OiBub25lOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXSBjbG91ZGZsYXJlLWFwcC1tZXNzYWdlIHsKICBkaXNwbGF5OiBibG9jazsKfQoKY2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gYSB7CiAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7CiAgY29sb3I6ICNlYmViZjQ7Cn0KCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGE6aG92ZXIsCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGE6YWN0aXZlIHsKICBjb2xvcjogI2RiZGJlYjsKfQoKY2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gY2xvdWRmbGFyZS1hcHAtY2xvc2UgewogIGRpc3BsYXk6IGJsb2NrOwogIGN1cnNvcjogcG9pbnRlcjsKICBmb250LXNpemU6IDEuNWVtOwogIHBvc2l0aW9uOiBhYnNvbHV0ZTsKICByaWdodDogLjRlbTsKICB0b3A6IC4zNWVtOwogIGhlaWdodDogMWVtOwogIHdpZHRoOiAxZW07CiAgbGluZS1oZWlnaHQ6IDE7Cn0KCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGNsb3VkZmxhcmUtYXBwLWNsb3NlOmFjdGl2ZSB7CiAgLXdlYmtpdC10cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTsKICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgxcHgpOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXSBjbG91ZGZsYXJlLWFwcC1jbG9zZTpob3ZlciB7CiAgb3BhY2l0eTogLjllbTsKICBjb2xvcjogI2ZmZjsKfQo="
+    />
+</head>
+
+<body class="">
+    <div class="ie-panel">
+        <a href="http://windows.microsoft.com/en-US/internet-explorer/">
+            <img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+        </a>
+    </div>
     <div class="preloader loaded">
-      <div class="preloader-body">
-        <div class="cssload-bell">
-          <div class="cssload-circle">
-            <div class="cssload-inner"></div>
-          </div>
-          <div class="cssload-circle">
-            <div class="cssload-inner"></div>
-          </div>
-          <div class="cssload-circle">
-            <div class="cssload-inner"></div>
-          </div>
-          <div class="cssload-circle">
-            <div class="cssload-inner"></div>
-          </div>
-          <div class="cssload-circle">
-            <div class="cssload-inner"></div>
-          </div>
+        <div class="preloader-body">
+            <div class="cssload-bell">
+                <div class="cssload-circle">
+                    <div class="cssload-inner"></div>
+                </div>
+                <div class="cssload-circle">
+                    <div class="cssload-inner"></div>
+                </div>
+                <div class="cssload-circle">
+                    <div class="cssload-inner"></div>
+                </div>
+                <div class="cssload-circle">
+                    <div class="cssload-inner"></div>
+                </div>
+                <div class="cssload-circle">
+                    <div class="cssload-inner"></div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
     <div class="page animated" style="animation-duration: 500ms;">
-      <!-- Page Header-->
-      <header class="section page-header">
-        <!-- RD Navbar-->
-        <div class="rd-navbar-wrap" style="height: 167px;">
-          <nav class="rd-navbar rd-navbar-modern rd-navbar-original rd-navbar-static" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="100px" data-xl-stick-up-offset="120px" data-xxl-stick-up-offset="140px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
-            <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1 toggle-original" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
-            <div class="rd-navbar-aside-outer">
-              <div class="rd-navbar-aside">
-                <div class="rd-navbar-collapse toggle-original-elements">
-                  <div class="contacts-ruth">
-                    <div class="unit unit-spacing-xs-2 align-items-center">
-                      <div class="unit-left"><span class="icon linearicons-map-marker"></span></div>
-                      <div class="unit-body"><a href="contact-us.html#map" target="_blank">1885 Somerset Dr., <br>Glendale Heights, IL 60139 USA</a></div>
+        <!-- Page Header-->
+        <header class="section page-header">
+            <!-- RD Navbar-->
+            <div class="rd-navbar-wrap" style="height: 167px;">
+                <nav class="rd-navbar rd-navbar-modern rd-navbar-original rd-navbar-static" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed"
+                    data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="100px" data-xl-stick-up-offset="120px" data-xxl-stick-up-offset="140px"
+                    data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+                    <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1 toggle-original" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
+                    <div class="rd-navbar-aside-outer">
+                        <div class="rd-navbar-aside">
+                            <div class="rd-navbar-collapse toggle-original-elements">
+                                <div class="contacts-ruth">
+                                    <div class="unit unit-spacing-xs-2 align-items-center">
+                                        <div class="unit-left">
+                                            <span class="icon linearicons-map-marker"></span>
+                                        </div>
+                                        <div class="unit-body">
+                                            <a href="contact-us.html#map" target="_blank">1885 Somerset Dr., <br/>Glendale Heights, IL 60139
+                        USA</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="button button-sm button-icon button-icon-left button-default-outline-3 button-zakaria" href="contact-us.html"><span class="icon mdi mdi-email-outline"></span>Get in touch</a>
+                            </div>
+                            <!-- RD Navbar Panel-->
+                            <div class="rd-navbar-panel">
+                                <!-- RD Navbar Toggle-->
+                                <button class="rd-navbar-toggle toggle-original" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span>
+                  </span></button>
+                                <!-- RD Navbar Brand-->
+                                <div class="rd-navbar-brand">
+                                    <a class="brand" href="index.html">
+                                        <img class="brand-logo-dark" src="images/logo-default-231x49.png" alt="" width="231" height="49" srcset="images/logo-default-231x49.png 2x" />
+                                        <img class="brand-logo-light" src="images/logo-inverse-231x49.png" alt="" width="231" height="49" srcset="images/logo-inverse-231x49.png 2x" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="rd-navbar-button">
+                                <a class="button button-sm button-icon button-icon-left button-default-outline-3 button-zakaria" href="contact-us.html"><span class="icon mdi mdi-email-outline"></span>Get in touch</a>
+                            </div>
+                        </div>
                     </div>
-                  </div><a class="button button-sm button-icon button-icon-left button-default-outline-3 button-zakaria" href="contact-us.html"><span class="icon mdi mdi-email-outline"></span>Get in touch</a>
-                </div>
-                <!-- RD Navbar Panel-->
-                <div class="rd-navbar-panel">
-                  <!-- RD Navbar Toggle-->
-                  <button class="rd-navbar-toggle toggle-original" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
-                  <!-- RD Navbar Brand-->
-                  <div class="rd-navbar-brand"><a class="brand" href="index.html"><img class="brand-logo-dark" src="images/logo-default-231x49.png" alt="" width="231" height="49" srcset="images/logo-default-231x49.png 2x"><img class="brand-logo-light" src="images/logo-inverse-231x49.png" alt="" width="231" height="49" srcset="images/logo-inverse-231x49.png 2x"></a>
-                  </div>
-                </div>
-                <div class="rd-navbar-button"><a class="button button-sm button-icon button-icon-left button-default-outline-3 button-zakaria" href="contact-us.html"><span class="icon mdi mdi-email-outline"></span>Get in touch</a></div>
-              </div>
-            </div>
-            <div class="rd-navbar-main-outer">
-              <div class="rd-navbar-main">
-                <div class="rd-navbar-nav-wrap toggle-original-elements">
-                  <!-- RD Navbar Nav-->
-                  <ul class="rd-navbar-nav">
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="rd-nav-item "><a class="rd-nav-link" href="masonry-gallery.html">Gallery</a>
-                    </li>
-                    <li class="rd-nav-item rd-navbar--has-dropdown rd-navbar-submenu"><a class="rd-nav-link" href="shop-list.html">Shop</a><span class="rd-navbar-submenu-toggle"></span>
-                      <!-- RD Navbar Dropdown-->
-                      <ul class="rd-menu rd-navbar-dropdown">
-                        <!-- <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="grid-shop.html">Grid Shop</a></li> -->
-                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="shop-list.html">Our Products</a></li>
-                        <!-- <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="single-product.html">Single Product</a></li> -->
-                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="cart-page.html">Shopping Cart</a></li>
-                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="checkout.html">Checkout</a></li>
-                      </ul>
-                    </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="blog-list.html">Blog</a>
-                    </li>
-                    <li class="rd-nav-item rd-navbar--has-dropdown rd-navbar-submenu"><a class="rd-nav-link" href="what-we-offer.html">About Us</a><span class="rd-navbar-submenu-toggle"></span>
-                      <!-- RD Navbar Dropdown-->
-                      <ul class="rd-menu rd-navbar-dropdown">
-                        <!-- <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="what-we-offer.html">What We Offer</a></li> -->
-                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="our-team.html">Our Team</a></li>
-                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="testimonials.html">Testimonials</a></li>
-                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="privacy-policy.html">Privacy Policy</a></li>
-                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="pricing-list.html">Pricing List</a></li>
-                      </ul>
-                    </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="contact-us.html">Contact Us</a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="rd-navbar-main-element">
-                  <!-- RD Navbar Search-->
-                  <div class="rd-navbar-search rd-navbar-search-3 toggle-original-elements">
-                    <button class="rd-navbar-search-toggle rd-navbar-fixed-element-3 toggle-original" data-rd-navbar-toggle=".rd-navbar-search"><span></span></button>
-                    <form class="rd-search" action="search-results.html" method="GET">
-                      <div class="form-wrap">
-                        <label class="form-label rd-input-label" for="rd-navbar-search-form-input">Search...</label>
-                        <input class="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off">
-                        <div class="rd-search-results-live cleared" id="rd-search-results-live"></div>
-                        <button class="rd-search-form-submit fl-bigmug-line-search74" type="submit"></button>
-                      </div>
-                    </form>
-                  </div>
-                  <!-- RD Navbar Basket-->
-                  <div class="rd-navbar-basket-wrap">
-                    <button class="rd-navbar-basket fl-bigmug-line-shopping202 toggle-original" data-rd-navbar-toggle=".cart-inline"><span class="cart-count"></span></button>
-                    <div class="cart-inline toggle-original-elements">
-                      <div class="cart-inline-header">
-                        <h5 class="cart-inline-title">In cart:<span class="cart-count-2"> 0</span> Products</h5>
-                        <h6 class="cart-inline-title">Total price:<span class="mini-total"> $0</span></h6>
-                      </div>
-                      <div class="cart-inline-body mini-cart-items">
+                    <div class="rd-navbar-main-outer">
+                        <div class="rd-navbar-main">
+                            <div class="rd-navbar-nav-wrap toggle-original-elements">
+                                <!-- RD Navbar Nav-->
+                                <ul class="rd-navbar-nav">
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Home</a>
+                                    </li>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="masonry-gallery.html">Gallery</a>
+                                    </li>
+                                    <li class="rd-nav-item rd-navbar--has-dropdown rd-navbar-submenu"><a class="rd-nav-link" href="shop-list.html">Shop</a><span class="rd-navbar-submenu-toggle"></span>
+                                        <!-- RD Navbar Dropdown-->
+                                        <ul class="rd-menu rd-navbar-dropdown">
+                                            <!-- <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="grid-shop.html">Grid Shop</a></li> -->
+                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="shop-list.html">Our Products</a>
+                                            </li>
+                                            <!-- <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="single-product.html">Single Product</a></li> -->
+                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="cart-page.html">Shopping Cart</a>
+                                            </li>
+                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="checkout.html">Checkout</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="blog-list.html">Blog</a>
+                                    </li>
+                                    <li class="rd-nav-item rd-navbar--has-dropdown rd-navbar-submenu"><a class="rd-nav-link" href="what-we-offer.html">About Us</a><span class="rd-navbar-submenu-toggle"></span>
+                                        <!-- RD Navbar Dropdown-->
+                                        <ul class="rd-menu rd-navbar-dropdown">
+                                            <!-- <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="what-we-offer.html">What We Offer</a></li> -->
+                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="our-team.html">Our Team</a></li>
+                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="testimonials.html">Testimonials</a>
+                                            </li>
+                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="privacy-policy.html">Privacy
+                          Policy</a></li>
+                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="pricing-list.html">Pricing List</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="contact-us.html">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="rd-navbar-main-element">
+                                <!-- RD Navbar Search-->
+                                <div class="rd-navbar-search rd-navbar-search-3 toggle-original-elements">
+                                    <button class="rd-navbar-search-toggle rd-navbar-fixed-element-3 toggle-original" data-rd-navbar-toggle=".rd-navbar-search"><span></span></button>
+                                    <form class="rd-search" action="search-results.html" method="GET">
+                                        <div class="form-wrap">
+                                            <label class="form-label rd-input-label" for="rd-navbar-search-form-input">Search...</label>
+                                            <input class="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off" />
+                                            <div class="rd-search-results-live cleared" id="rd-search-results-live"></div>
+                                            <button class="rd-search-form-submit fl-bigmug-line-search74" type="submit"></button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- RD Navbar Basket-->
+                                <div class="rd-navbar-basket-wrap">
+                                    <button class="rd-navbar-basket fl-bigmug-line-shopping202 toggle-original" data-rd-navbar-toggle=".cart-inline"><span class="cart-count"></span></button>
+                                    <div class="cart-inline toggle-original-elements">
+                                        <div class="cart-inline-header">
+                                            <h5 class="cart-inline-title">In cart:<span class="cart-count-2"> 0</span> Products</h5>
+                                            <h6 class="cart-inline-title">Total price:<span class="mini-total"> $0</span></h6>
+                                        </div>
+                                        <div class="cart-inline-body mini-cart-items">
 
-                      </div>
-                      <div class="cart-inline-footer">
-                        <div class="group-sm"><a class="button button-default-outline-2 button-zakaria" href="cart-page.html">Go to cart</a><a class="button button-primary button-zakaria" href="checkout.html">Checkout</a></div>
-                      </div>
+                                        </div>
+                                        <div class="cart-inline-footer">
+                                            <div class="group-sm"><a class="button button-default-outline-2 button-zakaria" href="cart-page.html">Go to cart</a><a class="button button-primary button-zakaria" href="checkout.html">Checkout</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="rd-navbar-basket rd-navbar-basket-mobile fl-bigmug-line-shopping202 rd-navbar-fixed-element-2" href="cart-page.html"><span class="mini-cart-count"></span></a>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <a class="rd-navbar-basket rd-navbar-basket-mobile fl-bigmug-line-shopping202 rd-navbar-fixed-element-2" href="cart-page.html"><span class="mini-cart-count">2</span></a>
-                </div>
-              </div>
+                </nav>
             </div>
-          </nav>
-        </div>
-      </header>
-      <section class="breadcrumbs-custom">
-        <div class="parallax-container" data-parallax-img="images/shop-image-1.png">
-          <div class="breadcrumbs-custom-body parallax-content context-dark">
-            <div class="container">
-              <h2 class="breadcrumbs-custom-title">Our Products</h2>
-            </div>
-          </div>
-        </div>
-        <div class="breadcrumbs-custom-footer">
-          <div class="container">
-            <ul class="breadcrumbs-custom-path">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="grid-shop.html">Shop</a></li>
-              <li class="active">Our Products</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      <!-- Section Shop-->
-      <section class="section section-xxl bg-default text-md-left">
-        <div class="container">
-          <div class="row row-50">
-            <!-- side bar -->
-            <div class="col-lg-4 col-xl-3">
-              <div class="aside row row-30 row-md-50 justify-content-md-between">
-                
-                <div class="aside-item col-sm-6 col-md-5 col-lg-12">
-                  <h6 class="aside-title">Categories</h6>
-                  <ul class="list-shop-filter styles">
-                    
-                  </ul>
-                  <!-- RD Search Form-->
-                  <form class="rd-search form-search" action="search-results.html" method="GET">
-                    <div class="form-wrap">
-                      <label class="form-label rd-input-label" for="search-form">Search in shop...</label>
-                      <input class="form-input" id="search-form" type="text" name="s" autocomplete="off">
-                      <button class="button-search fl-bigmug-line-search74" type="submit"></button>
+        </header>
+        <!-- Breadcrumbs -->
+        <section class="breadcrumbs-custom">
+            <div class="parallax-container" data-parallax-img="images/shop-image-1.png">
+                <div class="breadcrumbs-custom-body parallax-content context-dark">
+                    <div class="container">
+                        <h2 class="breadcrumbs-custom-title">Our Products</h2>
                     </div>
-                  </form>
                 </div>
-                <div class="aside-item col-sm-6 col-lg-12">
-                  <h6 class="aside-title">Popular products</h6>
-                  <div class="row row-20 gutters-10 popular">
-                  </div>
-                </div>
-              </div>
             </div>
-            <div class="col-lg-8 col-xl-9">
-              <!-- top bar -->
-              <div class="product-top-panel group-md">
-                <p class="product-top-panel-title">Showing <span class="shown-items">1-3</span> of <span class="matching-count">28</span> results</p>
-                <div>
-                  <div class="group-sm group-middle">
-                    <div class="product-view-toggle"><a class="mdi mdi-apps product-view-link product-view-grid" href="grid-shop.html"></a><a class="mdi mdi-format-list-bulleted product-view-link product-view-list active" href="shop-list.html"></a></div>
-                  </div>
-                </div>
-              </div>
-              <!-- products -->
-              <div class="row row-30 row-md-50 row-lg-60 products" id="products">
-                <!-- products -->
-              </div>
-              <!-- pagination -->
-              <div class="pagination-wrap">
-                  <!-- Bootstrap Pagination-->
-                  <nav aria-label="Page navigation">
-                    <ul class="pagination">
-                        <!-- paging elements -->
+            <div class="breadcrumbs-custom-footer">
+                <div class="container">
+                    <ul class="breadcrumbs-custom-path">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="grid-shop.html">Shop</a></li>
+                        <li class="active">Our Products</li>
                     </ul>
-                  </nav>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Page Footer-->
-      <footer class="section footer-modern">
-        <div class="footer-modern-body section-xl">
-          <div class="container">
-            <div class="row row-40 row-md-50 justify-content-xl-between">
-              <div class="col-md-10 col-lg-3 col-xl-4 wow fadeInRight" style="visibility: hidden; animation-name: none;">
-                <div class="inset-xl-right-70">
-                  <h5 class="footer-modern-title">Gallery</h5>
-                  <div class="row row-10 gutters-10" data-lightgallery="group">
-                    <div class="col-4 col-sm-2 col-lg-4">
-                      <!-- Thumbnail Minimal--><a class="thumbnail-minimal" href="images/grid-gallery-1-original.jpg" data-lightgallery="item"><img src="images/grid-gallery-1-130x130.jpg" alt="" width="130" height="130"></a>
-                    </div>
-                    <div class="col-4 col-sm-2 col-lg-4">
-                      <!-- Thumbnail Minimal--><a class="thumbnail-minimal" href="images/grid-gallery-2-original.jpg" data-lightgallery="item"><img src="images/grid-gallery-2-130x130.jpg" alt="" width="130" height="130"></a>
-                    </div>
-                    <div class="col-4 col-sm-2 col-lg-4">
-                      <!-- Thumbnail Minimal--><a class="thumbnail-minimal" href="images/grid-gallery-3-original.jpg" data-lightgallery="item"><img src="images/grid-gallery-3-130x130.jpg" alt="" width="130" height="130"></a>
-                    </div>
-                    <div class="col-4 col-sm-2 col-lg-4">
-                      <!-- Thumbnail Minimal--><a class="thumbnail-minimal" href="images/grid-gallery-4-original.jpg" data-lightgallery="item"><img src="images/grid-gallery-4-130x130.jpg" alt="" width="130" height="130"></a>
-                    </div>
-                    <div class="col-4 col-sm-2 col-lg-4">
-                      <!-- Thumbnail Minimal--><a class="thumbnail-minimal" href="images/grid-gallery-5-original.jpg" data-lightgallery="item"><img src="images/grid-gallery-5-130x130.jpg" alt="" width="130" height="130"></a>
-                    </div>
-                    <div class="col-4 col-sm-2 col-lg-4">
-                      <!-- Thumbnail Minimal--><a class="thumbnail-minimal" href="images/grid-gallery-6-original.jpg" data-lightgallery="item"><img src="images/grid-gallery-6-130x130.jpg" alt="" width="130" height="130"></a>
-                    </div>
-                  </div>
                 </div>
-              </div>
-              <div class="col-sm-6 col-md-7 col-lg-5 wow fadeInRight" data-wow-delay=".1s" style="visibility: hidden; animation-delay: 0.1s; animation-name: none;">
-                <h5 class="footer-modern-title">Quick Links</h5>
-                <ul class="footer-modern-list footer-modern-list-2 d-sm-inline-block d-md-block">
-                  <li><a href="our-team.html">Our Team</a></li>
-                  <li><a href="shop-list.html">Shop</a></li>
-                  <li><a href="pricing-list.html">Pricing</a></li>
-                  <li><a href="#">FAQ</a></li>
-                  <li><a href="contact-us.html">Contact Us</a></li>
-                  <li><a href="what-we-offer.html">What We Offer</a></li>
-                  <li><a href="blog-list.html">Our Blog</a></li>
-                  <li><a href="testimonials.html">Testimonials</a></li>
-                  <li><a href="#">Cooking School</a></li>
-                </ul>
-              </div>
-              <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 wow fadeInRight" data-wow-delay=".2s" style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
-                <h5 class="footer-modern-title">Get in touch</h5>
-                <ul class="contacts-creative">
-                  <li>
-                    <div class="unit unit-spacing-sm flex-column flex-md-row">
-                      <div class="unit-left"><span class="icon mdi mdi-map-marker"></span></div>
-                      <div class="unit-body"><a href="contact-us.html#map" target="_blank">1885 Somerset Dr., <br>Glendale Heights, IL 60139 USA</a></div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="unit unit-spacing-sm flex-column flex-md-row">
-                      <div class="unit-left"><span class="icon mdi mdi-phone"></span></div>
-                      <div class="unit-body"><a href="tel:#">+1 (773) 366 4220</a></div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="unit unit-spacing-sm flex-column flex-md-row">
-                      <div class="unit-left"><span class="icon mdi mdi-email-outline"></span></div>
-                      <div class="unit-body"><a href="mailto:#">smggraf91@yahoo.com</a></div>
-                    </div>
-                  </li>
-                </ul>
-                <ul class="list-inline list-social-3 list-inline-sm">
-                  <li><a class="icon mdi mdi-facebook icon-xxs" href="#"></a></li>
-                  <li><a class="icon mdi mdi-twitter icon-xxs" href="#"></a></li>
-                  <li><a class="icon mdi mdi-instagram icon-xxs" href="#"></a></li>
-                  <li><a class="icon mdi mdi-google-plus icon-xxs" href="#"></a></li>
-                  <li><a class="icon mdi mdi-skype icon-xxs" href="#"></a></li>
-                </ul>
-              </div>
             </div>
-          </div>
-        </div>
-        <div class="footer-modern-panel text-center">
-          <div class="container">
-            <p class="rights"><span>©&nbsp;</span><span class="copyright-year">2020</span><span>.&nbsp;</span><span>Goddess Salsas</span><span>.&nbsp;</span><span>All Rights Reserved</span><span>.&nbsp;</span><a href="privacy-policy.html">Privacy Policy.</a></p>
-          </div>
-        </div>
-      </footer>
+        </section>
+        <!-- Section Shop-->
+        <section class="section section-xxl bg-default text-md-left">
+            <div class="container">
+                <div class="row row-50">
+                    <!-- side bar -->
+                    <div class="col-lg-4 col-xl-3">
+                        <div class="aside row row-30 row-md-50 justify-content-md-between">
+
+                            <div class="aside-item col-sm-6 col-md-5 col-lg-12">
+                                <h6 class="aside-title">Categories</h6>
+                                <ul class="list-shop-filter styles">
+
+                                </ul>
+                                <!-- RD Search Form-->
+                                <form class="rd-search form-search" action="search-results.html" method="GET">
+                                    <div class="form-wrap">
+                                        <label class="form-label rd-input-label" for="search-form">Search in shop...</label>
+                                        <input class="form-input" id="search-form" type="text" name="s" autocomplete="off" />
+                                        <button class="button-search fl-bigmug-line-search74" type="submit"></button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="aside-item col-sm-6 col-lg-12">
+                                <h6 class="aside-title">Popular products</h6>
+                                <div class="row row-20 gutters-10 popular">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- main area -->
+                    <div class="col-lg-8 col-xl-9">
+                        <!-- top bar -->
+                        <div class="product-top-panel group-md">
+                            <p class="product-top-panel-title">Showing <span class="shown-items">1-3</span> of <span class="matching-count">28</span> results</p>
+                            <div>
+                                <div class="group-sm group-middle">
+                                    <div class="product-view-toggle">
+                                        <a class="mdi mdi-apps product-view-link product-view-grid" href="grid-shop.html"> </a>
+                                        <a class="mdi mdi-format-list-bulleted product-view-link product-view-list active" href="shop-list.html"> </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- products -->
+                        <div class="row row-30 row-md-50 row-lg-60 products" id="products">
+                            <!-- products -->
+                        </div>
+                        <!-- pagination -->
+                        <div class="pagination-wrap">
+                            <!-- Bootstrap Pagination-->
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination">
+                                    <!-- paging elements -->
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Page Footer-->
+        <footer class="section footer-modern">
+            <div class="footer-modern-body section-xl">
+                <div class="container">
+                    <div class="row row-40 row-md-50 justify-content-xl-between">
+                        <div class="col-md-10 col-lg-3 col-xl-4 wow fadeInRight" style="visibility: hidden; animation-name: none;">
+                            <div class="inset-xl-right-70">
+                                <h5 class="footer-modern-title">Gallery</h5>
+                                <div class="row row-10 gutters-10" data-lightgallery="group">
+                                    <div class="col-4 col-sm-2 col-lg-4">
+                                        <!-- Thumbnail Minimal-->
+                                        <a class="thumbnail-minimal" href="images/grid-gallery-1-original.jpg" data-lightgallery="item"><img src="images/grid-gallery-1-130x130.jpg" alt="" width="130" height="130"></a>
+                                    </div>
+                                    <div class="col-4 col-sm-2 col-lg-4">
+                                        <!-- Thumbnail Minimal-->
+                                        <a class="thumbnail-minimal" href="images/grid-gallery-2-original.jpg" data-lightgallery="item"><img src="images/grid-gallery-2-130x130.jpg" alt="" width="130" height="130"></a>
+                                    </div>
+                                    <div class="col-4 col-sm-2 col-lg-4">
+                                        <!-- Thumbnail Minimal-->
+                                        <a class="thumbnail-minimal" href="images/grid-gallery-3-original.jpg" data-lightgallery="item"><img src="images/grid-gallery-3-130x130.jpg" alt="" width="130" height="130"></a>
+                                    </div>
+                                    <div class="col-4 col-sm-2 col-lg-4">
+                                        <!-- Thumbnail Minimal-->
+                                        <a class="thumbnail-minimal" href="images/grid-gallery-4-original.jpg" data-lightgallery="item"><img src="images/grid-gallery-4-130x130.jpg" alt="" width="130" height="130"></a>
+                                    </div>
+                                    <div class="col-4 col-sm-2 col-lg-4">
+                                        <!-- Thumbnail Minimal-->
+                                        <a class="thumbnail-minimal" href="images/grid-gallery-5-original.jpg" data-lightgallery="item"><img src="images/grid-gallery-5-130x130.jpg" alt="" width="130" height="130"></a>
+                                    </div>
+                                    <div class="col-4 col-sm-2 col-lg-4">
+                                        <!-- Thumbnail Minimal-->
+                                        <a class="thumbnail-minimal" href="images/grid-gallery-6-original.jpg" data-lightgallery="item"><img src="images/grid-gallery-6-130x130.jpg" alt="" width="130" height="130"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-7 col-lg-5 wow fadeInRight" data-wow-delay=".1s" style="visibility: hidden; animation-delay: 0.1s; animation-name: none;">
+                            <h5 class="footer-modern-title">Quick Links</h5>
+                            <ul class="footer-modern-list footer-modern-list-2 d-sm-inline-block d-md-block">
+                                <li><a href="our-team.html">Our Team</a></li>
+                                <li><a href="shop-list.html">Shop</a></li>
+                                <li><a href="pricing-list.html">Pricing</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="contact-us.html">Contact Us</a></li>
+                                <li><a href="what-we-offer.html">What We Offer</a></li>
+                                <li><a href="blog-list.html">Our Blog</a></li>
+                                <li><a href="testimonials.html">Testimonials</a></li>
+                                <li><a href="#">Cooking School</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 wow fadeInRight" data-wow-delay=".2s" style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+                            <h5 class="footer-modern-title">Get in touch</h5>
+                            <ul class="contacts-creative">
+                                <li>
+                                    <div class="unit unit-spacing-sm flex-column flex-md-row">
+                                        <div class="unit-left"><span class="icon mdi mdi-map-marker"></span></div>
+                                        <div class="unit-body"><a href="contact-us.html#map" target="_blank">1885 Somerset Dr., <br>Glendale Heights, IL 60139 USA</a></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="unit unit-spacing-sm flex-column flex-md-row">
+                                        <div class="unit-left"><span class="icon mdi mdi-phone"></span></div>
+                                        <div class="unit-body"><a href="tel:#">+1 (773) 366 4220</a></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="unit unit-spacing-sm flex-column flex-md-row">
+                                        <div class="unit-left"><span class="icon mdi mdi-email-outline"></span></div>
+                                        <div class="unit-body"><a href="mailto:#">smggraf91@yahoo.com</a></div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="list-inline list-social-3 list-inline-sm">
+                                <li>
+                                    <a class="icon mdi mdi-facebook icon-xxs" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="icon mdi mdi-twitter icon-xxs" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="icon mdi mdi-instagram icon-xxs" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="icon mdi mdi-google-plus icon-xxs" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="icon mdi mdi-skype icon-xxs" href="#"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-modern-panel text-center">
+                <div class="container">
+                    <p class="rights"><span>©&nbsp;</span><span class="copyright-year">2020</span><span>.&nbsp;</span><span>Goddess Salsas</span><span>.&nbsp;</span><span>All Rights Reserved</span><span>.&nbsp;</span><a href="privacy-policy.html">Privacy Policy.</a></p>
+                </div>
+            </div>
+        </footer>
     </div>
     <div class="snackbars" id="form-output-global"></div>
-    <script src="js/core.min.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/render.js"></script>
-  <script>
-      var filterSet = new Set();
-      renderListPaginator(1);
-      renderMiniCart(cartLS.list());
-      cartLS.onChange(renderMiniCart);
-      getStyles("list");
-      renderPopularItems();
-  </script>
-  
-<a href="#" id="ui-to-top" class="ui-to-top mdi mdi-arrow-up"></a><span role="status" aria-live="polite" class="select2-hidden-accessible"></span></body></html>
+    <script src="js/core.min.js">
+    </script>
+    <script src="js/script.js">
+    </script>
+    <script src="js/render.js">
+    </script>
+    <script src="js/lunr.js">
+    </script>
+    <script src="js/search.js">
+    </Script>
+
+    <script>
+        renderListPaginator(1);
+        renderMiniCart(cartLS.list());
+        cartLS.onChange(renderMiniCart);
+        getStyles("list");
+        renderPopularItems();
+    </script>
+
+    <a href="#" id="ui-to-top" class="ui-to-top mdi mdi-arrow-up"> </a>
+    <span role="status" aria-live="polite" class="select2-hidden-accessible"> </span>
+</body>
+
+</html>
