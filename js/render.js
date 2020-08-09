@@ -1,5 +1,14 @@
 /*jshint esversion: 6 */
 
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
 /**
  * renders the filter styles on the product collection pages
  *
@@ -8,29 +17,29 @@ function getStyles(type) {
     const $styles = document.querySelector(".styles");
     var styleCounts = [];
     products.forEach((item) => {
-      if(item.style.length > 1) {
-        item.style.forEach((s) => {
-          
-            var data = styleCounts.find((e) => e.style === s);
-            if(data) {
-              data.count++;
+        if (item.style.length > 1) {
+            item.style.forEach((s) => {
+
+                var data = styleCounts.find((e) => e.style === s);
+                if (data) {
+                    data.count++;
+                } else {
+                    var emptyStyle = { style: s, count: 1 };
+                    styleCounts.push(emptyStyle);
+                }
+            });
+        } else {
+            var data = styleCounts.find((e) => e.style === item.style[0]);
+            if (data) {
+                data.count++;
             } else {
-              var emptyStyle = { style: s, count: 1};
+                var emptyStyle = { style: item.style[0], count: 1 };
                 styleCounts.push(emptyStyle);
             }
-        });
-      } else {
-        var data = styleCounts.find((e) => e.style === item.style[0]);
-        if(data) {
-          data.count++;
-        } else {
-          var emptyStyle = { style: item.style[0], count: 1};
-            styleCounts.push(emptyStyle);
         }
-      }
     });
     styleCounts.forEach(item => {
-      addFilter(item.style, type);
+        addFilter(item.style, type);
     });
     $styles.innerHTML = styleCounts.map((item) => `
           <li>
@@ -48,11 +57,11 @@ function getStyles(type) {
  */
 function renderGridProducts(page, filters) {
     const $products = document.querySelector(".products");
-    const start_id = (page * 9)-8;
+    const start_id = (page * 9) - 8;
     const end_id = (page * 9);
     const filteredProducts = (filters && filters.size > 0) ? products.filter(p => p.style.some(r => filters.has(r))) : products;
 
-    const pageProducts = filteredProducts.slice((page*9)-9,page*9);
+    const pageProducts = filteredProducts.slice((page * 9) - 9, page * 9);
     $products.innerHTML = pageProducts.map((item) => `
       <div class="col-sm-6 col-md-4 col-lg-6 col-xl-4">
             <!-- Product-->
@@ -60,7 +69,7 @@ function renderGridProducts(page, filters) {
               <div class="product-body">
                 <div class="product-figure"><img src="${item.image_small}" alt="">
                 </div>
-                <h5 class="product-title"><a href="single-product-${item.id}.html">${item.name}</a></h5>
+                <h5 class="product-title"><a href="single-product.html?id=${item.id}">${item.name}</a></h5>
                 <div class="product-price-wrap">
                   ${(item.onSale == true)? `<div class=\"product-price product-price-old\">$${item.price_previous}</div>` : ""}
                   <div class="product-price">$${item.price_current}</div>
@@ -69,7 +78,7 @@ function renderGridProducts(page, filters) {
               
               ${(item.onSale == true) ? `<span class=\"product-badge product-badge-sale\">Sale</span>` : "" }
               <div class="product-button-wrap">
-                <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-search74" href="single-product-${item.id}.html"></a></div>
+                <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-search74" href="single-product.html?id=${item.id}"></a></div>
                 <div class="product-button"><span class="button button-primary-2 button-zakaria fl-bigmug-line-shopping202" onclick="cartLS.add({id: ${item.id}, name: '${item.name}', price: ${item.price_current}, image: '${item.image_small}'})"></span></div>
               </div>
             </article>
@@ -86,21 +95,93 @@ function renderHomeProducts() {
     // $products.innerHTML = products.map((item) => `
     //         <div class="owl-item cloned ${(item.id < 4) ? "active" : ""}" style="width: 370px; margin-right: 30px;">
     //             <article class="box-info-modern wow slideInUp" data-wow-delay=".1s" style="visibility: hidden; animation-delay: 0.1s; animation-name: none;">
-    //                 <a class="box-info-modern-figure" href="single-product-${item.id}.html"><img src="${item.image_small}" alt="" width="340" height="243"></a>
-    //                 <h4 class="box-info-modern-title"><a href="single-product-${item.id}.html">${item.name} <br><i style="font-size: large;"></i></a></h4>
+    //                 <a class="box-info-modern-figure" href="single-product.html?id=${item.id}"><img src="${item.image_small}" alt="" width="340" height="243"></a>
+    //                 <h4 class="box-info-modern-title"><a href="single-product.html?id=${item.id}">${item.name} <br><i style="font-size: large;"></i></a></h4>
     //                 <div class="box-info-modern-text">${item.desc_short}</div>
-    //                 <a class="box-info-modern-link" href="single-product-${item.id}.html">Read more</a>
+    //                 <a class="box-info-modern-link" href="single-product.html?id=${item.id}">Read more</a>
     //             </article>
     //         </div>
     //     `).join("");
     $products.innerHTML = products.map((item) => `
                 <article class="box-info-modern wow slideInUp" data-wow-delay=".1s" style="visibility: hidden; animation-delay: 0.1s; animation-name: none;">
-                    <a class="box-info-modern-figure" href="single-product-${item.id}.html"><img src="${item.image_small}" alt="" width="340" height="243"></a>
-                    <h4 class="box-info-modern-title"><a href="single-product-${item.id}.html">${item.name} <br><i style="font-size: large;"></i></a></h4>
+                    <a class="box-info-modern-figure" href="single-product.html?id=${item.id}"><img src="${item.image_small}" alt="" width="340" height="243"></a>
+                    <h4 class="box-info-modern-title"><a href="single-product.html?id=${item.id}">${item.name} <br><i style="font-size: large;"></i></a></h4>
                     <div class="box-info-modern-text">${item.desc_short}</div>
-                    <a class="box-info-modern-link" href="single-product-${item.id}.html">Read more</a>
+                    <a class="box-info-modern-link" href="single-product.html?id=${item.id}">Read more</a>
                 </article>
         `).join("");
+}
+function renderProduct(id) {
+  var idn = parseInt(id, 10);
+  if(idn) {
+    const $productTitle = document.querySelector(".single-product-title");
+    const $productName = document.querySelector(".single-product-name");
+    const $productPrice = document.querySelector(".single-product-price");
+    const $productDesc = document.querySelector(".single-product-desc");
+    const $productStyle = document.querySelector(".single-product-styles");
+    const $productVolume = document.querySelector(".single-product-volume");
+    const $productRating = document.querySelector(".single-product-rating");
+    const $productImages = document.querySelector(".single-product-images");
+    const $productImages2 = document.querySelector(".single-product-images-2");
+    const $productOnSale = document.querySelector(".single-product-onsale");
+    const $productOldPrice = document.querySelector(".single-product-oldprice");
+    const $productAddToCart = document.querySelector(".single-product-cartadd");
+
+    const pageProduct = products.find(p => p.id === idn);
+    if(pageProduct) {
+      $productName.innerHTML = pageProduct.name;
+      $productTitle.innerHTML = pageProduct.name;
+      $productPrice.innerHTML = '$' + pageProduct.price_current;
+      $productDesc.innerHTML = pageProduct.desc_long;
+      $productStyle.innerHTML = pageProduct.style.join(", ");
+      $productVolume.innerHTML = pageProduct.volume;
+      
+      // on sale?
+      if(pageProduct.onSale) {
+        $productOnSale.style.visibility = "visible";
+        $productOldPrice.innerHTML = '$' + pageProduct.price_previous;
+      }
+      // ratings
+      var rating = '';
+      var star_count = 0;
+      var whole_stars = Math.floor(pageProduct.rating);
+      for (i=1; i <= whole_stars; i++) {
+        rating += '<span class="icon mdi mdi-star"></span>';
+        star_count ++;
+      }
+      var fractional_rating = pageProduct.rating % 1;
+      if(fractional_rating > 0 && fractional_rating < 0.8) {
+        rating += '<span class="icon mdi mdi-star-half"></span>';
+        star_count++;
+      } else {
+        rating += '<span class="icon mdi mdi-star"></span>';
+        star_count++;
+      }
+      if(star_count<5) {
+        while(star_count < 5) {
+          rating += '<span class="icon mdi mdi-star-outline"></span>';
+          star_count++;
+        }
+      }
+      $productRating.innerHTML = rating;
+
+      // add to cart button and link
+      $productAddToCart.innerHTML = `<span class="button button-lg button-secondary button-zakaria add-to-cart" style="color:white" onclick="cartAdd({id: ${pageProduct.id}, name: '${pageProduct.name}', price: ${pageProduct.price_current}, image: '${pageProduct.image_small}'})">Add to cart</span>`;
+
+      // product images
+      $productImages.innerHTML = pageProduct.image_details.map((item) => `
+        <div class="item">
+          <div class="slick-product-figure"><img src="${item}" alt="" width="530" height="480"/></div>
+        </div>
+      `).join("");
+      $productImages2.innerHTML = $productImages.innerHTML;
+
+      //social links
+      renderSocialLinks(pageProduct.id);
+    }
+  }
+  
+  
 }
 /**
  * renders the Product List Page products
@@ -121,13 +202,13 @@ function renderListProducts(page, filters) {
                 <article class=\"product-modern text-center text-sm-left\">
                     <div class=\"unit unit-spacing-0 flex-column flex-sm-row\">
                         <div class=\"unit-left\">
-                            <a class=\"product-modern-figure\" href=\"single-product-${item.id}.html\">
+                            <a class=\"product-modern-figure\" href=\"single-product.html?id=${item.id}\">
                             <img src="${item.image_large}" alt="" width="328" height="330" style="margin-left: 5px; max-width: 400px;" class="list-img">
                             </a>
                         </div>
                         <div class=\"unit-body\">
                             <div class=\"product-modern-body\">
-                                <h4 class=\"product-modern-title\"><a href=\"single-product-${item.id}.html\">${item.name}</a></h4>
+                                <h4 class=\"product-modern-title\"><a href=\"single-product.html?id=${item.id}\">${item.name}</a></h4>
                                 <div class=\"product-price-wrap\">
                                     ${(item.onSale == true)? `<div class=\"product-price product-price-old\">$${item.price_previous}</div>` : ""}
                                     <div class=\"product-price\">$${item.price_current}</div>
@@ -158,9 +239,9 @@ function renderMiniCart(items) {
     $cartItems.innerHTML = items.map((item) => `
         <div class="cart-inline-item">
           <div class="unit unit-spacing-sm align-items-center">
-            <div class="unit-left"><a class="cart-inline-figure" href="single-product-${item.id}.html"><img src="${item.image}" alt="" width="100" height="90" style="width:100px; height:90px;background-color:white"></a></div>
+            <div class="unit-left"><a class="cart-inline-figure" href="single-product.html?id=${item.id}"><img src="${item.image}" alt="" width="100" height="90" style="width:100px; height:90px;background-color:white"></a></div>
             <div class="unit-body">
-              <h6 class="cart-inline-name"><a href="single-product-${item.id}.html">${item.name}</a></h6>
+              <h6 class="cart-inline-name"><a href="single-product.html?id=${item.id}">${item.name}</a></h6>
               <div>
                 <div class="group-xs group-middle">
                   <div class="table-cart-stepper">
@@ -241,16 +322,58 @@ function renderPopularItems() {
                 <div class="col-4 col-sm-6 col-md-12">
                     <!-- Product Minimal-->
                     <article class="product-minimal">
-                    <div class="unit unit-spacing-sm flex-column flex-md-row align-items-center" style="box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.08);">
-                        <div class="unit-left" style="margin-top: 8px;"><a class="product-minimal-figure" href="single-product-${item.id}.html"><img src="${item.image_small}" alt="" width="106" height="104" style="width:106px;height:104px;background-color:white;"></a></div>
+                    <div class="unit unit-spacing-sm flex-column flex-md-row align-items-center" >
+                        <div class="unit-left" style="margin-top: 8px;"><a class="product-minimal-figure" href="single-product.html?id=${item.id}"><img src="${item.image_small}" alt="" width="106" height="104" style="width:106px;height:104px;background-color:white;"></a></div>
                         <div class="unit-body">
-                        <p class="product-minimal-title"><a href="single-product-${item.id}.html">${item.name}</a></p>
+                        <p class="product-minimal-title"><a href="single-product.html?id=${item.id}">${item.name}</a></p>
                         <p class="product-minimal-price">$${item.price_current}</p>
                         </div>
                     </div>
                     </article>
                 </div>
     `).join("");
+}
+function renderFeaturedItems() {
+  const $featured = document.querySelector(".featured");
+  const filteredFeatured = products.filter(p => p.featured === true);
+  $featured.innerHTML = filteredFeatured.map((item) => `
+      <div class="col-sm-6 col-md-5 col-lg-3">
+      <!-- Product-->
+      <article class="product">
+        <div class="product-body">
+          <div class="product-figure"><img src="${item.image_small}" alt="" width="152" height="160" style="width: 200px;">
+          </div>
+          <h5 class="product-title"><a href="single-product.html?id=${item.id}">${item.name}</a></h5>
+          <div class="product-price-wrap">
+            <div class="product-price product-price-old">$${item.onSale ? item.price_previous : ''}</div>
+            <div class="product-price">$${item.price_current}</div>
+          </div>
+        </div>
+        ${(item.onSale == true)? `<span class="product-badge product-badge-sale">Sale</span>` : ""}
+        
+        <div class="product-button-wrap">
+          <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-search74" href="single-product.html?id=${item.id}"></a></div>
+          <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-shopping202" style="color:white;" onclick="cartLS.add({id: ${item.id}, name: '${item.name}', price: ${item.price_current}, image: '${item.image_small}'})"></a></div>
+        </div>
+      </article>
+    </div>
+  `).join("");
+}
+function renderSocialLinks(id) {
+  const $socialLinks = document.querySelector(".social-links");
+  var links = `
+                <li><a class="icon mdi mdi-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://goddess-salsas.github.io/index.html"></a></li>
+                <li><a class="icon mdi mdi-twitter" href="https://twitter.com/home?status=https://goddess-salsas.github.io//index.html"></a></li>
+                <li><a class="icon mdi mdi-email" href="mailto:smggraf91@yahoo.com?&subject=&body=https://goddess-salsas.github.io/index.html"></a></li>
+                <li><a class="icon mdi mdi-pinterest" href="https://pinterest.com/pin/create/button/?url=https://goddess-salsas.github.io/index.html&media=&description="></a></li>
+  `;
+  if(id) {
+    links = `<li><a class="icon mdi mdi-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://goddess-salsas.github.io/single-product.html?id=${id}"></a></li>`;
+    links += `<li><a class="icon mdi mdi-twitter" href="https://twitter.com/home?status=https://goddess-salsas.github.io//single-product.html?id=${id}" ></a></li>`;
+    links += `<li><a class="icon mdi mdi-email" href="mailto:smggraf91@yahoo.com?&subject=&body=https://goddess-salsas.github.io/single-product.html?id=${id}"></a></li>`;
+    links += `<li><a class="icon mdi mdi-pinterest" href="https://pinterest.com/pin/create/button/?url=https://goddess-salsas.github.io/single-product.html?id=${id}&media=&description="></a></li>`;
+  }
+  $socialLinks.innerHTML = links;
 }
 /**
  * adds a style filter to the product collection page
