@@ -368,7 +368,8 @@ function renderSocialLinks(id) {
                 <li><a class="icon mdi mdi-pinterest" href="https://pinterest.com/pin/create/button/?url=https://goddess-salsas.github.io/index.html&media=&description="></a></li>
   `;
   if(id) {
-    links = `<li><a class="icon mdi mdi-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgoddess-salsas.github.io%2Fsingle-product.html%3Fid%3D${id}&amp;src=sdkpreparse" target="_blank"></a></li>`;
+    // links = `<li><a class="icon mdi mdi-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgoddess-salsas.github.io%2Fsingle-product.html%3Fid%3D${id}&amp;src=sdkpreparse" target="_blank"></a></li>`;
+    links = `<li><a class="icon mdi mdi-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://goddess-salsas.github.io/single-product-${id}.html" target="_blank"></a></li>`;
     links += `<li><a class="icon mdi mdi-twitter" href="https://twitter.com/home?status=https://goddess-salsas.github.io//single-product.html?id=${id}" ></a></li>`;
     links += `<li><a class="icon mdi mdi-email" href="mailto:smggraf91@yahoo.com?&subject=&body=https://goddess-salsas.github.io/single-product.html?id=${id}"></a></li>`;
     links += `<li><a class="icon mdi mdi-pinterest" href="https://pinterest.com/pin/create/button/?url=https://goddess-salsas.github.io/single-product.html?id=${id}&media=&description="></a></li>`;
