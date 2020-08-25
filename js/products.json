@@ -17,7 +17,7 @@
         "popular": true,
         "rating": 4.9,
         "featured": true,
-        "type": "salsa",
+        "type": ["salsa"],
         "sizes": [
             {
                 "id": "1a",
@@ -80,7 +80,7 @@
         "popular": false,
         "rating": 4.9,
         "featured": true,
-        "type": "salsa",
+        "type": ["salsa"],
         "sizes": [
             {
                 "id": "2a",
@@ -143,7 +143,7 @@
         "popular": true,
         "rating": 4.7,
         "featured": true,
-        "type": "salsa",
+        "type": ["salsa"],
         "sizes": [
             {
                 "id": "3a",
@@ -206,7 +206,7 @@
         "popular": false,
         "rating": 4.9,
         "featured": false,
-        "type": "salsa",
+        "type": ["salsa"],
         "sizes": [
             {
                 "id": "4a",
@@ -268,7 +268,7 @@
         "popular": true,
         "rating": 4.8,
         "featured": false,
-        "type": "salsa",
+        "type": ["salsa"],
         "sizes": [
             {
                 "id": "5a",
@@ -330,7 +330,7 @@
         "popular": false,
         "rating": 4.7,
         "featured": false,
-        "type": "salsa",
+        "type": ["salsa"],
         "sizes": [
             {
                 "id": "6a",
@@ -393,7 +393,7 @@
         "popular": false,
         "rating": 4.9,
         "featured": true,
-        "type": "salsa",
+        "type": ["salsa", "sauce"],
         "sizes": [
             {
                 "id": "7a",
@@ -456,7 +456,7 @@
         "popular": false,
         "rating": 4.9,
         "featured": true,
-        "type": "spread",
+        "type": ["spread", "sauce"],
         "sizes": [
             {
                 "id": "8a",
