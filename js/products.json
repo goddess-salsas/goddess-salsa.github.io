@@ -436,5 +436,68 @@
                 "default": false
             }
         ]
+    },
+    {
+        "id": 8,
+        "name": "Raspberry Jam",
+        "desc_short": "Our Raspberry Jam is a delicious and delightful addition to your spreads.  Bursting with flavor, you can taste the freshness with every bite.",
+        "desc_long": "<p>Our Raspberry Jam has the perfect combination of sweet and tart to liven up anything that you might use it on.</p><p>Our Raspberry Jam is a delicious and delightful addition to your spreads.  Bursting with flavor, you can taste the freshness with every bite.</p>",
+        "image_small": "images/raspberry-jam-1.jpeg",
+        "image_large": "images/raspberry-jam-1.jpeg",
+        "image_details": [
+            "images/raspberry-jam-1.jpg",
+            "images/craspberry-jam-2.jpg",
+            "images/raspberry-jam-3.jpg"
+        ],
+        "style": [
+            "tart",
+            "sweet"
+        ],
+        "popular": false,
+        "rating": 4.9,
+        "featured": true,
+        "type": "spread",
+        "sizes": [
+            {
+                "id": "8a",
+                "title": "Trial Sized",
+                "value": "2",
+                "volume": "2 oz",
+                "price_current": 4,
+                "price_previous": 4.5,
+                "onsale": false,
+                "default": false
+            },
+            {
+                "id": "8b",
+                "title": "Single Sized",
+                "value": "4",
+                "volume": "4 oz",
+                "price_current": 8,
+                "price_previous": 9,
+                "onsale": false,
+                "default": true
+            },
+            {
+                "id": "8c",
+                "title": "Family Sized",
+                "value": "8",
+                "volume": "8 oz",
+                "price_current": 12,
+                "price_previous": 13.5,
+                "onsale": false,
+                "default": false
+            },
+            {
+                "id": "8d",
+                "title": "Gathering Sized",
+                "value": "16",
+                "volume": "16 oz",
+                "price_current": 16,
+                "price_previous": 18,
+                "onsale": false,
+                "default": false
+            }
+        ]
     }
 ]
