@@ -8,7 +8,7 @@
     <meta property="og:title" content="Goddess Salsa"/>
     <meta property="og:type" content="Goddess Salsa Website"/>
     <meta property="og:image" content="https://goddess-salsas.github.io/images/salsa-collection.png"/>
-    <meta property="og:description" content="Goddess Salsas offers the best salsas and freshest ingredients for you and your family. All of our products are made from scratch using family recipes with only the highest quality ingredients - many grown locally to ensure the richest flavors possible. Because you only want the best for you and your family."/>
+    <meta property="og:description" content="Goddess Salsas offers the best toppings and freshest ingredients for you and your family. All of our products are made from scratch using family recipes with only the highest quality ingredients - many grown locally to ensure the richest flavors possible. Because you only want the best for you and your family."/>
     <meta property="og:url" content="https://goddess-salsas.github.io/index.html">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="fonts/poppins.css">
@@ -33,7 +33,18 @@
         }
     </style>
     <script src="js/cart-localstorage.min.js"></script>
-    <script type="text/javascript" language="javascript" src="js/products.js"></script>
+    <Script src="js/loader.js"></Script>
+    <!-- <script type="text/javascript" language="javascript" src="js/products.js"></script>  -->
+    <Script>
+      var products = [];
+      // sets the product select list dropdown with all valid products
+      function getProductData() {
+          loadProductsJSON().then((productData) => {
+              products = productData;
+          });
+      }
+      getProductData();
+  </Script>
     <link rel="stylesheet" href="data:text/css;charset=utf-8;base64,Y2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gewogIGRpc3BsYXk6IGJsb2NrOwogIGJhY2tncm91bmQ6ICM0NTQ4NGQ7CiAgY29sb3I6ICNmZmY7CiAgbGluZS1oZWlnaHQ6IDEuNDU7CiAgcG9zaXRpb246IGZpeGVkOwogIHotaW5kZXg6IDkwMDAwMDAwOwogIHRvcDogMDsKICBsZWZ0OiAwOwogIHJpZ2h0OiAwOwogIHBhZGRpbmc6IC41ZW0gMWVtOwogIHRleHQtYWxpZ246IGNlbnRlcjsKICAtd2Via2l0LXVzZXItc2VsZWN0OiBub25lOwogICAgIC1tb3otdXNlci1zZWxlY3Q6IG5vbmU7CiAgICAgIC1tcy11c2VyLXNlbGVjdDogbm9uZTsKICAgICAgICAgIHVzZXItc2VsZWN0OiBub25lOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXVtkYXRhLXZpc2liaWxpdHk9ImhpZGRlbiJdIHsKICBkaXNwbGF5OiBub25lOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXSBjbG91ZGZsYXJlLWFwcC1tZXNzYWdlIHsKICBkaXNwbGF5OiBibG9jazsKfQoKY2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gYSB7CiAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7CiAgY29sb3I6ICNlYmViZjQ7Cn0KCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGE6aG92ZXIsCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGE6YWN0aXZlIHsKICBjb2xvcjogI2RiZGJlYjsKfQoKY2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gY2xvdWRmbGFyZS1hcHAtY2xvc2UgewogIGRpc3BsYXk6IGJsb2NrOwogIGN1cnNvcjogcG9pbnRlcjsKICBmb250LXNpemU6IDEuNWVtOwogIHBvc2l0aW9uOiBhYnNvbHV0ZTsKICByaWdodDogLjRlbTsKICB0b3A6IC4zNWVtOwogIGhlaWdodDogMWVtOwogIHdpZHRoOiAxZW07CiAgbGluZS1oZWlnaHQ6IDE7Cn0KCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGNsb3VkZmxhcmUtYXBwLWNsb3NlOmFjdGl2ZSB7CiAgLXdlYmtpdC10cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTsKICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgxcHgpOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXSBjbG91ZGZsYXJlLWFwcC1jbG9zZTpob3ZlciB7CiAgb3BhY2l0eTogLjllbTsKICBjb2xvcjogI2ZmZjsKfQo=">
     <!-- <script id="mcjs">
         ! function(c, h, i, m, p) {
@@ -96,6 +107,7 @@
                                     <a class="brand" href="index.html"><img class="brand-logo-dark" src="images/logo-default-231x49.png" alt="" width="231" height="49" srcset="images/logo-default-231x49.png 2x"><img class="brand-logo-light" src="images/logo-inverse-231x49.png" alt="" width="231"
                                             height="49" srcset="images/logo-inverse-231x49.png 2x"></a>
                                 </div>
+                                <div><span style="margin-right:20px;font-size: 14px;color:#c14679;">SALSA</span><span style="margin-right:20px;font-size: 14px;color:#c14679;">SAUCES</span><span style="font-size: 14px;color:#c14679;">SPREADS</span></div>
                             </div>
                             <div class="rd-navbar-button"><a class="button button-sm button-icon button-icon-left button-default-outline-3 button-zakaria" href="contact-us.html"><span class="icon mdi mdi-email-outline"></span>Get in touch</a></div>
                         </div>
@@ -175,8 +187,8 @@
                 <div class="row">
                     <div class="col-md-7 col-xl-5 text-left">
                         <div class="text-big text-decorative text-primary wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">Delicious</div>
-                        <h3 class="wow fadeInLeft font-weight-bold text-decor-line text-spacing-200" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">salsas for you</h3>
-                        <h4 class="wow fadeInLeft text-spacing-100 text-transform-none text-gray-600 font-weight-normal text-gray-600" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;"><span class="d-xl-block">Goddess Salsas offers the best </span><span class="d-xl-block">salsas and freshest ingredients for you and your family.</span></h4><a class="button button-lg button-shadow-2 button-primary button-zakaria wow fadeInUp"
+                        <h3 class="wow fadeInLeft font-weight-bold text-decor-line text-spacing-200" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">toppings</h3>
+                        <h4 class="wow fadeInLeft text-spacing-100 text-transform-none text-gray-600 font-weight-normal text-gray-600" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;"><span class="d-xl-block">Goddess Salsas offers the best </span><span class="d-xl-block"><span id="word">Salsas</span> with the freshest ingredients for you and your family.</span></h4><a class="button button-lg button-shadow-2 button-primary button-zakaria wow fadeInUp"
                             href="shop-list.html" style="visibility: visible; animation-name: fadeInUp;">Shop now</a>
                     </div>
                 </div>
@@ -228,7 +240,7 @@
                         </div>
                         <div class="unit-body">
                           <h4 class="box-icon-nancy-title"><a href="#">Quality Products</a></h4>
-                          <p class="box-icon-nancy-text">We guarantee the quality of all the salsas we provide as they are made using the freshest ingredients.</p>
+                          <p class="box-icon-nancy-text">We guarantee the quality of all the products we provide as they are made using the freshest ingredients.</p>
                         </div>
                       </div>
                     </article>
@@ -330,8 +342,8 @@
                           <div class="tab-content">
                               <div class="tab-pane fade show active" id="tabs-1-1">
                                   <div class="box-info-creative">
-                                      <h4 class="box-info-creative-title"><a href="#">providing quality fresh foods and salsa for all customers</a></h4>
-                                      <div class="box-info-creative-text">Our mission is to create a business that makes the best quality salsas on site from scratch, and where both employees and customers would feel comfortable.</div>
+                                      <h4 class="box-info-creative-title"><a href="#">providing quality fresh foods and toppings for all customers</a></h4>
+                                      <div class="box-info-creative-text">Our mission is to create a business that makes the best quality salsas, sauces, and spreads on site from scratch, and where both employees and customers would feel comfortable.</div>
                                       <a class="link-classic box-info-creative-link" href="what-we-offer.html">Read more</a>
                                   </div>
                               </div>
@@ -345,7 +357,7 @@
                               <div class="tab-pane fade" id="tabs-1-3">
                                   <div class="box-info-creative">
                                       <h4 class="box-info-creative-title"><a href="#">Serving only the freshest foods and salsa for you</a></h4>
-                                      <div class="box-info-creative-text">We aim to deliver the best foods and salsas for corporate events and individual celebrations, while also offering the best level of customer service in the United States.</div>
+                                      <div class="box-info-creative-text">We aim to deliver the best foods and experience for corporate events and individual celebrations, while also offering the best level of customer service in the United States.</div>
                                       <a class="link-classic box-info-creative-link" href="what-we-offer.html">Read more</a>
                                   </div>
                               </div>
@@ -408,7 +420,7 @@
         <section class="section section-xxl section-inset-1 bg-image" style="background-image: url(images/salsa-features.png);">
           <div class="container box-cta">
             <h3 class="font-weight-normal text-transform-none wow fadeInDown text-decorative text-primary text-spacing-75" style="visibility: hidden; animation-name: none;">Unique Flavors and Fresh Ingredients</h3>
-            <h2 class="text-spacing-75 text-black-800 wow fadeScale" style="visibility: hidden; animation-name: none;">All Kinds of Salsas</h2><a class="button button-lg button-primary button-zakaria wow fadeInUp" href="shop-list.html" style="visibility:
+            <h2 class="text-spacing-75 text-black-800 wow fadeScale" style="visibility: hidden; animation-name: none;">Salsas, Sauces, <br/>and Spreads</h2><a class="button button-lg button-primary button-zakaria wow fadeInUp" href="shop-list.html" style="visibility:
                       hidden; animation-name: none;">Read More</a>
           </div>
         </section>
@@ -634,6 +646,18 @@
       renderMiniCart(cartLS.list());
       renderSocialLinks();
       cartLS.onChange(renderMiniCart);
+    </script>
+    <script>
+      $(function () {
+          count = 0;
+          wordsArray = ["Salsas", "Sauces", "Spreads"];
+          setInterval(function () {
+              count++;
+              $("#word").fadeOut(400, function () {
+                $(this).text(wordsArray[count % wordsArray.length]).fadeIn(400);
+              });
+          }, 2000);
+      });
     </script>
 	
 	<!--LIVEDEMO_00 -->

@@ -156,166 +156,160 @@
         </div>
       </section>
       <!-- Section checkout form-->
-      <form id="order" class="rd-form rd-mailform form-checkout gform" method="post" action="https://script.google.com/macros/s/AKfycbznw3rG2ZAeSi_OZnyPh9YtB6jA5JFqOhjMrx5Lj5q5WP_HQj4/exec">
-        <section class="section section-sm section-first bg-default text-md-left">
-            <div class="container">
-                <div class="row row-50 justify-content-center">
-                    <!-- Billing Details-->
-                    <div class="col-md-10 col-lg-6">
-                        <h3 class="font-weight-medium">Billing Details</h3>
-                        <div class="row row-30">
-                            <div class="col-sm-6">
-                                <div class="form-wrap">
-                                    <input class="form-input" id="checkout-first-name-1" type="text" name="name_first_billing" data-constraints="@Required" required/>
-                                    <label class="form-label" for="checkout-first-name-1">First Name</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-wrap">
-                                    <input class="form-input" id="checkout-last-name-1" type="text" name="name_last_billing" data-constraints="@Required" required/>
-                                    <label class="form-label" for="checkout-last-name-1">Last Name</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-wrap">
-                                    <input class="form-input" id="checkout-company-1" type="text" name="company_billing"/>
-                                    <label class="form-label" for="checkout-company-1">Company</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-wrap">
-                                    <input class="form-input" id="checkout-address-1" type="text" name="address_billing" data-constraints="@Required" required/>
-                                    <label class="form-label" for="checkout-address-1">Address</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-wrap">
-                                    <input class="form-input" id="checkout-city-1" type="text" name="city_billing" data-constraints="@Required" required/>
-                                    <label class="form-label" for="checkout-city-1">City/Town</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-wrap">
-                                    <input class="form-input" id="checkout-state-1" type="text" name="state_billing" data-constraints="@Required" required/>
-                                    <label class="form-label" for="checkout-state-1">State/Province</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-wrap">
-                                    <input class="form-input" id="checkout-postal-1" type="text" name="postal_billing" data-constraints="@Numeric @Required" required/>
-                                    <label class="form-label" for="checkout-postal-1">Postal Code</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-wrap">
-                                    <input class="form-input" id="checkout-email-1" type="email" name="email_billing" data-constraints="@Email @Required" required/>
-                                    <label class="form-label" for="checkout-email-1">E-Mail</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-wrap">
-                                    <input class="form-input" id="checkout-phone-1" type="text" name="phone_billing" data-constraints="@Numeric @Required" required/>
-                                    <label class="form-label" for="checkout-phone-1">Phone</label>
-                                </div>
-                            </div>
-                        </div>
-                        <label class="checkbox-inline text-transform-capitalize">
-                            <input id="same-address" name="input_checkbox_1" value="checkbox-1" type="checkbox" onchange="checkShipping();"/>My Billing Address and Shipping Address are the same
-                        </label>
+      <section class="section section-sm section-first bg-default text-md-left">
+        <div class="container">
+          <div class="row row-50 justify-content-center">
+            <div class="col-md-10 col-lg-6">
+              <h3 class="font-weight-medium">Billing Information</h3>
+              <form id="billing-address" class="rd-form rd-mailform form-checkout">
+                <div class="row row-30">
+                  <div class="col-sm-6">
+                    <div class="form-wrap">
+                      <input class="form-input" id="checkout-first-name-1" type="text" name="name-first-billing" data-constraints="@Required"/>
+                      <label class="form-label" for="checkout-first-name-1">First Name</label>
                     </div>
-                    <!-- Delivery Details-->
-                    <div class="col-md-10 col-lg-6">
-                        <h3 class="font-weight-medium">Delivery Details</h3>
-                        <div class="row row-30">
-                            <div class="col-sm-6">
-                                <div class="form-wrap">
-                                    <input class="form-input" id="checkout-first-name-2" type="text" name="name_first_shipping" data-constraints="@Required" required/>
-                                    <label class="form-label" for="checkout-first-name-2">First Name</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-wrap">
-                                    <input class="form-input" id="checkout-last-name-2" type="text" name="name_last_shipping" data-constraints="@Required" required/>
-                                    <label class="form-label" for="checkout-last-name-2">Last Name</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-wrap">
-                                    <input class="form-input" id="checkout-company-2" type="text" name="company_shipping"/>
-                                    <label class="form-label" for="checkout-company-2">Company</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-wrap">
-                                    <input class="form-input" id="checkout-address-2" type="text" name="address_shipping" data-constraints="@Required" required/>
-                                    <label class="form-label" for="checkout-address-2">Address</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-wrap">
-                                    <input class="form-input" id="checkout-city-2" type="text" name="city_shipping" data-constraints="@Required" required/>
-                                    <label class="form-label" for="checkout-city-2">City/Town</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-wrap">
-                                    <input class="form-input" id="checkout-state-2" type="text" name="state_shipping" data-constraints="@Required" required/>
-                                    <label class="form-label" for="checkout-state-2">State/Province</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-wrap">
-                                    <input class="form-input" id="checkout-postal-2" type="text" name="postal_shipping" data-constraints="@Numeric @Required" required/>
-                                    <label class="form-label" for="checkout-postal-2">Postal Code</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-wrap">
-                                    <input class="form-input" id="checkout-email-2" type="email" name="email_shipping" data-constraints="@Email @Required" required/>
-                                    <label class="form-label" for="checkout-email-2">E-Mail</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-wrap">
-                                    <input class="form-input" id="checkout-phone-2" type="text" name="phone_shipping" data-constraints="@Numeric @Required" required/>
-                                    <label class="form-label" for="checkout-phone-2">Phone</label>
-                                </div>
-                            </div>
-                        </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-wrap">
+                      <input class="form-input" id="checkout-last-name-1" type="text" name="name-last-billing" data-constraints="@Required"/>
+                      <label class="form-label" for="checkout-last-name-1">Last Name</label>
                     </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-wrap">
+                      <input class="form-input" id="checkout-company-1" type="text" name="company-billing" data-constraints="@Required"/>
+                      <label class="form-label" for="checkout-company-1">Company</label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-wrap">
+                      <input class="form-input" id="checkout-address-1" type="text" name="address-billing" data-constraints="@Required"/>
+                      <label class="form-label" for="checkout-address-1">Address</label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-wrap">
+                      <input class="form-input" id="checkout-city-1" type="text" name="city-billing" data-constraints="@Required"/>
+                      <label class="form-label" for="checkout-city-1">City/Town</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-wrap">
+                      <input class="form-input" id="checkout-state-1" type="text" name="state-billing" data-constraints="@Required"/>
+                      <label class="form-label" for="checkout-state-1">State/Province</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-wrap">
+                      <input class="form-input" id="checkout-postal-1" type="text" name="postal-billing" data-constraints="@Numeric"/>
+                      <label class="form-label" for="checkout-postal-1">Postal Code</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-wrap">
+                      <input class="form-input" id="checkout-email-1" type="email" name="email-billing" data-constraints="@Email @Required"/>
+                      <label class="form-label" for="checkout-email-1">E-Mail</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-wrap">
+                      <input class="form-input" id="checkout-phone-1" type="text" name="phone-billing" data-constraints="@Numeric"/>
+                      <label class="form-label" for="checkout-phone-1">Phone</label>
+                    </div>
+                  </div>
                 </div>
+                <label class="checkbox-inline text-transform-capitalize">
+                  <input id="same-address" name="input-checkbox-1" value="checkbox-1" type="checkbox" onchange="checkShipping();"/>My Billing Address and Shipping Address are the same
+                </label>
+              </form>
             </div>
-        </section>
-        <!-- Shopping Cart-->
-        <section class="section section-xl bg-default">
-            <div class="container">
-                <!-- shopping-cart-->
-                <div class="table-custom-responsive">
-                    <table id="cart_table" class="table-custom table-cart">
-                    <thead>
-                        <tr>
-                        <th>Product name</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Total</th>
-                        <th></th>
-                        </tr>
-                    </thead>
-                    <tbody class="cart" >
-                
-                    </tbody>
-                    </table>
+            <div class="col-md-10 col-lg-6">
+              <h3 class="font-weight-medium">Delivery Information</h3>
+              <form id="shipping-address" class="rd-form rd-mailform form-checkout">
+                <div class="row row-30">
+                  <div class="col-sm-6">
+                    <div class="form-wrap">
+                      <input class="form-input" id="checkout-first-name-2" type="text" name="name-first-shipping" data-constraints="@Required"/>
+                      <label class="form-label" for="checkout-first-name-2">First Name</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-wrap">
+                      <input class="form-input" id="checkout-last-name-2" type="text" name="name-last-shipping" data-constraints="@Required"/>
+                      <label class="form-label" for="checkout-last-name-2">Last Name</label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-wrap">
+                      <input class="form-input" id="checkout-company-2" type="text" name="company-shipping" data-constraints="@Required"/>
+                      <label class="form-label" for="checkout-company-2">Company</label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-wrap">
+                      <input class="form-input" id="checkout-address-2" type="text" name="address-shipping" data-constraints="@Required"/>
+                      <label class="form-label" for="checkout-address-2">Address</label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-wrap">
+                      <input class="form-input" id="checkout-city-2" type="text" name="city-shipping" data-constraints="@Required"/>
+                      <label class="form-label" for="checkout-city-2">City/Town</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-wrap">
+                      <input class="form-input" id="checkout-state-2" type="text" name="state-shipping" data-constraints="@Required"/>
+                      <label class="form-label" for="checkout-state-2">State/Province</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-wrap">
+                      <input class="form-input" id="checkout-postal-2" type="text" name="postal-shipping" data-constraints="@Numeric"/>
+                      <label class="form-label" for="checkout-postal-2">Postal Code</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-wrap">
+                      <input class="form-input" id="checkout-email-2" type="email" name="email-shipping" data-constraints="@Email @Required"/>
+                      <label class="form-label" for="checkout-email-2">E-Mail</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-wrap">
+                      <input class="form-input" id="checkout-phone-2" type="text" name="phone-shipping" data-constraints="@Numeric"/>
+                      <label class="form-label" for="checkout-phone-2">Phone</label>
+                    </div>
+                  </div>
                 </div>
+              </form>
             </div>
-            <input class="form-input" id="order-details" type="text" name="order_details" style="visibility: hidden;"/>
-            <button id="place_order" class="button button-lg button-secondary button-zakaria" type="submit" style="float: right;margin-right: 290px;" disabled="disabled">Place Order</button>
-            <div class="thankyou_message" style="display: none;margin-top: 25px;">
-              <h6><em>Thanks</em> for ordering with us!
-                We will get back to you soon with details on your orders progress!</h6>
-            </div>
-        </section>
+          </div>
+        </div>
+      </section>
+       <!-- Shopping Cart-->
+       <section class="section section-xl bg-default">
+        <div class="container">
+          <!-- shopping-cart-->
+          <div class="table-custom-responsive">
+            <table class="table-custom table-cart">
+              <thead>
+                <tr>
+                  <th>Product name</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Total</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody class="cart">
         
-      </form>
+              </tbody>
+            </table>
+          </div>
+        </div>
+    </section>
+
       <!-- Section Payment-->
       <section class="section section-sm section-last bg-default text-md-left">
         <div class="container">
@@ -334,7 +328,7 @@
                 </div>
                 <div class="radio-panel">
                   <label class="radio-inline">
-                    <input id="payment-check" name="input-group-radio" value="checkbox-1" type="radio">Check Payment
+                    <input id="payment-check" name="input-group-radio" value="checkbox-1" type="radio">Cheque Payment
                   </label>
                   <div class="radio-panel-content">
                     <p>Please send a check to Goddess Salsa, 1885 Somerset Dr., Glendale Heights, IL 60139 USA.  <i>Please note that orders will not ship until they have cleared bank processing.</i></p>
@@ -387,10 +381,10 @@
             <tr>
                 <td>
                     <div class="prod-card-inner">
-                        <a class="table-cart-figure" href="single-product.html?id=${item.productId}" style="background-color: white;max-width: 80px;">
+                        <a class="table-cart-figure" href="single-product.html" style="background-color: white;max-width: 80px;">
                             <img src="${item.image}" alt="" width="146" height="132" style="width:73px;height:66px;">
                         </a>
-                        <a class="table-cart-link" href="single-product.html?id=${item.productId}">${item.name} - <i style="font-size:smaller">${item.size} oz</i></a>
+                        <a class="table-cart-link" href="single-product.html">${item.name}</a>
                     </div>
                 </td>
                 <td>$${item.price}</td>
@@ -398,13 +392,13 @@
                     <div class="table-cart-stepper">
                         <div class="stepper">
                             <input class="form-input stepper-input" type="number" data-zeros="true" value="${item.quantity}" min="1" max="1000">
-                            <span class="stepper-arrow up" onClick="cartLS.quantity('${item.id}',1)"></span>
-                            <span class="stepper-arrow down" onClick="cartLS.quantity('${item.id}',-1)"></span>
+                            <span class="stepper-arrow up" onClick="cartLS.quantity(${item.id},1)"></span>
+                            <span class="stepper-arrow down" onClick="cartLS.quantity(${item.id},-1)"></span>
                         </div>
                     </div>
                 </td>
                 <td>$${item.quantity*item.price}</td>
-                <td class="text-right"><Button class="btn btn-primary" onClick="cartLS.remove('${item.id}')">Delete</Button></td>
+                <td class="text-right"><Button class="btn btn-primary" onClick="cartLS.remove(${item.id})">Delete</Button></td>
             </tr>`).join("")
             
         $itemtotal.innerHTML = "$" + cartLS.total()
@@ -426,7 +420,7 @@
         const $shipPostal = document.getElementById("checkout-postal-2");
         const $shipEmail = document.getElementById("checkout-email-2");
         const $shipPhone = document.getElementById("checkout-phone-2");
-        const $shipForm = document.getElementById("order");
+        const $shipForm = document.getElementById("shipping-address");
         if(billAndShipSame){
           $shipFirstName.value = document.getElementById("checkout-first-name-1").value;
           $shipLastName.value = document.getElementById("checkout-last-name-1").value;
@@ -463,46 +457,13 @@
           $shipEmail.disabled=false;
           $shipPhone.disabled=false;
         }
-        //trigger validate here
-        $('#order').find('#place_order').prop('disabled', !check('#order'));
-      }
-      function createGuid() {  
-        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {  
-            var r = Math.random()*16|0, v = c === 'x' ? r : (r&0x3|0x8);  
-            return v.toString(16);  
-        });  
-      } 
-      function buildOrderExtract(items) {
-          var extract ='';
-          if(items && items.length>0) {
-            var orderExtractItems = items.map((item) => {
-                return {
-                    id: item.id,
-                    productId: item.productId,
-                    product: item.name,
-                    quantity: item.quantity,
-                    size: item.size,
-                    unit_price: item.price,
-                    subtotal: (item.price * item.quantity)
-                }
-            })
-            var total = 0;
-            orderExtractItems.forEach((item) => {
-                total += item.subtotal;
-            });
-            var order = {order_number: createGuid(), total: total, items: orderExtractItems};
-            extract = JSON.stringify(order);
-          }
-          document.getElementById("order-details").value = extract;
       }
       function renderCarts(items) {
         renderMiniCart(items);
         renderShoppingCart(items);
-        buildOrderExtract(cartLS.list());
       }
     </script>
     <script src="https://www.paypal.com/sdk/js?client-id=AQVMZnKIwUSPLykBj7XO1eWsqnj3yYxYk4fZQGxTYJssLKroAAIBzs1afRP-PMu-8pLyG5GHKTY7Luir"></script>
-    <script data-cfasync="false" type="text/javascript" src="js/order-submission-handler.js"></script>
     <script>
       paypal.Buttons({
         createOrder: function(data, actions) {
@@ -521,50 +482,6 @@
         }
       }).render('#paypal-button-container'); // Display payment options on your web page
     </script>
-    <Script>
-        function checkForm() {
-          console.log('           new check...');
-            // here, "this" is an input element
-            var isValidForm = true;
-            $(this.form).find(':input[required]:visible').each(function() {
-                if (!this.value.trim()) {
-                    isValidForm = false;
-                    console.log( this.id + ' INVALID field');
-                } else {
-                    console.log( this.id + ' VALID field');
-                }
-            });
-            $(this.form).find('#place_order').prop('disabled', !isValidForm);
-            return isValidForm;
-          }
-          function check(formId) {
-              console.log('           custom check...');
-              // here, "this" is an input element
-              var isValidForm = true;
-              $(formId).find(':input[required]:visible').each(function() {
-                  if (!this.value.trim()) {
-                      isValidForm = false;
-                      console.log( this.id + ' INVALID field');
-                  } else {
-                      console.log( this.id + ' VALID field');
-                  }
-              });
-              $(formId).find('#place_order').prop('disabled', !isValidForm);
-              return isValidForm;
-          }
-
-        $('#place_order').closest('form')
-          // indirectly bind the handler to form
-          .submit(function() {
-              return checkForm.apply($(this).find(':input')[0]);
-          })
-          // look for input elements
-          .find(':input[required]:visible')
-          // bind the handler to input elements
-          .keyup(checkForm)
-          // immediately fire it to initialize buttons state
-          .keyup();
-    </Script>
     <script>
       renderCarts(cartLS.list());
       cartLS.onChange(renderCarts);
