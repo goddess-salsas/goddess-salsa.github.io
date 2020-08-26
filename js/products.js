@@ -8,15 +8,53 @@ var products = [
         image_small: "images/corn-salsa.jpeg",
         image_large: "images/corn-salsa.jpeg",
         image_details: ["images/corn-salsa-530x462.jpg", "images/corn-salsa-2-530x462.jpg","images/corn-salsa-5-530x462.jpg"],
-        price_current: 7.00,
-        price_previous:10.00,
-        onSale: true,
-        volume: "8 oz",
         style: ["mild"],
         popular: true,
         rating: 4.9,
-        featured: true
-
+        featured: true,
+        type: 'salsa',
+        sizes: [
+            {
+                id:'1a',
+                title: "Trial Sized",
+                value: "4",
+                volume: "4 oz",
+                price_current: 4.00,
+                price_previous: 4.50,
+                onsale: true,
+                default: false
+            },
+            {
+                id:'1b',
+                title: "Single Sized",
+                value: "8",
+                volume: "8 oz",
+                price_current: 8.00,
+                price_previous: 9.00,
+                onsale: true,
+                default: true
+            },
+            {
+                id:'1c',
+                title: "Family Sized",
+                value: "12",
+                volume: "12 oz",
+                price_current: 12.00,
+                price_previous: 13.50,
+                onsale: true,
+                default: false
+            },
+            {
+                id:'1d',
+                title: "Party Sized",
+                value: "16",
+                volume: "16 oz",
+                price_current: 16.00,
+                price_previous: 18.00,
+                onsale: true,
+                default: false
+            }
+        ]
     },
     {
         id: 2,
@@ -26,14 +64,53 @@ var products = [
         image_small: "images/mango-salsa-6.jpeg",
         image_large: "images/mango-salsa-6.jpeg",
         image_details: ["images/corn-salsa-530x462.jpg", "images/corn-salsa-2-530x462.jpg","images/corn-salsa-5-530x462.jpg"],
-        price_current: 10.00,
-        price_previous:10.00,
-        onSale: false,
-        volume: "8 oz",
         style: ["mild", "sweet"],
         popular: false,
         rating: 4.9,
-        featured: true
+        featured: true,
+        type: 'salsa',
+        sizes: [
+            {
+                id:'2a',
+                title: "Trial Sized",
+                value: "4",
+                volume: "4 oz",
+                price_current: 5.00,
+                price_previous: 5.50,
+                onsale: true,
+                default: false
+            },
+            {
+                id:'2b',
+                title: "Single Sized",
+                value: "8",
+                volume: "8 oz",
+                price_current: 10.00,
+                price_previous: 11.00,
+                onsale: true,
+                default: true
+            },
+            {
+                id:'2c',
+                title: "Family Sized",
+                value: "12",
+                volume: "12 oz",
+                price_current: 15.00,
+                price_previous: 16.50,
+                onsale: true,
+                default: false
+            },
+            {
+                id:'2d',
+                title: "Party Sized",
+                value: "16",
+                volume: "16 oz",
+                price_current: 20.00,
+                price_previous: 22.00,
+                onsale: true,
+                default: false
+            }
+        ]
     },
     {
         id: 3,
@@ -43,14 +120,53 @@ var products = [
         image_small: "images/pinapple-salsa-2a.jpg",
         image_large: "images/pinapple-salsa-2a.jpg",
         image_details: ["images/corn-salsa-530x462.jpg", "images/corn-salsa-2-530x462.jpg","images/corn-salsa-5-530x462.jpg"],
-        price_current: 9.00,
-        price_previous:12.00,
-        onSale: true,
-        volume: "8 oz",
         style: ["mild", "sweet"],
         popular: true,
         rating: 4.7,
-        featured: true
+        featured: true,
+        type: 'salsa',
+        sizes: [
+            {
+                id:'3a',
+                title: "Trial Sized",
+                value: "4",
+                volume: "4 oz",
+                price_current: 5.00,
+                price_previous: 5.50,
+                onsale: false,
+                default: false
+            },
+            {
+                id:'3b',
+                title: "Single Sized",
+                value: "8",
+                volume: "8 oz",
+                price_current: 10.00,
+                price_previous: 11.00,
+                onsale: false,
+                default: true
+            },
+            {
+                id:'3c',
+                title: "Family Sized",
+                value: "12",
+                volume: "12 oz",
+                price_current: 15.00,
+                price_previous: 16.50,
+                onsale: false,
+                default: false
+            },
+            {
+                id:'3d',
+                title: "Party Sized",
+                value: "16",
+                volume: "16 oz",
+                price_current: 20.00,
+                price_previous: 22.00,
+                onsale: false,
+                default: false
+            }
+        ]
     },
     {
         id: 4,
@@ -60,14 +176,53 @@ var products = [
         image_small: "images/hot-salsa-verde.jpeg",
         image_large: "images/hot-salsa-verde.jpeg",
         image_details: ["images/corn-salsa-530x462.jpg", "images/corn-salsa-2-530x462.jpg","images/corn-salsa-5-530x462.jpg"],
-        price_current: 10.00,
-        price_previous:10.00,
-        onSale: false,
-        volume: "8 oz",
         style: ["hot", "sweet"],
         popular: false,
         rating: 4.9,
-        featured: false
+        featured: false,
+        type: 'salsa',
+        sizes: [
+            {
+                id:'4a',
+                title: "Trial Sized",
+                value: "4",
+                volume: "4 oz",
+                price_current: 4.00,
+                price_previous: 4.50,
+                onsale: true,
+                default: false
+            },
+            {
+                id:'4b',
+                title: "Single Sized",
+                value: "8",
+                volume: "8 oz",
+                price_current: 8.00,
+                price_previous: 9.00,
+                onsale: true,
+                default: true
+            },
+            {
+                id:'4c',
+                title: "Family Sized",
+                value: "12",
+                volume: "12 oz",
+                price_current: 12.00,
+                price_previous: 13.50,
+                onsale: true,
+                default: false
+            },
+            {
+                id:'4d',
+                title: "Party Sized",
+                value: "16",
+                volume: "16 oz",
+                price_current: 16.00,
+                price_previous: 18.00,
+                onsale: true,
+                default: false
+            }
+        ]
     },
     {
         id: 5,
@@ -77,14 +232,53 @@ var products = [
         image_small: "images/haberno-salsa-verde-2.jpg",
         image_large: "images/haberno-salsa-verde-2.jpg",
         image_details: ["images/corn-salsa-530x462.jpg", "images/corn-salsa-2-530x462.jpg","images/corn-salsa-5-530x462.jpg"],
-        price_current: 10.00,
-        price_previous:10.00,
-        onSale: false,
-        volume: "8 oz",
         style: ["hot"],
         popular: true,
         rating: 4.8,
-        featured: false
+        featured: false,
+        type: 'salsa',
+        sizes: [
+            {
+                id:'5a',
+                title: "Trial Sized",
+                value: "4",
+                volume: "4 oz",
+                price_current: 4.00,
+                price_previous: 4.50,
+                onsale: false,
+                default: false
+            },
+            {
+                id:'5b',
+                title: "Single Sized",
+                value: "8",
+                volume: "8 oz",
+                price_current: 8.00,
+                price_previous: 9.00,
+                onsale: false,
+                default: true
+            },
+            {
+                id:'5c',
+                title: "Family Sized",
+                value: "12",
+                volume: "12 oz",
+                price_current: 12.00,
+                price_previous: 13.50,
+                onsale: false,
+                default: false
+            },
+            {
+                id:'5d',
+                title: "Party Sized",
+                value: "16",
+                volume: "16 oz",
+                price_current: 16.00,
+                price_previous: 18.00,
+                onsale: false,
+                default: false
+            }
+        ]
     },
     {
         id: 6,
@@ -94,14 +288,53 @@ var products = [
         image_small: "images/Pico-de-Gallo.jpg",
         image_large: "images/Pico-de-Gallo.jpg",
         image_details: ["images/corn-salsa-530x462.jpg", "images/corn-salsa-2-530x462.jpg","images/corn-salsa-5-530x462.jpg"],
-        price_current: 10.00,
-        price_previous:10.00,
-        onSale: false,
-        volume: "8 oz",
         style: ["mild"],
         popular: false,
         rating: 4.7,
-        featured: false
+        featured: false,
+        type: 'salsa',
+        sizes: [
+            {
+                id:'6a',
+                title: "Trial Sized",
+                value: "4",
+                volume: "4 oz",
+                price_current: 4.00,
+                price_previous: 4.50,
+                onsale: false,
+                default: false
+            },
+            {
+                id:'6b',
+                title: "Single Sized",
+                value: "8",
+                volume: "8 oz",
+                price_current: 8.00,
+                price_previous: 9.00,
+                onsale: false,
+                default: true
+            },
+            {
+                id:'6c',
+                title: "Family Sized",
+                value: "12",
+                volume: "12 oz",
+                price_current: 12.00,
+                price_previous: 13.50,
+                onsale: false,
+                default: false
+            },
+            {
+                id:'6d',
+                title: "Party Sized",
+                value: "16",
+                volume: "16 oz",
+                price_current: 16.00,
+                price_previous: 18.00,
+                onsale: false,
+                default: false
+            }
+        ]
     },
     {
         id: 7,
@@ -111,13 +344,52 @@ var products = [
         image_small: "images/mango-salsa-7.jpg",
         image_large: "images/mango-salsa-7.jpg",
         image_details: ["images/corn-salsa-530x462.jpg", "images/corn-salsa-2-530x462.jpg","images/corn-salsa-5-530x462.jpg"],
-        price_current: 10.00,
-        price_previous:10.00,
-        onSale: false,
-        volume: "8 oz",
         style: ["mild", "sweet"],
         popular: false,
         rating: 4.9,
-        featured: true
+        featured: true,
+        type: 'salsa',
+        sizes: [
+            {
+                id:'7a',
+                title: "Trial Sized",
+                value: "4",
+                volume: "4 oz",
+                price_current: 4.00,
+                price_previous: 4.50,
+                onsale: false,
+                default: false
+            },
+            {
+                id:'7b',
+                title: "Single Sized",
+                value: "8",
+                volume: "8 oz",
+                price_current: 8.00,
+                price_previous: 9.00,
+                onsale: false,
+                default: true
+            },
+            {
+                id:'7c',
+                title: "Family Sized",
+                value: "12",
+                volume: "12 oz",
+                price_current: 12.00,
+                price_previous: 13.50,
+                onsale: false,
+                default: false
+            },
+            {
+                id:'7d',
+                title: "Party Sized",
+                value: "16",
+                volume: "16 oz",
+                price_current: 16.00,
+                price_previous: 18.00,
+                onsale: false,
+                default: false
+            }
+        ]
     }
 ];
