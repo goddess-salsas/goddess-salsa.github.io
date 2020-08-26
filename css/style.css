@@ -227,6 +227,14 @@ body {
 	-webkit-text-size-adjust: none;
 	-webkit-font-smoothing: subpixel-antialiased;
 }
+.sub-logo {
+	visibility: visible;
+}
+@media (max-width: 590px) {
+	.sub-logo {
+		visibility:hidden;
+	}
+}
 
 @media (min-width: 768px) {
 	body {
