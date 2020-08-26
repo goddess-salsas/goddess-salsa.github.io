@@ -10,10 +10,20 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/cart-localstorage.min.js"></script>
-    <script type="text/javascript" language="javascript" src="js/products.js"></script> 
+    <Script src="js/loader.js"></Script>
+    <!-- <script type="text/javascript" language="javascript" src="js/products.js"></script>  -->
+    <Script>
+      var products = [];
+      // sets the product select list dropdown with all valid products
+      function getProductData() {
+          loadProductsJSON().then((productData) => {
+              products = productData;
+          });
+      }
+      getProductData();
+  </Script>
     <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
     <link rel="stylesheet" href="data:text/css;charset=utf-8;base64,Y2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gewogIGRpc3BsYXk6IGJsb2NrOwogIGJhY2tncm91bmQ6ICM0NTQ4NGQ7CiAgY29sb3I6ICNmZmY7CiAgbGluZS1oZWlnaHQ6IDEuNDU7CiAgcG9zaXRpb246IGZpeGVkOwogIHotaW5kZXg6IDkwMDAwMDAwOwogIHRvcDogMDsKICBsZWZ0OiAwOwogIHJpZ2h0OiAwOwogIHBhZGRpbmc6IC41ZW0gMWVtOwogIHRleHQtYWxpZ246IGNlbnRlcjsKICAtd2Via2l0LXVzZXItc2VsZWN0OiBub25lOwogICAgIC1tb3otdXNlci1zZWxlY3Q6IG5vbmU7CiAgICAgIC1tcy11c2VyLXNlbGVjdDogbm9uZTsKICAgICAgICAgIHVzZXItc2VsZWN0OiBub25lOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXVtkYXRhLXZpc2liaWxpdHk9ImhpZGRlbiJdIHsKICBkaXNwbGF5OiBub25lOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXSBjbG91ZGZsYXJlLWFwcC1tZXNzYWdlIHsKICBkaXNwbGF5OiBibG9jazsKfQoKY2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gYSB7CiAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7CiAgY29sb3I6ICNlYmViZjQ7Cn0KCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGE6aG92ZXIsCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGE6YWN0aXZlIHsKICBjb2xvcjogI2RiZGJlYjsKfQoKY2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gY2xvdWRmbGFyZS1hcHAtY2xvc2UgewogIGRpc3BsYXk6IGJsb2NrOwogIGN1cnNvcjogcG9pbnRlcjsKICBmb250LXNpemU6IDEuNWVtOwogIHBvc2l0aW9uOiBhYnNvbHV0ZTsKICByaWdodDogLjRlbTsKICB0b3A6IC4zNWVtOwogIGhlaWdodDogMWVtOwogIHdpZHRoOiAxZW07CiAgbGluZS1oZWlnaHQ6IDE7Cn0KCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGNsb3VkZmxhcmUtYXBwLWNsb3NlOmFjdGl2ZSB7CiAgLXdlYmtpdC10cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTsKICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgxcHgpOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXSBjbG91ZGZsYXJlLWFwcC1jbG9zZTpob3ZlciB7CiAgb3BhY2l0eTogLjllbTsKICBjb2xvcjogI2ZmZjsKfQo=">
-  
 </head>
   <body class="">
     <!-- Load Facebook SDK for JavaScript -->
@@ -71,6 +81,7 @@
                   <!-- RD Navbar Brand-->
                   <div class="rd-navbar-brand"><a class="brand" href="index.html"><img class="brand-logo-dark" src="images/logo-default-231x49.png" alt="" width="231" height="49" srcset="images/logo-default-231x49.png 2x"><img class="brand-logo-light" src="images/logo-inverse-231x49.png" alt="" width="231" height="49" srcset="images/logo-inverse-231x49.png 2x"></a>
                   </div>
+                  <div><span style="margin-right:20px;font-size: 14px;color:#c14679;">SALSA</span><span style="margin-right:20px;font-size: 14px;color:#c14679;">SAUCES</span><span style="font-size: 14px;color:#c14679;">SPREADS</span></div>
                 </div>
                 <div class="rd-navbar-button"><a class="button button-sm button-icon button-icon-left button-default-outline-3 button-zakaria" href="contact-us.html"><span class="icon mdi mdi-email-outline"></span>Get in touch</a></div>
               </div>
@@ -153,7 +164,8 @@
         <div class="parallax-container" data-parallax-img="images/shop-image-1.png">
           <div class="breadcrumbs-custom-body parallax-content context-dark">
             <div class="container">
-              <h2 class="breadcrumbs-custom-title single-product-title">Sample Product</h2>
+              <h2 class="breadcrumbs-custom-title single-product-title" style="font-size:75px;"></h2>
+              <h4 class="single-product-subtitle" style="margin-top:15px; font-style:italic;"></h4>
             </div>
           </div>
         </div>
@@ -162,7 +174,7 @@
             <ul class="breadcrumbs-custom-path">
               <li><a href="index.html">Home</a></li>
               <li><a href="grid-shop.html">Shop</a></li>
-              <li class="active">Sample Product</li>
+              <li class="active product-active-title"></li>
             </ul>
           </div>
         </div>
@@ -183,6 +195,7 @@
       <div class="col-lg-6">
         <div class="single-product">
           <h3 class="text-transform-none font-weight-medium single-product-name">Product Name</h3>
+          <span style="visibility: hidden;" class="single-product-id"></span>
           <div class="group-md group-middle">
             <div class="product-price product-price-old single-product-oldprice" style="font-size: 22px;"></div>
             <div class="single-product-price"></div>
@@ -192,8 +205,10 @@
           <p class=single-product-desc></p>
           <hr class="hr-gray-100">
           <ul class="list list-description">
+            <li><span>Type:</span><span class="single-product-types">Salsa</span></li>
             <li><span>Categories:</span><span class="single-product-styles">Mild</span></li>
             <li><span>Volume:</span><span class="single-product-volume">8.00 oz</span></li>
+            <li><span class="single-product-sizes awsselect" style="width:100%;"></span></li>
           </ul>
           <div class="group-xs group-middle">
             <div class="product-stepper">
@@ -262,7 +277,7 @@
       <!-- Related Products-->
       <section class="section section-sm section-last bg-default">
         <div class="container">
-          <h4 class="font-weight-sbold">Featured Salsas</h4>
+          <h4 class="font-weight-sbold">Featured Products</h4>
           <div class="row row-lg row-30 row-lg-50 justify-content-center featured"></div>
         </div>
       </section>
@@ -323,13 +338,13 @@
                   <li>
                     <div class="unit unit-spacing-sm flex-column flex-md-row">
                       <div class="unit-left"><span class="icon mdi mdi-phone"></span></div>
-                      <div class="unit-body"><a href="tel:#">+1 (773) 366 4220</a></div>
+                      <div class="unit-body"><a href="tel:1-773-366 4220">+1 (773) 366 4220</a></div>
                     </div>
                   </li>
                   <li>
                     <div class="unit unit-spacing-sm flex-column flex-md-row">
                       <div class="unit-left"><span class="icon mdi mdi-email-outline"></span></div>
-                      <div class="unit-body"><a href="mailto:#">smggraf91@yahoo.com</a></div>
+                      <div class="unit-body"><a href="mailto:smggraf91@yahoo.com">smggraf91@yahoo.com</a></div>
                     </div>
                   </li>
                 </ul>
@@ -361,6 +376,33 @@
         function cartAdd(item) {
           var amount = document.getElementById("quantity").value;
           var quantity = (typeof amount == 'number') ? amount : parseInt(amount);
+          item.size = document.getElementById("size_sel").value;
+          var p = products.find((e) => e.id === item.productId);
+          if(p && p.sizes && p.sizes.length > 0) {
+            var s = p.sizes.find((i) => i.value.toString() === item.size);
+            if (s) {
+              item.price = s.price_current;
+              item.id = s.id;
+            }
+          }
+          cartLS.add(item, quantity);
+        }
+        function dynamicCartAdd() {
+          var item = {};
+          var amount = document.getElementById("quantity").value;
+          var quantity = (typeof amount == 'number') ? amount : parseInt(amount);
+          item.size = document.getElementById("size_sel").value;
+          var p = products.find((e) => e.id === Number.parseInt(productId));
+          item.name = p.name;
+          item.image = p.image_large;
+          if(p && p.sizes && p.sizes.length > 0) {
+            var s = p.sizes.find((i) => i.value.toString() === item.size);
+            if (s) {
+              item.price = s.price_current;
+              item.id = s.id;
+              item.productId = item.id;
+            }
+          }
           cartLS.add(item, quantity);
         }
         function addMetadata(id) {
@@ -393,15 +435,38 @@
           ogimage.content = `https://goddess-salsas.github.io/${pageProduct.image_large}`;
           document.getElementsByTagName('head')[0].appendChild(ogimage);
         }
-
+        function size_changed(value){
+          const $productVolume = document.querySelector(".single-product-volume");
+          const $productPrice = document.querySelector(".single-product-price");
+          const $productOnSale = document.querySelector(".single-product-onsale");
+          const $productOldPrice = document.querySelector(".single-product-oldprice");
+            
+          $productVolume.innerHTML = value + ' oz';
+            
+            var p = products.find((e) => e.id.toString() === productId);
+            if (p && p.sizes && p.sizes.length > 0) {
+              // now select the current size chosen
+              var s = p.sizes.find((i) => i.value === value);
+              if(s) {
+                $productPrice.innerHTML = '$' + s.price_current.toFixed(2);
+                if(s.onsale) {
+                  $productOnSale.style.visibility = "visible";
+                  $productOldPrice.innerHTML = '$' + s.price_previous.toFixed(2);
+                }           
+              }
+            }
+        }
     </script>
     <script>
+      function loadDetails() {
+          addMetadata(productId);
+          renderProduct(productId);
+          renderFeaturedItems()
+          renderMiniCart(cartLS.list());
+          cartLS.onChange(renderMiniCart);
+      }
       var productId = getParameterByName('id');
-      addMetadata(productId);
-      renderProduct(productId);
-      renderFeaturedItems()
-      renderMiniCart(cartLS.list());
-      cartLS.onChange(renderMiniCart);
+      loadDetails();
     </script>
   
 <a href="#" id="ui-to-top" class="ui-to-top mdi mdi-arrow-up"></a></body></html>
