@@ -517,5 +517,50 @@ var products = [
                 'default': false
             }
         ]
+    },
+    {
+        id: 9,
+        name: 'Blackberry Jam',
+        type: [
+            'spread'
+        ],
+        desc_long: '<p>Goddess Blackberry Jams are made with only the plumpest blackberries and has an amazing deep fruit flavor - the perfect combination of sweetness along with a little tartness.</p><p>Our Blackberry Jam has a great dark flavor that really reminds us of a freshly baked blackberry bramble. It is great with cream cheese for your morning toast or bagels or just heat it up and pour it over raspberry frozen yogurt for a quick low-fat dessert.</p>',
+        desc_short: 'Goddess Blackberry Jams are made with only the plumpest blackberries and has an amazing deep fruit flavor - the perfect combination of sweetness along with a little tartness.',
+        popular: true,
+        featured: false,
+        rating: 5,
+        style: [
+            'sweet',
+            'tart'
+        ],
+        image_large: 'images/Blackberry-Jam-1.jpg',
+        image_small: 'images/Blackberry-Jam-1.jpg',
+        image_details: [
+            'images/blackberry-jam-3.jpg',
+            'images/blackberry-jam-2.jpg',
+            'images/blackberry-jam-4.jpg'
+        ],
+        sizes: [
+            {
+                id: '9A',
+                title: 'sample',
+                value: '2',
+                volume: '2 oz',
+                onsale: false,
+                'default': false,
+                price_current: 6,
+                price_previous: 6
+            },
+            {
+                id: '9B',
+                title: 'single',
+                value: '6',
+                volume: '6 oz',
+                onsale: false,
+                'default': true,
+                price_current: 14,
+                price_previous: 14
+            }
+        ]
     }
 ]
