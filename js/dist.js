@@ -266,11 +266,11 @@ document.querySelector('#save_json').addEventListener('click', function (event) 
     event.preventDefault();
     var productsJSON = JSON.stringify(products);
     uploadProducts(productsJSON);
-    var pages = buildSitePages();
-    var sitePagesJSON = JSON.stringify(pages);
-    uploadJSFile(sitePagesJSON, 'site', 'site-pages.js', 'js', 'updated via Admin Console');
-    var indexJSON = buildSearchIndexJSON(pages);
-    uploadJSONFile(indexJSON, 'searchIDX', 'search-index.js', 'js', 'updated via Admin Console');
+   //  var pages = buildSitePages();
+   //  var sitePagesJSON = JSON.stringify(pages);
+   //  uploadJSFile(sitePagesJSON, 'site', 'site-pages.js', 'js', 'updated via Admin Console');
+   //  var indexJSON = buildSearchIndexJSON(pages);
+   //  uploadJSONFile(indexJSON, 'searchIDX', 'search-index.js', 'js', 'updated via Admin Console');
  });
 
 document.addEventListener('change',function(event){
