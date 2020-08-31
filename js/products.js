@@ -2,23 +2,23 @@ var products = [
     {
         id: 1,
         name: 'Isis',
+        type: [
+            'salsa'
+        ],
+        desc_long: '<p>Isis is the Egyptian Goddess of marriage, fertility, motherhood, magic, medicine, and harvest. She taught human women how to grind and store corn, spin flax, and weave cloth. Like it\'s namesake, our corn salsa is packed full of flavorful surprise, bringing you back for more, like magic.</p><p>Perfect with your favorite tortilla chips, this delicious Corn Salsa is amazing! Loaded with fresh, delicious veggies, this salsa is just as flavorful as it is pretty.</p> ',
         desc_short: 'Perfect with your favorite tortilla chips, this delicious Corn Salsa is amazing! Loaded with fresh, delicious veggies, this salsa is just as flavorful as it is pretty.',
-        desc_long: '<p>Isis is the Egyptian Goddess of marriage, fertility, motherhood, magic, medicine, and harvest. She taught human woman how to grind and store corn, spin flax, and weave cloth. Our corn salsa is packed full of flavor bringing you back for more, like magic.</p><p>Perfect with your favorite tortilla chips, this delicious Corn Salsa is amazing! Loaded with fresh, delicious veggies, this salsa is just as flavorful as it is pretty.</p> ',
-        image_small: 'images/corn-salsa.jpeg',
+        popular: true,
+        featured: true,
+        rating: 4,
+        style: [
+            'mild'
+        ],
         image_large: 'images/corn-salsa.jpeg',
+        image_small: 'images/corn-salsa.jpeg',
         image_details: [
             'images/corn-salsa-530x462.jpg',
             'images/corn-salsa-2-530x462.jpg',
             'images/corn-salsa-5-530x462.jpg'
-        ],
-        style: [
-            'mild'
-        ],
-        popular: true,
-        rating: 4.9,
-        featured: true,
-        type: [
-            'salsa'
         ],
         sizes: [
             {
@@ -26,40 +26,40 @@ var products = [
                 title: 'Trial Sized',
                 value: '4',
                 volume: '4 oz',
-                price_current: 4,
-                price_previous: 4.5,
                 onsale: true,
-                'default': false
+                'default': false,
+                price_current: 4,
+                price_previous: 4.5
             },
             {
                 id: '1b',
                 title: 'Single Sized',
                 value: '8',
                 volume: '8 oz',
-                price_current: 8,
-                price_previous: 9,
                 onsale: true,
-                'default': true
+                'default': true,
+                price_current: 8,
+                price_previous: 9
             },
             {
                 id: '1c',
                 title: 'Family Sized',
                 value: '12',
                 volume: '12 oz',
-                price_current: 12,
-                price_previous: 13.5,
                 onsale: true,
-                'default': false
+                'default': false,
+                price_current: 12,
+                price_previous: 13.5
             },
             {
                 id: '1d',
                 title: 'Party Sized',
                 value: '16',
                 volume: '16 oz',
-                price_current: 16,
-                price_previous: 18,
                 onsale: true,
-                'default': false
+                'default': false,
+                price_current: 16,
+                price_previous: 18
             }
         ]
     },
