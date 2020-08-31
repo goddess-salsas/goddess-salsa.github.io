@@ -66,24 +66,24 @@ var products = [
     {
         id: 2,
         name: 'Aphrodite',
-        desc_short: 'Our Mango Salsa is a delicious combination of sweet juicy mangoes, tart lime juice and peppers for the perfect combination of sweet and heat.',
-        desc_long: '<p>The Greek Goddess of love, beauty, pleasure, and passion. With our mango salsa you will find yourself falling in love with each bite, sparking simply passions of pleasure.</p><p>Our Mango Salsa is a delicious combination of sweet juicy mangoes, tart lime juice and peppers for the perfect combination of sweet and heat.</p>',
-        image_small: 'images/mango-salsa-6.jpeg',
-        image_large: 'images/mango-salsa-6.jpeg',
-        image_details: [
-            'images/corn-salsa-530x462.jpg',
-            'images/corn-salsa-2-530x462.jpg',
-            'images/corn-salsa-5-530x462.jpg'
+        type: [
+            'salsa'
         ],
+        desc_long: '<p>The Greek Goddess of love, beauty, pleasure, and passion. With our mango salsa you will find yourself falling in love with each bite, sparking the simple passions of pleasure.</p><p>Our Mango Salsa is a delicious combination of sweet juicy mangoes, tart lime juice and peppers for the perfect combination of sweet and heat.</p>',
+        desc_short: 'Our Mango Salsa is a delicious combination of sweet juicy mangoes, tart lime juice and peppers for the perfect combination of sweet and heat.',
+        popular: false,
+        featured: true,
+        rating: 4,
         style: [
             'mild',
             'sweet'
         ],
-        popular: false,
-        rating: 4.9,
-        featured: true,
-        type: [
-            'salsa'
+        image_large: null,
+        image_small: null,
+        image_details: [
+            null,
+            null,
+            null
         ],
         sizes: [
             {
@@ -91,40 +91,40 @@ var products = [
                 title: 'Trial Sized',
                 value: '4',
                 volume: '4 oz',
-                price_current: 5,
-                price_previous: 5.5,
                 onsale: true,
-                'default': false
+                'default': false,
+                price_current: 5,
+                price_previous: 5.5
             },
             {
                 id: '2b',
                 title: 'Single Sized',
                 value: '8',
                 volume: '8 oz',
-                price_current: 10,
-                price_previous: 11,
                 onsale: true,
-                'default': true
+                'default': true,
+                price_current: 10,
+                price_previous: 11
             },
             {
                 id: '2c',
                 title: 'Family Sized',
                 value: '12',
                 volume: '12 oz',
-                price_current: 15,
-                price_previous: 16.5,
                 onsale: true,
-                'default': false
+                'default': false,
+                price_current: 15,
+                price_previous: 16.5
             },
             {
                 id: '2d',
                 title: 'Party Sized',
                 value: '16',
                 volume: '16 oz',
-                price_current: 20,
-                price_previous: 22,
                 onsale: true,
-                'default': false
+                'default': false,
+                price_current: 20,
+                price_previous: 22
             }
         ]
     },
