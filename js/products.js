@@ -69,8 +69,8 @@ var products = [
         type: [
             'salsa'
         ],
-        desc_long: '<p>The Greek Goddess of love, beauty, pleasure, and passion. With our mango salsa you will find yourself falling in love with each bite, sparking the simple passions of pleasure.</p><p>Our Mango Salsa is a delicious combination of sweet juicy mangoes, tart lime juice, and peppers for the perfect combination of sweet and heat.  Try it now!</p>',
-        desc_short: 'Our Mango Salsa is a delicious combination of sweet juicy mangoes, tart lime juice and peppers for the perfect combination of sweet and heat.',
+        desc_long: '<p>The Greek Goddess of love, beauty, pleasure, and passion. With our mango salsa you will find yourself falling in love with each bite, sparking the simple passions of pleasure.</p><p>Our Mango Salsa is a delicious combination of sweet juicy mangoes, tart lime juice, and peppers for the perfect combination of sweet and heat.  Try it now and fall in love!</p>',
+        desc_short: 'Our Mango Salsa is a delicious combination of sweet juicy mangoes, tart lime juice, and peppers for the perfect combination of sweet and heat.',
         popular: false,
         featured: true,
         rating: 4,
@@ -78,12 +78,12 @@ var products = [
             'mild',
             'sweet'
         ],
-        image_small: 'images/mango-salsa-6.jpeg',
         image_large: 'images/mango-salsa-6.jpeg',
+        image_small: 'images/mango-salsa-6.jpeg',
         image_details: [
-          'images/corn-salsa-530x462.jpg',
-          'images/corn-salsa-2-530x462.jpg',
-          'images/corn-salsa-5-530x462.jpg'
+            'images/corn-salsa-530x462.jpg',
+            'images/corn-salsa-2-530x462.jpg',
+            'images/corn-salsa-5-530x462.jpg'
         ],
         sizes: [
             {
