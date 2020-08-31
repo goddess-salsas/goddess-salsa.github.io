@@ -212,16 +212,16 @@ function buildSitePages() {
    var newPages = site.filter((p) => p.id < 10);
    products.forEach((p) => {
        var newSitePage = {};
-       newSite.id = nextProductId;
-       newSite.name = p.name;
-       newSite.page = 'single-product.html?id=' + p.id;
-       newSite.text = p.name + ' ' + p.desc_short + ' ' + p.desc_long;
+       newSitePage.id = nextProductId;
+       newSitePage.name = p.name;
+       newSitePage.page = 'single-product.html?id=' + p.id;
+       newSitePage.text = p.name + ' ' + p.desc_short + ' ' + p.desc_long;
        newPages.push(newSitePage);
        nextProductId++;
    });
    blogs.forEach((b) => {
        var newSitePage = {};
-       newSitePageid = nextProductId;
+       newSitePage.id = nextProductId;
        newSitePage.name = b.title; 
        newSitePage.page = 'blog-post.html?id=' + b.id;
        newSitePage.text = b.title + ' ' + b.description + ' ' + b.content;
