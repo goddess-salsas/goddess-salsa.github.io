@@ -6,7 +6,7 @@ var products = [
             'salsa'
         ],
         desc_long: '<p>Isis is the Egyptian Goddess of marriage, fertility, motherhood, magic, medicine, and harvest. She taught human women how to grind and store corn, spin flax, and weave cloth. Like it\'s namesake, our corn salsa is packed full of flavorful surprise, bringing you back for more, like magic.</p><p>Perfect with your favorite tortilla chips, this delicious Corn Salsa is amazing! Loaded with fresh, delicious veggies, this salsa is just as flavorful as it is pretty.</p> ',
-        desc_short: 'Perfect with your favorite tortilla chips, this delicious Corn Salsa is amazing! Loaded with fresh, delicious veggies, this salsa is just as flavorful as it is pretty.  Try it today and discover your magic!',
+        desc_short: 'Perfect with your favorite tortilla chips, this delicious Corn Salsa is amazing! Loaded with fresh, delicious veggies, this salsa is just as flavorful as it is pretty.  Try it today and discover it\'s magic!',
         popular: true,
         featured: true,
         rating: 4.9,
