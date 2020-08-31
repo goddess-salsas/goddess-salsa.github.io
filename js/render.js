@@ -59,7 +59,7 @@ function setTypesFilter(loadedProducts, page) {
 }
 function setTypes(loadedProducts) {
     var uniqueTypes = getUniqueTypes(loadedProducts).map((p) => `
-        <option value="${p}">${p}</option>
+        <option value="${p.type}">${p.type}</option>
     `
     ).join("");
     document.getElementById("product_types").innerHTML = uniqueTypes;
@@ -524,23 +524,292 @@ function renderFeaturedItems() {
   });
   $featured.innerHTML = featuredItems;
 }
-function renderSocialLinks(id) {
+function renderSocialLinks(id, ) {
   const $socialLinks = document.querySelector(".social-links");
   var links = `
-                <li><a class="icon mdi mdi-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://goddess-salsas.github.io/index.html" target="_blank"></a></li>
-                <li><a class="icon mdi mdi-twitter" href="https://twitter.com/home?status=https://goddess-salsas.github.io//index.html"></a></li>
-                <li><a class="icon mdi mdi-email" href="mailto:smggraf91@yahoo.com?&subject=&body=https://goddess-salsas.github.io/index.html"></a></li>
-                <li><a class="icon mdi mdi-pinterest" href="https://pinterest.com/pin/create/button/?url=https://goddess-salsas.github.io/index.html&media=&description="></a></li>
+      <li><a class="icon mdi mdi-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://goddess-salsas.github.io/index.html" target="_blank"></a></li>
+      <li><a class="icon mdi mdi-twitter" href="https://twitter.com/home?status=https://goddess-salsas.github.io//index.html"></a></li>
+      <li><a class="icon mdi mdi-email" href="mailto:smggraf91@yahoo.com?&subject=&body=https://goddess-salsas.github.io/index.html"></a></li>
+      <li><a class="icon mdi mdi-pinterest" href="https://pinterest.com/pin/create/button/?url=https://goddess-salsas.github.io/index.html&media=&description="></a></li>
   `;
   if(id) {
-    links = `<li><a class="icon mdi mdi-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://goddess-salsas.github.io/single-product-${id}.html" target="_blank"></a></li>`;
-    links += `<li><a class="icon mdi mdi-twitter" href="https://twitter.com/home?status=https://goddess-salsas.github.io//single-product.html?id=${id}" ></a></li>`;
-    links += `<li><a class="icon mdi mdi-email" href="mailto:smggraf91@yahoo.com?&subject=&body=https://goddess-salsas.github.io/single-product.html?id=${id}"></a></li>`;
-    links += `<li><a class="icon mdi mdi-pinterest" href="https://pinterest.com/pin/create/button/?url=https://goddess-salsas.github.io/single-product.html?id=${id}&media=&description="></a></li>`;
+      links = `<li><a class="icon mdi mdi-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://goddess-salsas.github.io/single-product-${id}.html" target="_blank"></a></li>`;
+      links += `<li><a class="icon mdi mdi-twitter" href="https://twitter.com/home?status=https://goddess-salsas.github.io//single-product.html?id=${id}" ></a></li>`;
+      links += `<li><a class="icon mdi mdi-email" href="mailto:smggraf91@yahoo.com?&subject=&body=https://goddess-salsas.github.io/single-product.html?id=${id}"></a></li>`;
+      links += `<li><a class="icon mdi mdi-pinterest" href="https://pinterest.com/pin/create/button/?url=https://goddess-salsas.github.io/single-product.html?id=${id}&media=&description="></a></li>`;
+      $socialLinks.innerHTML = links;
   }
-  $socialLinks.innerHTML = links;
 }
 
+// BLOG RENDERING
+function splitBlogParagraphs(text) {
+  if(text.includes('<p')) { return text; }
+  var sentences = text.split(/\r\n|\r|\n/gi);
+  var htmlText = sentences.map((s) => `
+      <p class="post-modern-text">${s}</p>
+  `).join("");
+  return htmlText;
+}
+function getUniqueBlogTypes() {
+  var blogTypeCounts = [];
+    blogs.forEach((item) => {
+        if (item.type && item.type.length > 0) {
+            item.type.forEach((t) => {
+                var data = blogTypeCounts.find((e) => e.type === t);
+                if (!data) {
+                    var emptyStyle = { type: t, count: 1 };
+                    blogTypeCounts.push(emptyStyle);
+                } else {
+                  data.count++;
+                }
+            });
+        }
+    });
+    return blogTypeCounts;
+}
+function getUniqueBlogTags() {
+  var blogTagCounts = [];
+    blogs.forEach((item) => {
+        if (item.tags && item.tags.length > 0) {
+            item.tags.forEach((t) => {
+                var data = blogTagCounts.find((e) => e.tag === t);
+                if (!data) {
+                    var emptyTag = { tag: t, count: 1 };
+                    blogTagCounts.push(emptyTag);
+                } else {
+                  data.count++;
+                }
+            });
+        }
+    });
+    return blogTagCounts;
+}
+function renderBlogFilterLinks() {
+  var $filterLinks = document.getElementById("blog-filter-links");
+  var uniqueBlogTypes = getUniqueBlogTypes();
+  var allFilter = `<li><a href="blog-list.html">All</a><span class="list-categories-number">(${blogs.length})</span></li>`;
+  var filters = uniqueBlogTypes.map((item) => `
+      <li><a href="blog-list.html?f=${item.type}">${item.type}</a><span class="list-categories-number">(${item.count})</span></li>
+  `).join("");
+  $filterLinks.innerHTML = allFilter + filters;
+}
+function renderBlogTypeFilters(elem) {
+  var filters = '';
+  var uniqueBlogTypes = getUniqueBlogTypes();
+  uniqueBlogTypes.forEach(item => {
+      addBlogFilter(item.type);
+  });
+  var allFilter = `
+        <li>
+          <label class="checkbox-inline">
+            <span class="checkbox-custom-dummy" style="visibility: hidden;"></span>all
+          </label>
+          <span class="list-blog-filter-number">(${blogs.length})</span>
+        </li>
+        `;
+  filters = uniqueBlogTypes.map((item) => `
+        <li>
+          <label class="checkbox-inline">
+            <input name="input-group-radio" value="${item.type}" type="checkbox" class="checkbox-custom" onclick="handleBlogFiltersChanged(event)" checked><span class="checkbox-custom-dummy"></span>${item.type}
+          </label><span class="list-blog-filter-number">(${item.count})</span>
+        </li>
+  `).join("");
+  elem.innerHTML = allFilter + filters;
+}
+function loadBlogPost(id) {
+  var post = blogs.find((p) => p.id.toString()===id);
+  var $content = document.getElementById("content");
+  $content.innerHTML = renderBlogPost(post);
+  renderLatestBlogPosts();
+  renderBlogUniqueMonths('m');
+}
+function renderBlogPost(post) {
+  var types = "";
+  post.type.forEach((t) => {
+    types += `<span class="post-modern-tag" style="margin-right: 4px;">${t.toUpperCase()}</span>`;
+  });
+  var $content = document.getElementById("content");
+  var item = `
+  <article class="post post-modern box-xxl">
+    <div class="post-modern-panel">
+      <div>${types}</div>
+      <div>
+        <time class="post-modern-time" datetime="${post.timestamp}">${new Date(post.timestamp).toDateString()}</time>
+      </div>
+    </div>
+    <h3 class="post-modern-title">${post.title}</h3>
+    <div class="post-modern-figure"><img src="${post.image_main}" alt="" width="800" height="394"/>
+    </div>
+    ${splitBlogParagraphs(post.content)}
+  <div class="single-post-bottom-panel">
+    <div class="group-sm group-justify">
+      <div>
+        <div class="group-sm group-tags"><a class="link-tag" href="#">News</a><a class="link-tag" href="#">Tips</a><a class="link-tag" href="#">Blog</a></div>
+      </div>
+      <div>
+        <div class="group-xs group-middle"><span class="list-social-title">Share</span>
+          <div>
+            <ul class="list-inline list-social list-inline-sm">
+            <li><a class="icon mdi mdi-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://goddess-salsas.github.io/blog-post-${post.id}.html" target="_blank"></a></li>
+            <li><a class="icon mdi mdi-twitter" href="https://twitter.com/home?status=https://goddess-salsas.github.io//blog-post.html?id=${post.id}" ></a></li>
+            <li><a class="icon mdi mdi-email" href="mailto:smggraf91@yahoo.com?&subject=&body=https://goddess-salsas.github.io/blog-post.html?id=${post.id}"></a></li>
+            <li><a class="icon mdi mdi-pinterest" href="https://pinterest.com/pin/create/button/?url=https://goddess-salsas.github.io/blog-post.html?id=${post.id}&media=&description="></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+`;
+return item;
+}
+function loadBlogList(page) {
+  var $blogList = document.getElementById("blog-list");
+  var $blogFilters = document.getElementById("blog-filters");
+  const $paging = document.querySelector(".pagination");
+  renderBlogList(page);
+  renderBlogTypeFilters($blogFilters);
+  renderBlogListPaginator(page, $paging);
+  renderLatestBlogPosts();
+  renderBlogPopularTags();
+  renderBlogUniqueMonths();
+}
+function renderBlogListPaginator(activePage, elem) {
+  var orderedPosts = blogs.sort(function(a,b){
+    return new Date(b.timestamp) - new Date(a.timestamp);
+  });
+  const filteredBlogsByType = (filterBlogSet && filterBlogSet.size > 0) ? orderedPosts.filter(p => p.type.some(r => filterBlogSet.has(r))) : orderedPosts;
+  const pageCount = Math.ceil(filteredBlogsByType.length / 3);
+    var pager = (activePage <= 1) ? `<li class="page-item page-item-control disabled"><span class="icon page-link" aria-hidden="true" onclick="renderBlogList(${activePage - 1})"></span></li>` : `<li class="page-item page-item-control"><span class="icon page-link" aria-hidden="true" onclick="renderBlogList(${activePage - 1})"></span></li>`;
+    for(var i = 0; i < pageCount; i++) {
+        pager += ((activePage == i+1) ? `<li class="page-item active"><span class="page-link">${activePage}</span></li>}` : `<li class="page-item"><span class="page-link" onclick="renderBlogList(${i+1})">${i+1}</span></li>`);
+    }
+    pager += (activePage < pageCount) ? `<li class="page-item page-item-control"><span class="icon page-link" aria-hidden="true" onclick="renderBlogList(${activePage + 1})"></span></li>` : `<li class="page-item page-item-control disabled"><span class="icon page-link" aria-hidden="true" onclick="renderBlogList(${activePage + 1})"></span></li>`;
+    elem.innerHTML = pager;
+}
+function renderBlogListItem(post) {
+  var types = "";
+  post.type.forEach((t) => {
+    types += `<span class="post-modern-tag" style="margin-right: 4px;">${t.toUpperCase()}</span>`;
+  });
+  var item = `
+    <div class="col-12">
+        <!-- Post Modern-->
+        <article class="post post-modern box-xxl">
+            <div class="post-modern-panel">
+                <div>${types}</div>
+                <div>
+                    <time class="post-modern-time" datetime="${post.timestamp}">${new Date(post.timestamp).toDateString()}</time>
+                </div>
+            </div>
+            <h3 class="post-modern-title"><a href="blog-post.html?id=${post.id}">${post.title}</a></h3>
+            <a class="post-modern-figure" href="blog-post.html?id=${post.id}"><img src="${post.image_main}" alt="" width="800" height="394"></a>
+            <p class="post-modern-text">${post.description}</p>
+            <a class="post-modern-link" href="blog-post.html?id=${post.id}">Read more</a>
+        </article>
+    </div>
+  `;
+  return item;
+}
+function renderLatestBlogPosts() {
+  var $latestPosts = document.getElementById("latest-posts");
+  var orderedPosts = blogs.sort(function(a,b){
+    return new Date(b.timestamp) - new Date(a.timestamp);
+  });
+  var lastTwoPosts = orderedPosts.slice(0, 2);
+  $latestPosts.innerHTML = lastTwoPosts.map((item) => `
+      <div class="col-6 col-lg-12">
+          <!-- Post Minimal-->
+          <article class="post post-minimal">
+              <div class="unit unit-spacing-sm flex-column flex-lg-row align-items-lg-center">
+                  <div class="unit-left">
+                      <a class="post-minimal-figure" href="blog-post.html?id=${item.id}"><img src="${item.image_main}" alt="" width="106" height="104" /></a>
+                  </div>
+                  <div class="unit-body">
+                      <p class="post-minimal-title"><a href="blog-post.html?id=${item.id}">${item.title}</a></p>
+                      <div class="post-minimal-time">
+                          <time datetime="${item.timestamp}">${new Date(item.timestamp).toDateString()}</time>
+                      </div>
+                  </div>
+              </div>
+          </article>
+      </div>
+  `).join("");
+}
+function renderBlogList(page) {
+  var $blogList = document.getElementById("blog-list");
+  const $paging = document.querySelector(".pagination");
+  var orderedPosts = blogs.sort(function(a,b){
+    return new Date(b.timestamp) - new Date(a.timestamp);
+  });
+  const filteredBlogsByType = (filterBlogSet && filterBlogSet.size > 0) ? orderedPosts.filter(p => p.type.some(r => filterBlogSet.has(r))) : orderedPosts;
+  const pageBlogs = filteredBlogsByType.slice((page*3)-3, page*3);
+  var listedBlogs = '';
+  pageBlogs.forEach((item) => {
+    listedBlogs +=renderBlogListItem(item);
+  });
+  $blogList.innerHTML = listedBlogs;
+  renderBlogListPaginator(page, $paging);
+}
+function renderBlogUniqueMonths(m) {
+  var $archives = document.querySelector(".list-archives");
+  // get unique month-year
+  var uniqueMonthYear = new Set();
+  var orderedPosts = blogs.sort(function(a,b){
+    return new Date(b.timestamp) - new Date(a.timestamp);
+  });
+  orderedPosts.forEach((p) => {
+    var targetDate = new Date(p.timestamp);
+    var y = targetDate.getFullYear(), m = targetDate.getMonth();
+    var firstDayOfMonth = new Date(y, m, 1);
+    uniqueMonthYear.add(firstDayOfMonth.toLocaleDateString('en-US'));
+  });
+  var months = '';
+  uniqueMonthYear.forEach((s) => {
+    var d = new Date(s);
+    if(m && m === 'm') {
+      months += `<li><a date="${s}" class="month-link" href="blog-list.html?m='${d.toLocaleDateString()}'">${d.toLocaleString('default', { month: 'long' }) + ' ' + d.getFullYear()}</a></li>`;
+    } else {
+      months += `<li><span date="${s}" class="month-link" onclick="renderBlogListByMonth('${s}')">${d.toLocaleString('default', { month: 'long' }) + ' ' + d.getFullYear()}</span></li>`;
+    }
+  });
+  if(!m) {
+    months = `<li><a class="month-link" href="blog-list.html">All</a></li>` + months;
+  }
+  $archives.innerHTML = months;
+}
+function renderBlogListByMonth(targetDate) {
+  var $blogList = document.getElementById("blog-list");
+  const $paging = document.querySelector(".pagination");
+  var orderedPosts = blogs.sort(function(a,b){
+    return new Date(b.timestamp) - new Date(a.timestamp);
+  });
+  var tDate = new Date(targetDate);
+  var y = tDate.getFullYear(), m = tDate.getMonth();
+  var firstDay = new Date(y, m, 1);
+  var lastDay = new Date(y, m + 1, 0);
+
+  var resultBlogData = orderedPosts.filter(function (a) {
+      var ts = new Date(a.timestamp);
+      return ts >= firstDay && ts <= lastDay;
+  });
+
+  var listedBlogs = '';
+  resultBlogData.forEach((item) => {
+    listedBlogs +=renderBlogListItem(item);
+  });
+  $blogList.innerHTML = listedBlogs;
+  $paging.innerHTML = '';
+}
+function renderBlogPopularTags() {
+  var uniqueTags = getUniqueBlogTags();
+  var $groupTags = document.querySelector(".group-tags");
+  var taglist = uniqueTags.map((t) => `
+      <span class="link-tag"">${t.tag}</span>
+  `).join(""); 
+  $groupTags.innerHTML = taglist;
+
+}
 // STYLE FILTERS
 /**
  * adds a style filter to the product collection page
@@ -644,6 +913,46 @@ function handleTypeFiltersChangedGrid(e) {
       removeTypeFilter(e.target.value, "grid");
   }
 }
+// BLOG FILTERS
+/**
+ * adds a blog filter to the blog collection page
+ *
+ * @param {*} f - style
+ */
+function addBlogFilter(f) {
+  filterBlogSet.add(f);
+  renderBlogList(1);
+}
+/**
+* removes all blog filters on blog collection pages
+*
+*/
+function clearBlogFilter() {
+  filterBlogSet.clear();
+  renderBlogList(1);
+}
+/**
+* removes a single blog filter on a blog collection page
+*
+* @param {*} f - filter style to remove
+*/
+function removeBlogFilter(f) {
+  filterBlogSet.delete(f);
+  renderBlogList(1);
+}
+/**
+* handles filter changing events from the list product html
+*
+* @param {*} e
+*/
+function handleBlogFiltersChanged(e) {
+  if(e.target.checked) {
+      addBlogFilter(e.target.value);
+  } else {
+      removeBlogFilter(e.target.value);
+  }
+}
 
 var filterStyleSet = new Set();
 var filterTypeSet = new Set();
+var filterBlogSet = new Set();
