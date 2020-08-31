@@ -69,7 +69,7 @@ var products = [
         type: [
             'salsa'
         ],
-        desc_long: '<p>The Greek Goddess of love, beauty, pleasure, and passion. With our mango salsa you will find yourself falling in love with each bite, sparking the simple passions of pleasure.</p><p>Our Mango Salsa is a delicious combination of sweet juicy mangoes, tart lime juice and peppers for the perfect combination of sweet and heat.</p>',
+        desc_long: '<p>The Greek Goddess of love, beauty, pleasure, and passion. With our mango salsa you will find yourself falling in love with each bite, sparking the simple passions of pleasure.</p><p>Our Mango Salsa is a delicious combination of sweet juicy mangoes, tart lime juice, and peppers for the perfect combination of sweet and heat.  Try it now!</p>',
         desc_short: 'Our Mango Salsa is a delicious combination of sweet juicy mangoes, tart lime juice and peppers for the perfect combination of sweet and heat.',
         popular: false,
         featured: true,
