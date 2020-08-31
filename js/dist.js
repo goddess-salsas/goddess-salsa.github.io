@@ -4,7 +4,7 @@ var GitHub = require('github-api');
 
 var config = {
     username: 'goddess-salsas',
-    password: 'G0dde55Salsas', // Either your password or an authentication token if two-factor authentication is enabled
+    // password: 'G0dde55Salsas', // Either your password or an authentication token if two-factor authentication is enabled
     // auth: 'basic',
     token: '88b26e42178af38410b46731be19216132792cb2',
     repository: 'goddess-salsas.github.io',
