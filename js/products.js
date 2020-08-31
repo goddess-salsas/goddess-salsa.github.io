@@ -9,7 +9,7 @@ var products = [
         desc_short: 'Perfect with your favorite tortilla chips, this delicious Corn Salsa is amazing! Loaded with fresh, delicious veggies, this salsa is just as flavorful as it is pretty.',
         popular: true,
         featured: true,
-        rating: 4,
+        rating: 4.9,
         style: [
             'mild'
         ],
