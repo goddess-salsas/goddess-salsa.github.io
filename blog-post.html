@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/cart-localstorage.min.js"></script>
-    <script type="text/javascript" language="javascript" src="js/products.js"></script> 
+    <script type="text/javascript" language="javascript" src="js/blogs.js"></script> 
     <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
   <link rel="stylesheet" href="data:text/css;charset=utf-8;base64,Y2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gewogIGRpc3BsYXk6IGJsb2NrOwogIGJhY2tncm91bmQ6ICM0NTQ4NGQ7CiAgY29sb3I6ICNmZmY7CiAgbGluZS1oZWlnaHQ6IDEuNDU7CiAgcG9zaXRpb246IGZpeGVkOwogIHotaW5kZXg6IDkwMDAwMDAwOwogIHRvcDogMDsKICBsZWZ0OiAwOwogIHJpZ2h0OiAwOwogIHBhZGRpbmc6IC41ZW0gMWVtOwogIHRleHQtYWxpZ246IGNlbnRlcjsKICAtd2Via2l0LXVzZXItc2VsZWN0OiBub25lOwogICAgIC1tb3otdXNlci1zZWxlY3Q6IG5vbmU7CiAgICAgIC1tcy11c2VyLXNlbGVjdDogbm9uZTsKICAgICAgICAgIHVzZXItc2VsZWN0OiBub25lOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXVtkYXRhLXZpc2liaWxpdHk9ImhpZGRlbiJdIHsKICBkaXNwbGF5OiBub25lOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXSBjbG91ZGZsYXJlLWFwcC1tZXNzYWdlIHsKICBkaXNwbGF5OiBibG9jazsKfQoKY2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gYSB7CiAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7CiAgY29sb3I6ICNlYmViZjQ7Cn0KCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGE6aG92ZXIsCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGE6YWN0aXZlIHsKICBjb2xvcjogI2RiZGJlYjsKfQoKY2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gY2xvdWRmbGFyZS1hcHAtY2xvc2UgewogIGRpc3BsYXk6IGJsb2NrOwogIGN1cnNvcjogcG9pbnRlcjsKICBmb250LXNpemU6IDEuNWVtOwogIHBvc2l0aW9uOiBhYnNvbHV0ZTsKICByaWdodDogLjRlbTsKICB0b3A6IC4zNWVtOwogIGhlaWdodDogMWVtOwogIHdpZHRoOiAxZW07CiAgbGluZS1oZWlnaHQ6IDE7Cn0KCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGNsb3VkZmxhcmUtYXBwLWNsb3NlOmFjdGl2ZSB7CiAgLXdlYmtpdC10cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTsKICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgxcHgpOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXSBjbG91ZGZsYXJlLWFwcC1jbG9zZTpob3ZlciB7CiAgb3BhY2l0eTogLjllbTsKICBjb2xvcjogI2ZmZjsKfQo="></head>
   <body>
@@ -164,7 +164,7 @@
             <div class="col-lg-8 col-xl-9">
               <div class="inset-xl-right-100">
                 <div class="row row-50 row-md-60 row-lg-80">
-                  <div class="col-12">
+                  <div class="col-12" id="content">
                     <article class="post post-modern box-xxl">
                       <div class="post-modern-panel">
                         <div><a class="post-modern-tag" href="#">News</a></div>
@@ -193,7 +193,7 @@
                         <div>
                           <div class="group-xs group-middle"><span class="list-social-title">Share</span>
                             <div>
-                              <ul class="list-inline list-social list-inline-sm">
+                              <ul class="list-inline list-social list-inline-sm social-links-blog">
                                 <li><a class="icon mdi mdi-facebook" href="#"></a></li>
                                 <li><a class="icon mdi mdi-twitter" href="#"></a></li>
                                 <li><a class="icon mdi mdi-instagram" href="#"></a></li>
@@ -325,7 +325,7 @@
                 <div class="aside-item col-12">
                   <div class="team-info box-sm"><a class="team-info-figure" href="#"><img src="images/user-4-123x123.jpg" alt="" width="123" height="123"/></a>
                     <h6 class="team-info-title"><a href="#">Shouston Graf</a></h6>
-                    <p class="team-info-text">Quis risus sed vulputate odio ut maecenas.</p>
+                    <p class="team-info-text">Master Chef of Goddess Salsa and food connoisseur.</p>
                   </div>
                   <!-- RD Search Form-->
                   <form class="rd-search form-search" action="search-results.html" method="GET">
@@ -338,7 +338,7 @@
                 </div>
                 <div class="aside-item col-sm-6 col-md-5 col-lg-12">
                   <h6 class="aside-title">Categories</h6>
-                  <ul class="list-categories">
+                  <ul class="list-categories" id="blog-filter-links" name="blog-filter-links">
                     <li><a href="#">All</a><span class="list-categories-number">(18)</span></li>
                     <li><a href="#">Cakes</a><span class="list-categories-number">(9)</span></li>
                     <li><a href="#">Baking</a><span class="list-categories-number">(5)</span></li>
@@ -347,7 +347,7 @@
                 </div>
                 <div class="aside-item col-sm-6 col-lg-12">
                   <h6 class="aside-title">Latest Posts</h6>
-                  <div class="row row-20 row-lg-30 gutters-10">
+                  <div class="row row-20 row-lg-30 gutters-10" id="latest-posts" name="latest-posts">
                     <div class="col-6 col-lg-12">
                       <!-- Post Minimal-->
                       <article class="post post-minimal">
@@ -406,7 +406,10 @@
     <script src="js/script.js"></script>
     <script src="js/render.js"></script>
     <script>
+      var blogId = getParameterByName('id');
       renderMiniCart(cartLS.list());
       cartLS.onChange(renderMiniCart);
+      loadBlogPost(blogId);
+      renderBlogFilterLinks();
     </script
   </body></html>

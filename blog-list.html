@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/cart-localstorage.min.js"></script>
-    <script type="text/javascript" language="javascript" src="js/products.js"></script>
+    <script type="text/javascript" language="javascript" src="js/blogs.js"></script>
     <style>
         .ie-panel {
             display: none;
@@ -76,7 +76,7 @@
                                         <div class="unit-left"><span class="icon linearicons-map-marker"></span></div>
                                         <div class="unit-body"><a href="contact-us.html#map" target="_blank">1885 Somerset Dr., <br>Glendale Heights, IL 60139 USA</a></div>
                                     </div>
-                                </div><a class="button button-sm button-icon button-icon-left button-default-outline-3 button-zakaria" href="#"><span class="icon mdi mdi-email-outline"></span>Get in touch</a>
+                                </div><a class="button button-sm button-icon button-icon-left button-default-outline-3 button-zakaria" href="contact-us.html"><span class="icon mdi mdi-email-outline"></span>Get in touch</a>
                             </div>
                             <!-- RD Navbar Panel-->
                             <div class="rd-navbar-panel">
@@ -89,7 +89,7 @@
                                 </div>
                                 <div class="sub-logo"><span style="margin-right:20px;font-size: 14px;color:#c14679;">SALSA</span><span style="margin-right:20px;font-size: 14px;color:#c14679;">SAUCES</span><span style="font-size: 14px;color:#c14679;">SPREADS</span></div>
                             </div>
-                            <div class="rd-navbar-button"><a class="button button-sm button-icon button-icon-left button-default-outline-3 button-zakaria" href="#"><span class="icon mdi mdi-email-outline"></span>Get in touch</a></div>
+                            <div class="rd-navbar-button"><a class="button button-sm button-icon button-icon-left button-default-outline-3 button-zakaria" href="contact-us.html"><span class="icon mdi mdi-email-outline"></span>Get in touch</a></div>
                         </div>
                     </div>
                     <div class="rd-navbar-main-outer">
@@ -234,7 +234,7 @@
                 <div class="row row-50 row-md-60">
                     <div class="col-lg-8 col-xl-9">
                         <div class="inset-xl-right-70">
-                            <div class="row row-50 row-md-60 row-lg-80 row-xl-100">
+                            <div class="row row-50 row-md-60 row-lg-80 row-xl-100" id="blog-list" name="blog-list">
                                 <div class="col-12">
                                     <!-- Post Modern-->
                                     <article class="post post-modern box-xxl">
@@ -298,7 +298,7 @@
                                 <div class="team-info box-sm">
                                     <a class="team-info-figure" href="#"><img src="images/user-4-123x123.jpg" alt="" width="123" height="123" /></a>
                                     <h6 class="team-info-title"><a href="#">Shouston Graf</a></h6>
-                                    <p class="team-info-text">Quis risus sed vulputate odio ut maecenas.</p>
+                                    <p class="team-info-text">Master Chef of Goddess Salsa and food connoisseur.</p>
                                 </div>
                                 <!-- RD Search Form-->
                                 <form class="rd-search form-search" action="search-results.html" method="GET">
@@ -311,7 +311,7 @@
                             </div>
                             <div class="aside-item col-sm-6 col-md-5 col-lg-12">
                                 <h6 class="aside-title">Categories</h6>
-                                <ul class="list-categories">
+                                <ul class="list-categories" id="blog-filters" name="blog-filters">
                                     <li><a href="#">All</a><span class="list-categories-number">(18)</span></li>
                                     <li><a href="#">Cakes</a><span class="list-categories-number">(9)</span></li>
                                     <li><a href="#">Baking</a><span class="list-categories-number">(5)</span></li>
@@ -320,7 +320,7 @@
                             </div>
                             <div class="aside-item col-sm-6 col-lg-12">
                                 <h6 class="aside-title">Latest Posts</h6>
-                                <div class="row row-20 row-lg-30 gutters-10">
+                                <div class="row row-20 row-lg-30 gutters-10" id="latest-posts" name="latest-posts">
                                     <div class="col-6 col-lg-12">
                                         <!-- Post Minimal-->
                                         <article class="post post-minimal">
@@ -480,6 +480,24 @@
     <script>
         renderMiniCart(cartLS.list());
         cartLS.onChange(renderMiniCart);
+        loadBlogList(1);
+        var filter = getParameterByName('f');
+        if(filter && filter.trim() != '') {
+            clearBlogFilter();
+            addBlogFilter(filter);
+            var cbfilters = document.getElementsByName("input-group-radio");
+            cbfilters.forEach((cb) => {
+                if(cb.value.trim().toLowerCase() === filter.trim().toLowerCase()) {
+                    cb.checked = true;
+                } else {
+                    cb.checked = false;
+                }
+            });
+        }
+        var month = getParameterByName('m');
+        if(month && month.trim() != '') {
+            renderBlogListByMonth(month);
+        }
     </script>
 </body>
 
