@@ -228,7 +228,7 @@ function buildSitePages() {
        newPages.push(newSitePage);
        nextProductId++;
    });
-   return newPages();
+   return newPages;
 }
 function buildSearchIndexJSON(pages) {
    var newIDX = '';
