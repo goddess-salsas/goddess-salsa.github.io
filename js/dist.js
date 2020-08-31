@@ -240,7 +240,7 @@ function buildSearchIndexJSON(pages) {
        this.add(site[i]);
        }
    });
-   newIDX = JSON.stringify(idx);
+   newIDX = JSON.stringify(lunrIDX);
    return newIDX;
 }
 function updateSearch() {
