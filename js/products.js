@@ -78,12 +78,12 @@ var products = [
             'mild',
             'sweet'
         ],
-        image_large: null,
-        image_small: null,
+        image_small: 'images/mango-salsa-6.jpeg',
+        image_large: 'images/mango-salsa-6.jpeg',
         image_details: [
-            null,
-            null,
-            null
+          'images/corn-salsa-530x462.jpg',
+          'images/corn-salsa-2-530x462.jpg',
+          'images/corn-salsa-5-530x462.jpg'
         ],
         sizes: [
             {
