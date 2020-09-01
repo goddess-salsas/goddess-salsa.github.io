@@ -522,9 +522,10 @@ var products = [
         id: 9,
         name: 'Blackberry Jam',
         type: [
+            'sauce',
             'spread'
         ],
-        desc_long: '<p>Goddess Blackberry Jams are made with only the plumpest blackberries and has an amazing deep fruit flavor - the perfect combination of sweetness along with a little tartness.</p><p>Our Blackberry Jam has a great dark flavor that really reminds us of a freshly baked blackberry bramble. It is great with cream cheese for your morning toast or bagels or just heat it up and pour it over raspberry frozen yogurt for a quick low-fat dessert.</p>',
+        desc_long: '<p>Goddess Blackberry Jams are made with only the plumpest blackberries and has an amazing deep fruit flavor - the perfect combination of sweetness along with a little tartness.</p><p>Our Blackberry Jam has a great dark flavor that really reminds us of a freshly baked blackberry bramble. It is great with cream cheese for your morning toast or bagels or just heat it up and pour it over raspberry frozen yogurt for a quick low-fat dessert.   </p>',
         desc_short: 'Goddess Blackberry Jams are made with only the plumpest blackberries and has an amazing deep fruit flavor - the perfect combination of sweetness along with a little tartness.',
         popular: true,
         featured: false,
