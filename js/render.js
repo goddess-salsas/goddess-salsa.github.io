@@ -65,6 +65,14 @@ function setTypes(loadedProducts) {
     document.getElementById("product_types").innerHTML = uniqueTypes;
     $("#product_types").selectpicker("refresh");
 }
+function setBlogTypes(loadedBlogs) {
+  var uniqueBlogTypes = getUniqueBlogTypes(loadedBlogs).map((p) => `
+      <option value="${p.type}">${p.type}</option>
+  `
+  ).join("");
+  document.getElementById("blog_types").innerHTML = uniqueBlogTypes;
+  $("#blog_types").selectpicker("refresh");
+}
 function setStyles(loadedProducts) {
   var uniqueStyles = getUniqueStyles(loadedProducts).map((p) => `
       <option value="${p.style}">${p.style}</option>
@@ -72,6 +80,14 @@ function setStyles(loadedProducts) {
   ).join("");
   document.getElementById("styles").innerHTML = uniqueStyles;
   $("#styles").selectpicker("refresh");
+}
+function setBlogTags(loadedBlogs) {
+  var uniqueStyles = getUniqueBlogTags(loadedBlogs).map((p) => `
+      <option value="${p.tag}">${p.tag}</option>
+  `
+  ).join("");
+  document.getElementById("blog_tags").innerHTML = uniqueStyles;
+  $("#blog_tags").selectpicker("refresh");
 }
 /**
  * renders the filter styles on the product collection pages
@@ -524,7 +540,7 @@ function renderFeaturedItems() {
   });
   $featured.innerHTML = featuredItems;
 }
-function renderSocialLinks(id, ) {
+function renderSocialLinks(id ) {
   const $socialLinks = document.querySelector(".social-links");
   var links = `
       <li><a class="icon mdi mdi-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://goddess-salsas.github.io/index.html" target="_blank"></a></li>
@@ -584,6 +600,43 @@ function getUniqueBlogTags() {
     });
     return blogTagCounts;
 }
+function renderRelatedBlogPosts(bId) {
+  var $relatedPosts = document.querySelector("#related-posts");
+  var curPost = blogs.find((p) => p.id.toString()===bId.toString());
+  var curTags = curPost.tags;
+  // get all other blog posts with at least one tag matching the current article
+  const blogsMatchingTags = (curTags && curTags.size > 0) ? blogs.filter(p => p.tag.some(r => curTags.has(r))) : blogs;
+  // remove the current article from the list
+  index = blogsMatchingTags.map(function(e) { return e.id.toString(); }).indexOf(bId.toString());
+  if (index > -1) {
+    blogsMatchingTags.splice(index, 1);
+  }
+  // shuffle the array randonly so different articles can appear
+  shuffleArray(blogsMatchingTags);
+  // grab the first two randomly sorted articles
+  var firstTwoMatches = blogsMatchingTags.slice(0, 2);
+  // display the articles
+  $relatedPosts.innerHTML = firstTwoMatches.map((p) => `
+          <div class="col-sm-6">
+            <!-- Post Classic-->
+            <article class="post post-classic box-md"><a class="post-classic-figure" href="blog-post.html?id=${p.id}"><img src="${p.image_main}" alt="" width="370" height="239"></a>
+              <div class="post-classic-content">
+                <div class="post-classic-time">
+                  <time datetime="${p.timestamp}">${new Date(p.timestamp).toDateString()}</time>
+                </div>
+                <h5 class="post-classic-title"><a href="blog-post.html?id=${p.id}">${p.title}</a></h5>
+                <div style="height: 72px; margin-top:18px;"><p class="post-classic-text text-fade" style="overflow: hidden;line-height:24px;">${p.description}</p></div>
+              </div>
+            </article>
+          </div>
+  `).join("");
+}
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+  }
+}
 function renderBlogFilterLinks() {
   var $filterLinks = document.getElementById("blog-filter-links");
   var uniqueBlogTypes = getUniqueBlogTypes();
@@ -621,7 +674,9 @@ function loadBlogPost(id) {
   var $content = document.getElementById("content");
   $content.innerHTML = renderBlogPost(post);
   renderLatestBlogPosts();
+  renderBlogPopularTags();
   renderBlogUniqueMonths('m');
+  renderRelatedBlogPosts(id);
 }
 function renderBlogPost(post) {
   var types = "";
@@ -803,7 +858,7 @@ function renderBlogListByMonth(targetDate) {
 }
 function renderBlogPopularTags() {
   var uniqueTags = getUniqueBlogTags();
-  var $groupTags = document.querySelector(".group-tags");
+  var $groupTags = document.querySelector("#popular-tags");
   var taglist = uniqueTags.map((t) => `
       <span class="link-tag"">${t.tag}</span>
   `).join(""); 
