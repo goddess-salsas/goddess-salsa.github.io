@@ -36,7 +36,7 @@ var blogs = [
         ],
         image_main: 'images/baby-chef.png',
         author: 'Evie Graf',
-        timeStamp: '2020-09-01T23:25:52.735Z'
+        timestamp: '2020-09-01T23:25:52.735Z'
     },
     {
         id: 3,
