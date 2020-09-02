@@ -1,7 +1,7 @@
 var blogs = [
     {
         id: 1,
-        timestamp: '2020-08-26T00:00:00.0000Z',
+        timestamp: '2020-08-26T01:00:01.0000Z',
         type: [
             'howto',
             'news',
@@ -40,7 +40,7 @@ var blogs = [
     },
     {
         id: 3,
-        timestamp: '2020-08-19T00:00:00.0000Z',
+        timestamp: '2020-08-19T03:00:04.0000Z',
         type: [
             'recipe'
         ],
@@ -57,7 +57,7 @@ var blogs = [
     },
     {
         id: 4,
-        timestamp: '2020-08-22T00:00:00.0000Z',
+        timestamp: '2020-08-22T06:15:00.0000Z',
         type: [
             'news',
             'recipe'
@@ -75,7 +75,7 @@ var blogs = [
     },
     {
         id: 5,
-        timestamp: '2020-07-26T00:00:00.0000Z',
+        timestamp: '2020-07-26T08:20:00.0000Z',
         type: [
             'howto',
             'news',
