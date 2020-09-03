@@ -11,7 +11,7 @@ var blogs = [
         title: 'article title',
         description: '<p>short synopsis of article</p>',
         content: '<p>article content</p>',
-        image_main: 'images/baby-chef.png',
+        image_main: 'images/baby-chef.jpg',
         author: 'Shouston Graf',
         tags: [
             'tag1',
@@ -34,7 +34,7 @@ var blogs = [
             'decorating',
             'skills'
         ],
-        image_main: 'images/baby-chef.png',
+        image_main: 'images/baby-chef.jpg',
         author: 'Evie Graf',
         timestamp: '2020-09-01T23:25:52.735Z'
     },
