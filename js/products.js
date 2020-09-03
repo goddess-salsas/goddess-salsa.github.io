@@ -461,7 +461,7 @@ var products = [
       image_large: 'images/raspberry-jam-1.jpg',
       image_details: [
         'images/raspberry-jam-1a.jpg',
-        'images/raspberry-jam-2.png',
+        'images/raspberry-jam-2.jpg',
         'images/raspberry-jam-3.jpg'
       ],
       style: [
