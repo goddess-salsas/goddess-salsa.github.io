@@ -1,0 +1,20 @@
+{
+  "name": "goddess-salsas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "build": "browserify js/site-loader.js > js/dist.js && uglifyjs js/dist.js --compress --screw-ie8 --output dist.js",
+    "bundle": "browserify js/site-loader.js > js/dist.js",
+    "compress": "uglifyjs js/dist.js --compress --output dist.js"
+  },
+  "license": "CC-BY-4.0",
+  "devDependencies": {
+    "browserify": "^11.2.0",
+    "github-api": "^0.10.7",
+    "uglify-js": "^2.5.0"
+  },
+  "dependencies": {
+    "javascript-stringify": "^2.0.1"
+  }
+}
