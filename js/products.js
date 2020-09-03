@@ -4,8 +4,8 @@ var products = [
       name: 'Isis',
       desc_short: 'Perfect with your favorite tortilla chips, this delicious Corn Salsa is amazing! Loaded with fresh, delicious veggies, this salsa is just as flavorful as it is pretty.',
       desc_long: '<p>Isis is the Egyptian Goddess of marriage, fertility, motherhood, magic, medicine, and harvest. She taught human woman how to grind and store corn, spin flax, and weave cloth. Our corn salsa is packed full of flavor bringing you back for more, like magic.</p><p>Perfect with your favorite tortilla chips, this delicious Corn Salsa is amazing! Loaded with fresh, delicious veggies, this salsa is just as flavorful as it is pretty.</p> ',
-      image_small: 'images/corn-salsa.jpeg',
-      image_large: 'images/corn-salsa.jpeg',
+      image_small: 'images/corn-salsa.jpg',
+      image_large: 'images/corn-salsa.jpg',
       image_details: [
         'images/corn-salsa-530x462.jpg',
         'images/corn-salsa-2-530x462.jpg',
@@ -68,8 +68,8 @@ var products = [
       name: 'Aphrodite',
       desc_short: 'Our Mango Salsa is a delicious combination of sweet juicy mangoes, tart lime juice and peppers for the perfect combination of sweet and heat.',
       desc_long: '<p>The Greek Goddess of love, beauty, pleasure, and passion. With our mango salsa you will find yourself falling in love with each bite, sparking simply passions of pleasure.</p><p>Our Mango Salsa is a delicious combination of sweet juicy mangoes, tart lime juice and peppers for the perfect combination of sweet and heat.</p>',
-      image_small: 'images/mango-salsa-6.jpeg',
-      image_large: 'images/mango-salsa-6.jpeg',
+      image_small: 'images/mango-salsa-6.jpg',
+      image_large: 'images/mango-salsa-6.jpg',
       image_details: [
         'images/corn-salsa-530x462.jpg',
         'images/corn-salsa-2-530x462.jpg',
@@ -198,8 +198,8 @@ var products = [
       name: 'Zorya',
       desc_short: 'This salsa starts with a sweet earthy flavor, going to the bright citrus notes, and finishing with the heat of the peppers.',
       desc_long: '<p>There are three Slavic Dawn Goddesses; Morning Star, Evening Star, and Midnight Star. This salsa embraces all three, starting with a sweet earthy flavor in the morning, going to the bright citrus notes in the evening, finally finishing with the heat of the peppers at midnight.</p><p>This salsa is simply a wonderful experience to savor and enjoy on any occasion!</p>',
-      image_small: 'images/hot-salsa-verde.jpeg',
-      image_large: 'images/hot-salsa-verde.jpeg',
+      image_small: 'images/hot-salsa-verde.jpg',
+      image_large: 'images/hot-salsa-verde.jpg',
       image_details: [
         'images/corn-salsa-530x462.jpg',
         'images/corn-salsa-2-530x462.jpg',
