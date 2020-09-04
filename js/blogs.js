@@ -1,7 +1,7 @@
 var blogs = [
     {
         id: 1,
-        title: 'Grilled Skirt Steak with <a href="https://goddess-salsas.github.io/single-product.html?id=4">Zorya Salsa Verde</a>',
+        title: 'Grilled Skirt Steak with Zorya Salsa Verde',
         type: [
             'recipe',
             'tip'
