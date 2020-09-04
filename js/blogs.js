@@ -1,23 +1,19 @@
 var blogs = [
     {
         id: 1,
-        timestamp: '2020-08-26T01:00:01.0000Z',
+        title: 'Grilled Skirt Steak with <a href="https://goddess-salsas.github.io/single-product.html?id=4">Zorya Salsa Verde</a>',
         type: [
-            'howto',
-            'news',
             'recipe',
             'tip'
         ],
-        title: 'article title',
-        description: '<p>short synopsis of article</p>',
-        content: '<p>article content</p>',
-        image_main: 'images/baby-chef.jpg',
-        author: 'Shouston Graf',
+        description: 'Skirt steak, nicely marbled with fat, takes well to marinades, like this simple mix of herbs and garlic. While you can accent the grilled meat with a sauce made with more herbs and garlic, plus capers and anchovies; I like to make mine using our <a href="https://goddess-salsas.github.io/single-product.html?id=4">Zorya Salsa Verde</a.  I find that the combination of citrus notes and heat help make an amazing steak.\n\n',
+        content: 'Step 1\nIn a small bowl, combine the parsley, rosemary, thyme, garlic and olive oil. Spread the mixture all over the steak. Cover and refrigerate on a platter for at least 4 hours or overnight.\n\nStep 2    \nLight a grill. Scrape most of the marinade off the steak and season the meat with salt and black pepper. Grill over high heat for about 3 minutes. Turn the steak and grill for 2 minutes longer, until browned outside and medium-rare within. Transfer the steak to a cutting board and let rest for 3 minutes. Thinly slice the steak against the grain and sprinkle with smoked paprika. Pass the salsa verde at the table.\n\n',
         tags: [
-            'tag1',
-            'tag2',
-            'tag3'
-        ]
+            'recipe'
+        ],
+        image_main: 'images/recipe-skirt-steak-523x466.jpg',
+        author: 'Shouston Graf',
+        timestamp: '2020-09-04T16:53:23.470Z'
     },
     {
         id: 2,
