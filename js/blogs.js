@@ -23,8 +23,8 @@ var blogs = [
             'tip',
             'info'
         ],
-        description: '<p>Baby-talk Risus commodo viverra maecenas accumsan lacus vel. Nulla facilisi cras fermentum odio eu. Et egestas quis ipsum suspendisse. Sed nisi lacus sed viverra. Sodales ut eu sem. Evie is the best!<p>',
-        content: '\n            Superbaby Evelyn Rose Graf Facilisis mauris sit amet massa. Id faucibus nisl tincidunt eget nullam. Mus mauris vitae ultricies leo integer malesuada. Aliquam sem fringilla ut morbi tincidunt augue interdum. Sagittis orci a scelerisque purus semper eget duis at.\n            Bibendum at varius vel pharetra vel. Vestibulum mattis ullamcorper velit sed ullamcorper morbi. Aliquet nec ullamcorper sit amet. Eu sem integer vitae justo eget magna fermentum. Vitae ultricies leo integer malesuada nunc. Etiam sit amet nisl purus in mollis.\n            Aliquam faucibus purus in massa tempor nec feugiat. Feugiat in fermentum posuere urna nec tincidunt praesent semper. Massa sed elementum tempus egestas sed sed risus pretium quam. Vitae nunc sed velit dignissim sodales ut eu sem. Nisl tincidunt eget nullam non nisi est sit. Aliquam vestibulum morbi blandit cursus.\n            ',
+        description: 'Baby-talk Risus commodo viverra maecenas accumsan lacus vel. Nulla facilisi cras fermentum odio eu. Et egestas quis ipsum suspendisse. Sed nisi lacus sed viverra. Sodales ut eu sem. Evie is the best!',
+        content: 'Superbaby Evelyn Rose Graf Facilisis mauris sit amet massa. Id faucibus nisl tincidunt eget nullam. Mus mauris vitae ultricies leo integer malesuada. Aliquam sem fringilla ut morbi tincidunt augue interdum. Sagittis orci a scelerisque purus semper eget duis at.\n            Bibendum at varius vel pharetra vel. Vestibulum mattis ullamcorper velit sed ullamcorper morbi. Aliquet nec ullamcorper sit amet. Eu sem integer vitae justo eget magna fermentum. Vitae ultricies leo integer malesuada nunc. Etiam sit amet nisl purus in mollis.\n            Aliquam faucibus purus in massa tempor nec feugiat. Feugiat in fermentum posuere urna nec tincidunt praesent semper. Massa sed elementum tempus egestas sed sed risus pretium quam. Vitae nunc sed velit dignissim sodales ut eu sem. Nisl tincidunt eget nullam non nisi est sit. Aliquam vestibulum morbi blandit cursus.\n            ',
         tags: [
             'baking',
             'decorating',
@@ -41,8 +41,8 @@ var blogs = [
             'recipe'
         ],
         title: 'article title',
-        description: '<p>short synopsis of article</p>',
-        content: '<p>article content</p>',
+        description: 'short synopsis of article',
+        content: 'article content',
         image_main: 'images/Blackberry-Jam-1.jpg',
         author: 'Shouston Graf',
         tags: [
@@ -59,8 +59,8 @@ var blogs = [
             'recipe'
         ],
         title: 'article title',
-        description: '<p>short synopsis of article</p>',
-        content: '<p>article content</p>',
+        description: 'short synopsis of article',
+        content: 'article content',
         image_main: 'images/recipies-grilled-salmon.jpg',
         author: 'Shouston Graf',
         tags: [
@@ -79,8 +79,8 @@ var blogs = [
             'tip'
         ],
         title: 'article title',
-        description: '<p>short synopsis of article</p>',
-        content: '<p>article content</p>',
+        description: 'short synopsis of article',
+        content: 'article content',
         image_main: 'images/corn-salsa-horiz-a-800.jpg',
         author: 'Shouston Graf',
         tags: [
