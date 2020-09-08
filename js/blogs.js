@@ -17,20 +17,28 @@ var blogs = [
     },
     {
         id: 2,
-        title: 'How to Pipe a Sparkly Frosting Border on a Cake',
+        title: 'An easy and delicious Salsa Chicken dinner',
         type: [
             'howto',
             'tip',
-            'info'
+            'recipe'
         ],
-        description: 'Baby-talk Risus commodo viverra maecenas accumsan lacus vel. Nulla facilisi cras fermentum odio eu. Et egestas quis ipsum suspendisse. Sed nisi lacus sed viverra. Sodales ut eu sem. Evie is the best!',
-        content: 'Superbaby Evelyn Rose Graf Facilisis mauris sit amet massa. Id faucibus nisl tincidunt eget nullam. Mus mauris vitae ultricies leo integer malesuada. Aliquam sem fringilla ut morbi tincidunt augue interdum. Sagittis orci a scelerisque purus semper eget duis at.\n            Bibendum at varius vel pharetra vel. Vestibulum mattis ullamcorper velit sed ullamcorper morbi. Aliquet nec ullamcorper sit amet. Eu sem integer vitae justo eget magna fermentum. Vitae ultricies leo integer malesuada nunc. Etiam sit amet nisl purus in mollis.\n            Aliquam faucibus purus in massa tempor nec feugiat. Feugiat in fermentum posuere urna nec tincidunt praesent semper. Massa sed elementum tempus egestas sed sed risus pretium quam. Vitae nunc sed velit dignissim sodales ut eu sem. Nisl tincidunt eget nullam non nisi est sit. Aliquam vestibulum morbi blandit cursus.\n            ',
+        description: 'Boneless, skinless chicken breasts stay juicy baked in our Salsa, getting all the flavors from tomatoes, onions, jalapenos, and garlic.',
+        content: `Incredibly simple and SO easy to make, this Baked Salsa Chicken is always the perfect recipe for when you’re short on time, but still want a delicious, homemade dinner.
+This easy recipe needs just a few ingredients and it’s a snap to prepare.
+<b>Step 1 The first and hardest step is to choose which Goddess Salsa you want to use for your chicken.  Our Salsas range across flavor profiles - from mild to hot; but, I generally prefer either Aphrodite, Ostara, or Pachamama for family dinners.
+<b>Step 2</b> Preheat oven to 375 F
+<b>Step 3</b> Warm some olive oil in a skillet.
+<b>Step 4</b>  Season chicken breasts with a mixture of seasonings, herbs, salt, and pepper; transfer chicken to skillet and cook for 2 minutes per side, or until just browned. For the seasonings; you can also use a store-bought or homemade taco seasoning mix. 
+<b>Step 5</b>  Cover the bottom of a baking dish with salsa. Arrange chicken on top and add more salsa over each chicken breast.
+<b>Step 6</b> Bake for 30 minutes, or until chicken is done.
+<b>Step 7</b> Add shredded cheese on top and bake for 4 more minutes, or until cheese is melted.
+That's it! Let stand 5 minutes, then serve.`,
         tags: [
-            'baking',
-            'decorating',
-            'skills'
+            'recipe',
+            'quick meals'
         ],
-        image_main: 'images/baby-chef.jpg',
+        image_main: 'images/recipe-chicken-cropped.jpg',
         author: 'Evie Graf',
         timestamp: '2020-09-01T23:25:52.735Z'
     },
