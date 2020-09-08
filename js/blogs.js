@@ -11,7 +11,7 @@ var blogs = [
         tags: [
             'recipe'
         ],
-        image_main: 'images/recipe-skirt-steak-523x466.jpg',
+        image_main: 'images/recipe-skirt-steak.jpg',
         author: 'Shouston Graf',
         timestamp: '2020-09-04T16:53:23.470Z'
     },
