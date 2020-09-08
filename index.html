@@ -37,6 +37,7 @@
     </style>
     <script src="js/cart-localstorage.min.js"></script>
     <script type="text/javascript" language="javascript" src="js/products.js"></script> 
+    <script type="text/javascript" language="javascript" src="js/blogs.js"></script> 
     <!-- <Script>
       var products = [];
       // sets the product select list dropdown with all valid products
@@ -493,57 +494,14 @@
         <div class="container">
           <h2 class="wow fadeScale" style="visibility: hidden; animation-name: none;">Latest News</h2>
           <div class="row row-lg row-30 justify-content-center">
-            <div class="col-sm-8 col-md-6 wow fadeInLeft" style="visibility: hidden; animation-name: none;">
-              <!-- Post Nikki 2-->
-              <article class="post post-nikki post-nikki-2">
-                <div class="post-nikki-figure"><img src="images/post-1-570x461.jpg" alt="" width="570" height="461">
-                </div>
-                <div class="post-nikki-body">
-                  <div>
-                    <div class="post-nikki-time">
-                      <time datetime="2020-09-08">August 9, 2020</time>
-                    </div>
-                    <div class="post-nikki-title"><a href="blog-post.html">How to Pipe a Fluffy Frosting Border on a Cake</a></div>
-                  </div>
-                </div>
-              </article>
-            </div>
+            <div class="col-sm-8 col-md-6 wow fadeInLeft" style="visibility: visible;" id="latest-post"></div>
             <div class="col-md-6">
-              <div class="row row-30">
-                <div class="col-6 col-md-12 wow fadeInRight" style="visibility: hidden; animation-name: none;">
-                  <!-- Post Nikki-->
-                  <article class="post post-nikki">
-                    <div class="unit unit-spacing-lg flex-column flex-md-row align-items-center">
-                      <div class="unit-left"><a class="post-nikki-figure" href="blog-post.html"><img src="images/post-2-270x215.jpg" alt="" width="270" height="215"></a></div>
-                      <div class="unit-body">
-                        <div class="post-nikki-time">
-                          <time datetime="2020-09-08">August 9, 2020</time>
-                        </div>
-                        <div class="post-nikki-title"><a href="blog-post.html">Recipe of the Day: Pumpkin Spice Latte Cake</a></div>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-                <div class="col-6 col-md-12 wow fadeInRight" style="visibility: hidden; animation-name: none;">
-                  <!-- Post Nikki-->
-                  <article class="post post-nikki">
-                    <div class="unit unit-spacing-lg flex-column flex-md-row align-items-center">
-                      <div class="unit-left"><a class="post-nikki-figure" href="blog-post.html"><img src="images/post-3-270x215.jpg" alt="" width="270" height="215"></a></div>
-                      <div class="unit-body">
-                        <div class="post-nikki-time">
-                          <time datetime="2020-09-08">August 9, 2020</time>
-                        </div>
-                        <div class="post-nikki-title"><a href="blog-post.html">Top 5 Tips for Successful Cake Baking</a></div>
-                      </div>
-                    </div>
-                  </article>
-                </div>
+              <div class="row row-30" id="other-posts">
               </div>
             </div>
           </div>
         </div>
       </section>
-
       <!-- Section Clients-->
       <section class="section section-xl bg-img-2">
         <div class="container">
@@ -647,6 +605,7 @@
       renderHomeProducts();
       renderMiniCart(cartLS.list());
       renderSocialLinks();
+      renderIndexBlogPosts();
       cartLS.onChange(renderMiniCart);
     </script>
     <script>
