@@ -24,7 +24,7 @@ var blogs = [
             'recipe'
         ],
         description: 'Boneless, skinless chicken breasts stay juicy baked in our Salsa, getting all the flavors from tomatoes, onions, jalapenos, and garlic.',
-        content: `Incredibly simple and SO easy to make, this Baked Salsa Chicken is always the perfect recipe for when you’re short on time, but still want a delicious, homemade dinner.
+        content: `Incredibly simple and SO easy to make, this Baked Salsa Chicken is always the perfect recipe for when you're short on time, but still want a delicious, homemade dinner.
 This easy recipe needs just a few ingredients and it’s a snap to prepare.
 <b>Step 1</b> The first and hardest step is to choose which Goddess Salsa you want to use for your chicken.  Our Salsas range across flavor profiles - from mild to hot; but, I generally prefer either Aphrodite, Ostara, or Pachamama for family dinners.
 <b>Step 2</b> Preheat oven to 375 F
