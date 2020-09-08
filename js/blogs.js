@@ -63,18 +63,23 @@ That's it! Let stand 5 minutes, then serve.`,
         id: 4,
         timestamp: '2020-08-22T06:15:00.0000Z',
         type: [
-            'news',
+            'tips',
             'recipe'
         ],
-        title: 'article title',
-        description: 'short synopsis of article',
-        content: 'article content',
-        image_main: 'images/recipies-grilled-salmon.jpg',
+        title: 'Pan-Seared Fish in a Tomato Salsa',
+        description: 'This fish recipe is a great way to end a long busy week. It’s quick and easy with just a few ingredients and a little help from your local market.',
+        content: `
+           This pan-seared fish recipe is a perfect option for a quick and easy dinner.
+            <b>Step 1</b> In a large nonstick skillet, preheat 3 tablespoons of olive oil to medium hear for 3 minutes.
+            <b>Step 2</b> Season the fish on both sides with lemon pepper seasoning and salt to taste.  Add the fillets to the preheated pan and cook for 2 to 3 mintes.  Turn over, reduce heat slightly, add 2 cups of salsa and lemon or lime juice, continue cooking for 5 minutes.  Cover, remove from the heat and let stand while you cook the corn.
+            <b>Step 3</b> Add the 2 tablespoons of olive oil to a medium pan and preheat on medium/high for 2 minutes.  Add 1/3 cup of red diced onion and, optionally, a diced poblano pepper, and cook for 5 minutes.  Add your favorite Goddess Tomato Salsa (we recommend <a href="single-product.html?id=6">Demeter</a>) and continue cooking for another 3 to 4 minutes.
+            Serve right away and enjoy!
+        `,
+        image_main: 'images/recipie-pan-fried-fish.jpg',
         author: 'Shouston Graf',
         tags: [
-            'tag1',
-            'tag2',
-            'tag3'
+            'recipe',
+            'quick meals'
         ]
     },
     {
