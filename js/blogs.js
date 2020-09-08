@@ -48,15 +48,26 @@ That's it! Let stand 5 minutes, then serve.`,
         type: [
             'recipe'
         ],
-        title: 'article title',
-        description: 'short synopsis of article',
-        content: 'article content',
-        image_main: 'images/Blackberry-Jam-1.jpg',
+        title: 'Blackberry Glazed Chicken',
+        description: 'Fire up the grill to make this fruit-infused chicken recipe which adds a touch of sweetness to your usual chicken meals.',
+        content: `
+            Looking for something different for dinner?  Why not spice up your usual chicken dinners and try this easy recipe for a wonderful blackberry glazed chicken?
+            <b>Step 1</b> Heat your grill to medium.
+            <b>Step 2</b> Pour some Goddess <a href="single-product.html?id=9">Blackberry Jam</a> into a small saucepan and bring to a simmer.
+            <b>Step 3</b> Add 2 tablespoons of butter and 1 tablespoon of whole grain mustard to the simmering sauce and stir until the butter is throughly melted.
+            <b>Step 4</b> Transfer half of the glaze to a bowl and hold it in reserve.</b>
+            <b>Step 5</b> Pat the chicken thighs and drumsticks dry and season them with kosher salt and black pepper.
+            <b>Step 6</b> Grill, skin-side up and covered for 15 minutes.  
+            <b>Step 7</b> Uncover, baste with some of the glaze - turning and basting occasionally until cooked all the way through - typically 10-12 minutes.
+
+            That's it!  Sprinkle with some fresh leaf parsley and server with the remaining glaze.
+            `,
+        image_main: 'images/recipe-blackberry-glazed-chicken.jpg',
         author: 'Shouston Graf',
         tags: [
-            'tag1',
-            'tag2',
-            'tag3'
+            'recipe',
+            'creative',
+            'different'
         ]
     },
     {
