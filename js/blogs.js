@@ -33,7 +33,7 @@ This easy recipe needs just a few ingredients and it’s a snap to prepare.
 <b>Step 5</b>  Cover the bottom of a baking dish with salsa. Arrange chicken on top and add more salsa over each chicken breast.
 <b>Step 6</b> Bake for 30 minutes, or until chicken is done.
 <b>Step 7</b> Add shredded cheese on top and bake for 4 more minutes, or until cheese is melted.
-That's it! Let stand 5 minutes, then serve.`,
+That is it! Let stand 5 minutes, then serve.`,
         tags: [
             'recipe',
             'quick meals'
@@ -60,7 +60,7 @@ That's it! Let stand 5 minutes, then serve.`,
             <b>Step 6</b> Grill, skin-side up and covered for 15 minutes.  
             <b>Step 7</b> Uncover, baste with some of the glaze - turning and basting occasionally until cooked all the way through - typically 10-12 minutes.
 
-            That's it!  Sprinkle with some fresh leaf parsley and serve with the remaining glaze.
+            That is all there is to it!  Sprinkle with some fresh leaf parsley and server with the remaining glaze.
             `,
         image_main: 'images/recipe-blackberry-glazed-chicken.jpg',
         author: 'Shouston Graf',
@@ -78,7 +78,7 @@ That's it! Let stand 5 minutes, then serve.`,
             'recipe'
         ],
         title: 'Pan-Seared Fish in a Tomato Salsa',
-        description: 'This fish recipe is a great way to end a long busy week. It’s quick and easy with just a few ingredients and a little help from your local market.',
+        description: 'This fish recipe is a great way to end a long busy week. It is quick and easy with just a few ingredients and a little help from your local market.',
         content: `
            This pan-seared fish recipe is a perfect option for a quick and easy dinner.
             <b>Step 1</b> In a large nonstick skillet, preheat 3 tablespoons of olive oil to medium heat for 3 minutes.
