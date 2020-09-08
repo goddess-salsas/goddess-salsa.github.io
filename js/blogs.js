@@ -60,7 +60,7 @@ That's it! Let stand 5 minutes, then serve.`,
             <b>Step 6</b> Grill, skin-side up and covered for 15 minutes.  
             <b>Step 7</b> Uncover, baste with some of the glaze - turning and basting occasionally until cooked all the way through - typically 10-12 minutes.
 
-            That's it!  Sprinkle with some fresh leaf parsley and server with the remaining glaze.
+            That's it!  Sprinkle with some fresh leaf parsley and serve with the remaining glaze.
             `,
         image_main: 'images/recipe-blackberry-glazed-chicken.jpg',
         author: 'Shouston Graf',
