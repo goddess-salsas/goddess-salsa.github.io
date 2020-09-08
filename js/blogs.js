@@ -70,9 +70,9 @@ That's it! Let stand 5 minutes, then serve.`,
         description: 'This fish recipe is a great way to end a long busy week. It’s quick and easy with just a few ingredients and a little help from your local market.',
         content: `
            This pan-seared fish recipe is a perfect option for a quick and easy dinner.
-            <b>Step 1</b> In a large nonstick skillet, preheat 3 tablespoons of olive oil to medium hear for 3 minutes.
-            <b>Step 2</b> Season the fish on both sides with lemon pepper seasoning and salt to taste.  Add the fillets to the preheated pan and cook for 2 to 3 mintes.  Turn over, reduce heat slightly, add 2 cups of salsa and lemon or lime juice, continue cooking for 5 minutes.  Cover, remove from the heat and let stand while you cook the corn.
-            <b>Step 3</b> Add the 2 tablespoons of olive oil to a medium pan and preheat on medium/high for 2 minutes.  Add 1/3 cup of red diced onion and, optionally, a diced poblano pepper, and cook for 5 minutes.  Add your favorite Goddess Tomato Salsa (we recommend <a href="single-product.html?id=6">Demeter</a>) and continue cooking for another 3 to 4 minutes.
+            <b>Step 1</b> In a large nonstick skillet, preheat 3 tablespoons of olive oil to medium heat for 3 minutes.
+            <b>Step 2</b> Season the fish on both sides with lemon pepper seasoning and salt to taste.  Add the fillets to the preheated pan and cook for 2 to 3 mintes.  Turn over, reduce heat slightly, add 2 cups of salsa (we recommend <a href="single-product.html?id=6">Demeter</a>) and lemon or lime juice, continue cooking for 5 minutes.  Cover, remove from the heat and let stand while you cook the corn.
+            <b>Step 3</b> Add the 2 tablespoons of olive oil to a medium pan and preheat on medium/high for 2 minutes.  Add 1/3 cup of red diced onion and, optionally, a diced poblano pepper, and cook for 5 minutes.  Add 2 cups of fresh corn and add a pinch of pepper and 1/3 tablespoon of cumin and continue cooking for another 3 to 4 minutes.
             Serve right away and enjoy!
         `,
         image_main: 'images/recipe-pan-fried-fish.jpg',
