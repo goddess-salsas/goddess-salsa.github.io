@@ -75,7 +75,7 @@ That's it! Let stand 5 minutes, then serve.`,
             <b>Step 3</b> Add the 2 tablespoons of olive oil to a medium pan and preheat on medium/high for 2 minutes.  Add 1/3 cup of red diced onion and, optionally, a diced poblano pepper, and cook for 5 minutes.  Add your favorite Goddess Tomato Salsa (we recommend <a href="single-product.html?id=6">Demeter</a>) and continue cooking for another 3 to 4 minutes.
             Serve right away and enjoy!
         `,
-        image_main: 'images/recipie-pan-fried-fish.jpg',
+        image_main: 'images/recipe-pan-fried-fish.jpg',
         author: 'Shouston Graf',
         tags: [
             'recipe',
