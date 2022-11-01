@@ -10,7 +10,7 @@
   },
   "license": "CC-BY-4.0",
   "devDependencies": {
-    "browserify": "^11.2.0",
+    "browserify": "^17.0.0",
     "github-api": "^0.10.7",
     "uglify-js": "^2.5.0"
   },
